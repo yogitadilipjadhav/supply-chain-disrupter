@@ -1,0 +1,54 @@
+MITIGATION PLAYBOOK: PORT CLOSURE & INFRASTRUCTURE FAILURE
+
+Event Classification: Port Authority Lockdown / Operational Shutdown
+
+Historical Reference:
+- Suez Canal Blockage (March 2021): Ever Given incident; 10-day global delay
+- COVID Port Restrictions (2020): Port capacity reduced 40–60%; extended queues
+- Labor Strikes (common in Indian ports): 3–7 day operational freezes
+
+Risk Indicators:
+- Port authority regulatory notices
+- Labor union announcements of strikes/walkouts
+- Geopolitical tensions affecting shipping lanes (Red Sea corridor)
+- Infrastructure maintenance alerts
+
+Impact Window: 3–14 days (depends on closure type)
+Affected SKUs: All commodities (full port halt)
+
+=== 3-POINT MITIGATION STRATEGY ===
+
+Action 1: IMMEDIATE MODAL SHIFT (Execute within 4 hours)
+- Switch from sea freight to air freight for high-value SKUs (CHIP_AP, memory modules)
+- Redirect cargo to alternate port + overland trucking:
+  * JNPT closure → Route via Mundra (350km, 2 days truck transit)
+  * Chennai closure → Route via Cochin (500km, 3 days truck transit)
+- Cost Impact: Air freight premium ₹80–150 per kg; overland ₹20–40 per unit
+- Timeline Extension: +3–5 days total (vs. normal 7–10 day sea route)
+
+Action 2: WAREHOUSE BUFFER ACTIVATION (Execute within 2 hours)
+- Tap regional free-trade zone warehouses near closed port
+- Release 2-week advanced inventory buffer to retail/manufacturing partners
+- Activate emergency procurement from local assembly hubs (if applicable)
+- Cost Delta: ₹100–200K in emergency storage/staging fees
+
+Action 3: SUPPLIER COORDINATION (Execute within 6 hours)
+- Negotiate temporary production pause with downstream manufacturers (no excess inventory buildup)
+- Activate Demand Leveling Protocol: Smooth forecasted orders over extended window
+- Communicate revised delivery timeline to key customers (transparent expectations)
+- Cost Delta: ₹50–150K in customer communication + compliance documentation
+
+=== FINANCIAL SUMMARY ===
+Total Mitigation Cost: ₹300–700K
+Lost Sales Risk Prevented: ₹8–15M
+Operational Resilience Gain: 85–95% demand fulfillment (vs. 30–40% without playbook)
+
+=== POST-RECOVERY MONITORING ===
+- Resume normal port operations once authority clearance is issued
+- Gradually normalize air/modal shift allocations back to sea baseline (5–7 days)
+- Audit supplier inventory levels post-disruption; rebalance stock
+
+=== CONTINGENCY TRIGGERS ===
+If port closure extends beyond 7 days:
+- Escalate to emergency manufacturing acceleration (Action 3b)
+- Activate alternate source procurement (backup suppliers from alternative regions)

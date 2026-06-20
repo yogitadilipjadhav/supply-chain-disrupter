@@ -1,0 +1,38 @@
+ports:
+  JNPT:
+    latitude: 19.0583
+    longitude: 72.8856
+  Mundra:
+    latitude: 23.0060
+    longitude: 70.8575
+  Chennai:
+    latitude: 13.0827
+    longitude: 80.2707
+  Vizag:
+    latitude: 17.6868
+    longitude: 83.2185
+  Cochin:
+    latitude: 9.9667
+    longitude: 76.2340
+  Kolkata:
+    latitude: 22.5726
+    longitude: 88.3639
+  Pipavav:
+    latitude: 20.8999
+    longitude: 71.6178
+
+route_maps:
+  JNPT:
+    backup_route: "Cape of Good Hope"
+  Mundra:
+    backup_route: "Suez Canal"
+  Chennai:
+    backup_route: "Cape of Good Hope"
+  Vizag:
+    backup_route: "Suez Canal"
+  Cochin:
+    backup_route: "Cape of Good Hope"
+  Kolkata:
+    backup_route: "Suez Canal"
+  Pipavav:
+    backup_route: "Cape of Good Hope"

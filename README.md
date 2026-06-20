@@ -1,114 +1,173 @@
-# Agentic Supply Chain Disruption Predictor & Simulation Engine
+# Electronics Supply Chain Disruption Predictor
 
-## Overview and Problem Statement
+Local SQLite, ChromaDB, RAG search, forecasting, and disruption-scenario
+dashboard built around Varun's electronics/semiconductor workbook.
 
-This project aims to develop an AI-powered supply chain disruption prediction and simulation system that proactively monitors global risk signals, predicts potential supply chain disruptions, forecasts demand impact, and simulates mitigation scenarios using multi-agent AI workflows, Retrieval-Augmented Generation (RAG), time-series forecasting, and discrete-event simulation techniques.
+Yogita's beauty/FMCG dataset is not loaded into either database.
 
-Modern supply chains are highly interconnected networks involving suppliers, manufacturers, logistics providers, ports, warehouses, and retailers across multiple countries. Disruptions such as extreme weather events, geopolitical conflicts, labor strikes, port closures, tariffs, or factory shutdowns can significantly affect inventory availability, delivery timelines, and revenue.
+## Current data
 
-Most organizations react only after disruptions occur because monitoring large-scale real-time data sources manually is difficult and inefficient. Businesses require intelligent systems capable of continuously analyzing news feeds, weather alerts, shipping indices, and logistics signals to identify risks before they escalate.
-
-The proposed system will build a LangGraph-orchestrated multi-agent platform that continuously ingests disruption-related information, classifies supply chain risks, forecasts demand fluctuations, simulates disruption scenarios, and generates mitigation recommendations. The platform aims to support proactive risk management, improve operational resilience, and assist organizations in strategic supply chain planning.
-
-## Methodology
-
-The platform is orchestrated using a LangGraph-based multi-agent workflow, where each agent is responsible for a specialized task:
-
-1. **Real-Time Data Ingestion Agent:**
-   - Continuously collects data from RSS feeds, logistics APIs, weather APIs, and shipping indices.
-   - Extracts disruption-related events using `feedparser` and NLP pipelines.
-   - Stores incoming disruption signals in a structured format.
-
-2. **News and Event Analysis Agent:**
-   - Analyzes news articles and logistics alerts using LLMs.
-   - Identifies disruption categories such as weather, geopolitical, logistics, raw material shortages, and demand shocks.
-
-3. **Weather Risk Monitoring Agent:**
-   - Fetches weather forecasts using the Open-Meteo API.
-   - Detects extreme weather events affecting ports, transportation hubs, and manufacturing facilities.
-
-4. **Risk Classification Agent:**
-   - Built within a LangGraph-based orchestration workflow.
-   - Uses DistilBERT-based classifiers to categorize supply chain risks.
-   - Generates supplier-level and trade-lane risk scores.
-
-5. **Demand Forecasting Agent:**
-   - Trains forecasting models using Facebook Prophet.
-   - Incorporates disruption risk signals into demand forecasting pipelines.
-   - Predicts demand deviations and inventory fluctuations.
-
-6. **Simulation Agent:**
-   - Simulates supply chain disruptions using SimPy discrete-event simulation.
-   - Models suppliers, warehouses, ports, and retailers as network nodes.
-   - Runs Monte Carlo simulations to estimate stockout probability and revenue impact.
-
-7. **Mitigation Recommendation Agent:**
-   - Generates natural-language mitigation recommendations using LLMs.
-   - Suggests alternate suppliers, route changes, safety stock adjustments, and inventory actions.
-
-8. **Dashboard and Alerting:**
-   - A Gradio dashboard for risk visualization and scenario analysis.
-   - Displays disruption heatmaps, timelines, and simulation outcomes.
-   - Triggers alerts for high-risk scenarios.
-
-## Datasets
-
-The project will utilize a combination of public datasets, APIs, and synthetic disruption datasets:
-- **SupplyChainNet Dataset:** Historical supply chain transactions, shipping records, supplier information, logistics delays, and disruption events (Source: Kaggle).
-- **Freightos Baltic Index Data:** Container shipping rate indices, freight trends, and logistics cost fluctuations (Source: Public Freightos shipping index).
-- **Open-Meteo Weather API:** Historical and forecast weather data for logistics hubs and shipping regions.
-- **News and RSS Feed Data:** News articles related to labor strikes, geopolitical risks, tariffs, factory shutdowns, and logistics disruptions (Sources: Reuters, Bloomberg, Supply Chain Dive, Google News API).
-- **Synthetic Supply Chain Events:** AI-generated synthetic disruption events, simulated demand shocks, disruption narratives, supplier failures, and logistics incidents.
-
-## Project Structure
+Source workbook:
 
 ```text
-.
-├── config/                 # Configuration files (API keys, model parameters)
-├── data/
-│   ├── processed/          # Cleaned and structured data
-│   └── raw/                # Raw datasets from Kaggle, synthetic data, etc.
-├── notebooks/              # Jupyter notebooks for EDA and prototyping
-├── src/                    # Main source code
-│   ├── agents/             # LangGraph agent implementations
-│   ├── dashboard/          # Gradio UI components
-│   ├── models/             # ML models (DistilBERT, Prophet wrappers)
-│   ├── simulation/         # SimPy discrete-event simulation logic
-│   └── utils/              # Helper functions, API clients, data parsers
-├── tests/                  # Unit and integration tests
-├── requirements.txt        # Project dependencies
-└── README.md               # Project documentation
+data/raw/supply_chain_lite_master.xlsx
 ```
 
-## Evaluation
+The database build preserves:
 
-- Measure risk classification accuracy.
-- Evaluate demand forecast deviation.
-- Assess simulation realism and mitigation recommendation quality.
+- 5,459 Lite Master order records
+- 200 operational KPI records
+- 2,282 semiconductor signal records
+- Workbook data dictionary and legend
+- Duplicate business order IDs without dropping rows
 
-## Challenges
+Generated outputs:
 
-- **Real-Time Data Integration:** Continuously processing multiple external data sources reliably.
-- **Risk Signal Extraction:** Identifying meaningful disruption indicators from noisy news and weather data.
-- **Forecasting Uncertainty:** Handling uncertainty in demand forecasting under disruption conditions.
-- **Simulation Complexity:** Modeling realistic supply chain behavior and interconnected dependencies.
-- **Multi-Agent Coordination:** Synchronizing ingestion, forecasting, simulation, and mitigation agents effectively.
-- **Scalability:** Efficiently managing large-scale supplier networks and logistics data.
-- **Recommendation Reliability:** Generating actionable and business-relevant mitigation strategies.
+```text
+outputs/supply_chain.db
+outputs/chromadb/
+```
 
-## Technologies Used
+## Requirements
 
-- **Agent Orchestration:** LangGraph, LangChain
-- **Machine Learning & NLP:** Hugging Face Transformers (DistilBERT), PyTorch
-- **Time-Series Forecasting:** Facebook Prophet
-- **Simulation:** SimPy (Discrete-Event Simulation)
-- **Data Collection:** Feedparser, Requests
-- **UI & Dashboard:** Gradio
-- **Data Processing:** Pandas, NumPy
+- Python 3.11 or 3.12
+- Internet access during the first setup to download Python packages and the
+  `all-MiniLM-L6-v2` embedding model
+- Internet access when running scenarios because weather data comes from
+  Open-Meteo
 
-## References
+No OpenAI API key is required.
 
-- [Facebook Prophet Documentation](https://facebook.github.io/prophet/)
-- [SimPy Documentation](https://simpy.readthedocs.io/en/latest/)
-- [Feedparser Documentation](https://feedparser.readthedocs.io/en/latest/)
-- [DistilBERT Model Documentation](https://huggingface.co/distilbert-base-uncased)
+## Setup on Windows PowerShell
+
+Run all commands from the project root:
+
+```powershell
+cd D:\supply-chain-disrupter
+```
+
+Create and activate a virtual environment:
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+If PowerShell blocks activation for the current session:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate.ps1
+```
+
+Install dependencies:
+
+```powershell
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+## Build SQLite and ChromaDB
+
+```powershell
+python -m src.build_databases
+```
+
+Expected headline results:
+
+```text
+SQLite: loaded 5,459 Lite Master orders
+ChromaDB: 306 chunks
+```
+
+The command safely rebuilds:
+
+- SQLite tables for Lite Master, operational KPIs, semiconductor signals,
+  workbook metadata, and mitigation outputs
+- A `daily_records` compatibility view used by the scenario workflow
+- An electronics-only ChromaDB collection containing semiconductor events,
+  mitigation knowledge, playbooks, event profiles, and field definitions
+
+## Run the application
+
+```powershell
+python -m streamlit run src/main.py
+```
+
+Streamlit normally opens:
+
+```text
+http://localhost:8501
+```
+
+The application contains three pages:
+
+1. **Data Ingestion** — rebuild and inspect SQLite and ChromaDB.
+2. **RAG Search** — search semiconductor events, mitigations, and field
+   definitions.
+3. **Scenario Analyzer** — select an existing workbook region, product, and
+   date; calculate risk, run a Prophet forecast, estimate stockout exposure,
+   and persist mitigation guidance.
+
+## Typical workflow
+
+```powershell
+cd D:\supply-chain-disrupter
+.\.venv\Scripts\Activate.ps1
+python -m src.build_databases
+python -m streamlit run src/main.py
+```
+
+The databases only need to be rebuilt when the workbook, playbooks, or database
+code changes.
+
+## Project structure
+
+```text
+config/
+  india_electronics.yaml       Port coordinates and fallback routes
+  playbooks/                   Electronics disruption playbooks
+data/
+  raw/
+    supply_chain_lite_master.xlsx
+outputs/                       Generated SQLite and ChromaDB files
+src/
+  agents/                      Scenario workflow and state models
+  dashboard/                   Streamlit pages
+  utils/                       ETL, SQLite, RAG, weather, and YAML utilities
+  build_databases.py           Database build command
+  main.py                      Streamlit entry point
+requirements.txt
+README.md
+```
+
+## Troubleshooting
+
+### `No module named streamlit`
+
+Activate the virtual environment and reinstall dependencies:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
+
+### Database or collection is missing
+
+```powershell
+python -m src.build_databases
+```
+
+### Embedding model download warning
+
+The first ChromaDB build downloads `all-MiniLM-L6-v2` from Hugging Face. A
+Hugging Face token is optional; the model can be downloaded anonymously.
+
+### Scenario weather request fails
+
+The database and RAG pages still work offline after initial setup. Scenario
+weather enrichment requires access to:
+
+```text
+https://api.open-meteo.com
+```

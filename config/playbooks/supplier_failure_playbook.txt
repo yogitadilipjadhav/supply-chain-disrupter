@@ -1,0 +1,57 @@
+MITIGATION PLAYBOOK: SUPPLIER FAILURE & MATERIAL SHORTAGE
+
+Event Classification: Supplier Bankruptcy / Component Shortage / Production Halt
+
+Historical Reference:
+- Semiconductor Supply Shock (2021–2022): TSMC capacity constraints; 6–12 month delays
+- Japan Manufacturing Earthquake (2011): Supplier disruptions rippled globally for 6+ months
+- COVID Lockdowns in Vietnam (2021): Manufacturing hubs frozen; 2–3 month supply gaps
+
+Risk Indicators:
+- Supplier financial distress signals (credit downgrades, missed payments, capacity warnings)
+- Component shortage alerts from industry indices
+- Manufacturing PMI index drops
+- Geopolitical sanctions affecting supplier regions
+
+Impact Window: 7–60 days (long-tail risk)
+Affected SKUs: CHIP_AP, CHIP_MEM (high-concentration suppliers)
+
+=== 3-POINT MITIGATION STRATEGY ===
+
+Action 1: DUAL-SOURCING ACTIVATION (Execute within 24 hours)
+- Shift 40–50% of affected SKU volume to pre-qualified backup suppliers:
+  * China suppliers → Taiwan or South Korea alternatives
+  * Single supplier → Distribute across 2–3 regional hubs
+- Trigger emergency purchase orders (higher unit costs, reduced lead times)
+- Unit Cost Premium: +10–18% for accelerated orders
+- Timeline: 7–14 days vs. 30+ days normal
+
+Action 2: INVENTORY PREPOSITIONING (Execute within 48 hours)
+- Calculate 8–12 week consumption forecast (vs. normal 2–4 weeks)
+- Acquire forward inventory from alternate suppliers
+- Stage inventory across multiple ports/warehouses (geographic decentralization)
+- Cost Delta: ₹500K–₹2M in bulk purchasing + storage (fully recoupable post-recovery)
+
+Action 3: DEMAND MANAGEMENT & CUSTOMER COMMUNICATION (Execute within 12 hours)
+- Issue Force Majeure notices to key customers (transparent communication)
+- Negotiate allocation ratios (e.g., "70% of normal order quantity for next 6 weeks")
+- Prioritize high-revenue customers; defer non-critical orders to post-recovery
+- Trigger Dynamic Pricing: +5–15% margin on constrained SKUs
+- Cost Delta: ₹100–300K in customer support + communication infrastructure
+
+=== FINANCIAL SUMMARY ===
+Total Mitigation Cost: ₹600K–₹2.5M
+Revenue Impact Mitigated: ₹20–50M (via dual-sourcing + inventory buffer)
+Customer Retention: 85–95% (vs. 40–50% without playbook)
+
+=== POST-RECOVERY MONITORING ===
+- Gradually reduce backup supplier orders as primary supplier stabilizes
+- Rebuild inventory buffers to normal 3-week cycle over 8–12 weeks
+- Update supplier risk scores in database; trigger Tier-1 supplier diversification review
+- Implement supplier health KPI dashboard for early warning
+
+=== ESCALATION PROTOCOLS ===
+If shortage persists beyond 30 days:
+- Activate Emergency Manufacturing: Contract local assembly (if tech-feasible)
+- Trigger Regulatory Coordination: Government support for critical component imports
+- Consider market hedging: Lock in futures contracts for next 6–12 months

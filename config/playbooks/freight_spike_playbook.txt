@@ -1,0 +1,60 @@
+MITIGATION PLAYBOOK: FREIGHT SPIKE & DEMAND SURGE
+
+Event Classification: Sudden Demand Spike / Holiday Season Peak / Flash E-Commerce Events
+
+Historical Reference:
+- Diwali Season (India): 200–300% demand spike; 3-week fulfillment window
+- Black Friday / Cyber Monday: Global demand surge; container capacity constraints
+- Post-COVID Recovery (2021): Pent-up demand triggered 6+ month supply chain strain
+
+Risk Indicators:
+- E-commerce promotional calendars (Flipkart Super, Amazon Prime, festive seasons)
+- Industry demand forecasts exceeding baseline by >50%
+- Freight rate spikes (Baltic Clean Tanker Index, Container rates >$5K/TEU)
+- Port congestion reports (>5-day vessel waiting queue)
+
+Impact Window: 2–8 weeks
+Affected Assets: Container capacity, warehouse space, transportation modes
+
+=== 3-POINT MITIGATION STRATEGY ===
+
+Action 1: CAPACITY RESERVATION (Execute within 1 week before peak)
+- Pre-book container capacity 6–8 weeks ahead:
+  * Lock in 30–40% of forecasted volume at fixed rates
+  * Negotiate seasonal rate locks with carriers (Maersk, MSC, CMA CGM)
+- Cost Impact: ₹50–100 per TEU above spot rates (insurance cost)
+- Benefit: Guarantee delivery window; avoid mid-peak rate surges (₹300–500/TEU premium)
+
+Action 2: WAREHOUSE STAGING (Execute within 2 weeks before peak)
+- Rent temporary warehouse capacity near ports/e-commerce hubs:
+  * Delhi, Bangalore, Mumbai cross-dock centers (2–8 week leases)
+  * Staging: Stage 3–4 week inventory buffer
+- Cost Delta: ₹200–400K in temp storage
+- Reduces port congestion; enables fast last-mile fulfillment
+
+Action 3: DYNAMIC FULFILLMENT ROUTING (Execute within 1 week before peak)
+- Activate Regional Fulfillment Network:
+  * Direct 40–50% of orders to nearest regional warehouse (vs. centralized distribution)
+  * Use air freight + express trucking for tier-1 cities (Delhi, Bangalore, Mumbai)
+  * Reserve sea freight for bulk, less-time-sensitive orders
+- Diversify carrier network: Add backup carriers (cost: +₹50–100 per shipment)
+- Cost Delta: ₹300–600K in premium air/express logistics
+- Timeline Benefit: 3–5 day faster fulfillment; 30–40% reduction in delivery delays
+
+=== FINANCIAL SUMMARY ===
+Total Mitigation Cost: ₹550K–₹1.2M (pre-season investment)
+Additional Revenue Captured: ₹15–40M (via on-time delivery + customer satisfaction)
+ROI: 15–30x over 8-week peak period
+
+=== POST-RECOVERY MONITORING ===
+- Release reserved container capacity post-peak (avoid sunk cost)
+- De-occupy temporary warehouses by week 1 post-season (return lease commitments)
+- Consolidate back to centralized fulfillment (4–6 weeks transition)
+- Update demand forecast models with actual spike patterns (improve future accuracy)
+
+=== EARLY WARNING INDICATORS ===
+Monitor these metrics during Q2, Q3 (pre-peak seasons):
+- E-commerce platform promotions calendar
+- Carrier rate indices trending upward
+- Port queue reports (>3-day waiting time)
+- Competitor inventory movements

@@ -1,0 +1,47 @@
+MITIGATION PLAYBOOK: EXTREME WEATHER & PORT DISRUPTION
+
+Event Classification: Monsoon/Cyclone Season Port Closure
+
+Historical Reference:
+- Chennai Floods (Dec 2015): Port closure for 3 days; inventory buffers at secondary ports enabled recovery
+- Cyclone Biparjoy (June 2023): Mundra port partial shutdown; Diwali demand peak delayed
+
+Risk Indicators:
+- IMD alerts for cyclone/heavy rainfall within 200km of port
+- Wind speed > 60 km/h at port coordinates (Open-Meteo API)
+- Port authority announcements of cargo operations suspension
+
+Impact Window: 2–7 days (depends on cyclone intensity)
+Affected Assets: Container handling equipment, crane operations, vessel scheduling
+
+=== 3-POINT MITIGATION STRATEGY ===
+
+Action 1: IMMEDIATE ROUTE DIVERSION (Execute within 2 hours)
+- Redirect in-transit vessels from affected port to nearest alternate:
+  * From JNPT (Mumbai) → Mundra or Paradip
+  * From Chennai → Cochin or Vizag
+  * From Mundra → JNPT
+- Cost Impact: +₹15–25 per TEU (fuel + time premium)
+- Inventory Impact: +2–3 days transit delay, but avoids port queue congestion
+
+Action 2: SAFETY STOCK DEPLOYMENT (Execute within 6 hours)
+- Activate emergency inventory at inland warehouses (Delhi, Bangalore regional DCs)
+- Pre-position CHIP_AP, CHIP_MEM, PCB stocks from neighboring port-adjacent warehouses
+- Minimum buffer: 3-week supply coverage at affected port's baseline demand
+- Cost Delta: ₹50–100K in expedited cross-warehouse transport
+
+Action 3: PROCUREMENT ACCELERATION (Execute within 12 hours)
+- Contact alternate suppliers (Taiwan, South Korea backup sources) for expedited production
+- Negotiate shorter lead times: 14 days → 7 days (premium: +8–12% on unit cost)
+- Lock in air freight capacity for critical SKUs (CHIP_AP, memory modules)
+- Cost Delta: +₹200–350K for accelerated procurement window; recoverable post-disruption
+
+=== FINANCIAL SUMMARY ===
+Total Mitigation Cost: ₹300–500K
+Inventory Risk Avoided (Stockout Prevention): ₹5–10M (revenue protection)
+ROI: 10–30x (1–2 week recovery window)
+
+=== POST-RECOVERY MONITORING ===
+- Resume normal port operations post-weather clearance (24–48 hour buffer)
+- Normalize alternate inventory to pre-disruption levels over 10–14 days
+- Update baseline forecasts post-event to reflect true demand spike during recovery period
