@@ -13,6 +13,14 @@ Source workbook:
 data/raw/supply_chain_lite_master.xlsx
 ```
 
+Additional static RAG context:
+
+```text
+data/raw/RAG_data/*.pdf
+data/raw/RAG_data/*.docx
+config/playbooks/*.txt
+```
+
 The database build preserves:
 
 - 5,459 Lite Master order records
@@ -85,8 +93,9 @@ The command safely rebuilds:
 - SQLite tables for Lite Master, operational KPIs, semiconductor signals,
   workbook metadata, and mitigation outputs
 - A `daily_records` compatibility view used by the scenario workflow
-- An electronics-only ChromaDB collection containing semiconductor events,
-  mitigation knowledge, playbooks, event profiles, and field definitions
+- One electronics-only ChromaDB collection containing semiconductor events,
+  mitigation knowledge, playbooks, event profiles, field definitions, and
+  the committed PDF/DOCX static context
 
 ## Run the application
 

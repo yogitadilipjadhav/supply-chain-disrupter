@@ -9,7 +9,7 @@ from src.utils.rag_utils import build_rag_corpus_complete, query_chroma_rag
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Build Varun's electronics SQLite and ChromaDB stores."
+        description="Build electronics SQLite database and ChromaDB stores."
     )
     parser.add_argument(
         "--no-rebuild",
@@ -32,6 +32,8 @@ def main() -> None:
         "semiconductor factory shutdown and chip shortage risk",
         "critical electronics supply disruption mitigation",
         "what field contains safety stock and lead time",
+        "Red Sea route disruption shipping risk",
+        "semiconductor production vulnerabilities and geographic concentration",
     ]
     for query in smoke_queries:
         hits = query_chroma_rag(query, n_results=1)

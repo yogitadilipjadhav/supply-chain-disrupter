@@ -4,11 +4,13 @@ import hashlib
 import re
 import shutil
 from pathlib import Path
-from typing import Any, Dict, Iterable, List
+from typing import Any, Dict, List
 
 import chromadb
 import pandas as pd
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
+from docx import Document as DocxDocument
+from pypdf import PdfReader
 
 from src.utils.etl_loader import EXCEL_SOURCE, read_excel_sheets
 
@@ -16,6 +18,7 @@ from src.utils.etl_loader import EXCEL_SOURCE, read_excel_sheets
 CHROMA_DIR = Path("outputs/chromadb")
 DEFAULT_COLLECTION_NAME = "electronics_supply_chain_knowledge"
 PLAYBOOKS_DIR = Path("config/playbooks")
+STATIC_CONTEXT_DIR = Path("data/raw/RAG_data")
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 200
@@ -282,6 +285,96 @@ def _playbook_documents(
     return documents, metadatas, ids, count
 
 
+def _docx_text(path: Path) -> str:
+    document = DocxDocument(path)
+    sections: List[str] = []
+
+    paragraphs = [
+        paragraph.text.strip()
+        for paragraph in document.paragraphs
+        if paragraph.text.strip()
+    ]
+    if paragraphs:
+        sections.append("\n\n".join(paragraphs))
+
+    for table_index, table in enumerate(document.tables, start=1):
+        rows = []
+        for row in table.rows:
+            values = [cell.text.strip() for cell in row.cells]
+            if any(values):
+                rows.append(" | ".join(values))
+        if rows:
+            sections.append(f"Table {table_index}\n" + "\n".join(rows))
+
+    return "\n\n".join(sections)
+
+
+def _static_context_documents(
+    context_dir: Path,
+) -> tuple[List[str], List[Dict[str, Any]], List[str], Dict[str, int]]:
+    documents: List[str] = []
+    metadatas: List[Dict[str, Any]] = []
+    ids: List[str] = []
+    counts = {
+        "static_context_files": 0,
+        "static_pdf_files": 0,
+        "static_pdf_pages": 0,
+        "static_docx_files": 0,
+    }
+    if not context_dir.exists():
+        return documents, metadatas, ids, counts
+
+    for path in sorted(context_dir.glob("*.pdf")):
+        reader = PdfReader(path)
+        indexed_pages = 0
+        for page_number, page in enumerate(reader.pages, start=1):
+            text = page.extract_text() or ""
+            if not text.strip():
+                continue
+            _add_document(
+                documents,
+                metadatas,
+                ids,
+                text=text,
+                source=path.name,
+                doc_type="static_report",
+                key=f"{path.stem}|page-{page_number}",
+                metadata={
+                    "title": path.stem.replace("_", " "),
+                    "file_type": "pdf",
+                    "page": page_number,
+                },
+            )
+            indexed_pages += 1
+
+        if indexed_pages:
+            counts["static_context_files"] += 1
+            counts["static_pdf_files"] += 1
+            counts["static_pdf_pages"] += indexed_pages
+
+    for path in sorted(context_dir.glob("*.docx")):
+        text = _docx_text(path)
+        if not text.strip():
+            continue
+        _add_document(
+            documents,
+            metadatas,
+            ids,
+            text=text,
+            source=path.name,
+            doc_type="static_report",
+            key=path.stem,
+            metadata={
+                "title": path.stem.replace("_", " "),
+                "file_type": "docx",
+            },
+        )
+        counts["static_context_files"] += 1
+        counts["static_docx_files"] += 1
+
+    return documents, metadatas, ids, counts
+
+
 def build_chroma_from_default_excel(flush_existing: bool = False) -> Dict[str, Any]:
     return build_chroma_complete(flush_existing=flush_existing)
 
@@ -294,8 +387,9 @@ def build_chroma_complete(
     flush_existing: bool = True,
     excel_path: Path = EXCEL_SOURCE,
     playbooks_dir: Path = PLAYBOOKS_DIR,
+    static_context_dir: Path = STATIC_CONTEXT_DIR,
 ) -> Dict[str, Any]:
-    """Build an electronics-only semantic store from Varun's workbook."""
+    """Build one electronics semantic store from all committed static sources."""
     if flush_existing and CHROMA_DIR.exists():
         shutil.rmtree(CHROMA_DIR)
 
@@ -305,10 +399,13 @@ def build_chroma_complete(
     playbook_docs, playbook_meta, playbook_ids, playbook_count = (
         _playbook_documents(playbooks_dir)
     )
+    context_docs, context_meta, context_ids, context_counts = (
+        _static_context_documents(static_context_dir)
+    )
 
-    documents = workbook_docs + playbook_docs
-    metadatas = workbook_meta + playbook_meta
-    ids = workbook_ids + playbook_ids
+    documents = workbook_docs + playbook_docs + context_docs
+    metadatas = workbook_meta + playbook_meta + context_meta
+    ids = workbook_ids + playbook_ids + context_ids
     if not documents:
         raise ValueError("No electronics knowledge documents were generated")
 
@@ -334,9 +431,14 @@ def build_chroma_complete(
     return {
         "collection": DEFAULT_COLLECTION_NAME,
         "chunks": collection.count(),
-        "source_documents": sum(counts.values()) + playbook_count,
+        "source_documents": (
+            sum(counts.values())
+            + playbook_count
+            + context_counts["static_context_files"]
+        ),
         "playbooks": playbook_count,
         **counts,
+        **context_counts,
         "domain": "electronics_semiconductors",
         "dataset_owner": "Varun",
         "beauty_products_included": False,

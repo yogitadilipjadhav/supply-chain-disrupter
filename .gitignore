@@ -13,6 +13,7 @@ env/
 
 # Generated databases and logs
 outputs/
+data/processed/
 *.log
 
 # Jupyter
