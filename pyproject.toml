@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "supply-chain-disrupter"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "chromadb>=1.5,<2",
+    "openpyxl>=3.1,<4",
+    "pandas>=2.2,<4",
+    "prophet>=1.1,<2",
+    "pydantic>=2.7,<3",
+    "pypdf>=6,<7",
+    "python-docx>=1.2,<2",
+    "pyyaml>=6,<7",
+    "requests>=2.31,<3",
+    "sentence-transformers>=5,<6",
+    "streamlit>=1.40,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]

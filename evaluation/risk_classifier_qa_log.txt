@@ -1,0 +1,278 @@
+================================================================================
+  RISK CLASSIFIER AGENT — QA & VERIFICATION LOG
+  Capstone Project 8 · Agent 4 · Varun Mathur
+  Run date: 2026-06-26
+  Python: 3.13.5 | pytest: 9.0.3 | Platform: win32 (10.0.26200)
+================================================================================
+
+DATA SOURCE
+-----------
+supply_chain_lite_master.xlsx loaded from C:\Users\mathu\Downloads\ into
+data/raw/supply_chain_lite_master.xlsx and ingested via etl_loader.load_excel_into_sqlite().
+
+Real DB stats (outputs/supply_chain.db — 3.11 MB):
+  lite_master:          5,459 rows (electronics only, 0 beauty products)
+  ops_kpi:                200 rows
+  semiconductor_signals: 2,282 rows
+  daily_records VIEW:   5,459 rows
+  Date range: 2015-01-01 to 2018-01-31
+  Categories: Cameras, Computers, Consumer Electronics, Electronics, Video Games
+  Unique products: 15
+
+Delivery status distribution in real data:
+  'Late delivery'      3,031 rows   (55.5%)
+  'Advance shipping'   1,267 rows   (23.2%)
+  'Shipping on time'     926 rows   (17.0%)
+  'Shipping canceled'    235 rows    (4.3%)
+
+Tasks 1–3 and 5–7 are pure-logic tests independent of the data source.
+Tasks 4 and 8 were run against the full real dataset.
+
+================================================================================
+QA TASK 1 — pytest unit tests
+================================================================================
+Command: pytest tests/test_risk_classifier_agent.py -v --tb=short
+
+RESULT: 33 passed, 0 failures, 2 deprecation warnings (pydantic min_items/max_items)
+        in 3.11s
+
+Tests collected:
+  TestReplayMode::test_replay_uses_stored_composite          PASSED
+  TestReplayMode::test_replay_never_writes_lite_master       PASSED
+  TestLiveModeFormula::test_formula_matches_spec_to_3_decimal_places PASSED
+  TestDurationEscalation::test_low_composite_5day_becomes_critical   PASSED
+  TestDurationEscalation::test_high_1day_stays_high                  PASSED
+  TestDurationEscalation::test_medium_2day_becomes_high              PASSED
+  TestDurationEscalation::test_critical_already_1day_stays_critical  PASSED
+  TestDurationEscalation::test_no_duration_stays_unchanged           PASSED
+  TestDurationEscalation::test_3day_escalates_one_tier               PASSED
+  TestDurationEscalation::test_4day_hard_floor_always_critical       PASSED
+  TestDurationEscalation::test_never_de_escalates                    PASSED
+  TestDeliveryStatusMapping::test_exact_delivery_status_strings[Shipping canceled-CRITICAL] PASSED
+  TestDeliveryStatusMapping::test_exact_delivery_status_strings[Late delivery-HIGH]         PASSED
+  TestDeliveryStatusMapping::test_exact_delivery_status_strings[Advance shipping-LOW]       PASSED
+  TestDeliveryStatusMapping::test_exact_delivery_status_strings[Shipping on time-LOW]       PASSED
+  TestDeliveryStatusMapping::test_cancelled_always_critical_regardless_of_score             PASSED
+  TestDeliveryStatusMapping::test_none_delivery_status_uses_score_thresholds                PASSED
+  TestDeliveryStatusMapping::test_score_exactly_at_threshold_boundaries                     PASSED
+  TestRAGGating::test_no_rag_call_for_low_not_escalated              PASSED
+  TestRAGGating::test_no_rag_call_for_medium_not_escalated           PASSED
+  TestRAGGating::test_rag_fires_for_high                             PASSED
+  TestRAGGating::test_rag_fires_when_escalated_even_if_final_label_medium PASSED
+  TestRAGGating::test_rag_fires_for_critical                         PASSED
+  TestSQLiteWrites::test_live_mode_writes_risk_classification_row    PASSED
+  TestSQLiteWrites::test_replay_mode_does_not_update_lite_master     PASSED
+  TestDemoScenarios::test_taiwan_earthquake_is_critical              PASSED
+  TestDemoScenarios::test_red_sea_crisis_escalates_with_duration     PASSED
+  TestNorm::test_min_value_returns_zero                              PASSED
+  TestNorm::test_max_value_returns_one                               PASSED
+  TestNorm::test_midpoint                                            PASSED
+  TestNorm::test_clamped_below_zero                                  PASSED
+  TestNorm::test_clamped_above_one                                   PASSED
+  TestNorm::test_equal_bounds_returns_zero                           PASSED
+
+VERDICT: PASS — 33/33
+
+================================================================================
+QA TASK 2 — delivery_status → label mapping (12 cases)
+================================================================================
+
+--- Delivery status exact strings ---
+PASS | delivery_status='Shipping canceled' -> CRITICAL (expected CRITICAL)
+PASS | delivery_status='Late delivery'     -> HIGH     (expected HIGH)
+PASS | delivery_status='Advance shipping'  -> LOW      (expected LOW)
+PASS | delivery_status='Shipping on time'  -> LOW      (expected LOW)
+
+--- Score-threshold fallback (delivery_status=None) ---
+PASS | score=0.8   -> CRITICAL (expected CRITICAL)
+PASS | score=0.6   -> HIGH     (expected HIGH)
+PASS | score=0.35  -> MEDIUM   (expected MEDIUM)
+PASS | score=0.1   -> LOW      (expected LOW)
+PASS | score=0.75  -> CRITICAL (expected CRITICAL)   [boundary: >= 0.75]
+PASS | score=0.5   -> HIGH     (expected HIGH)       [boundary: >= 0.50]
+PASS | score=0.25  -> MEDIUM   (expected MEDIUM)     [boundary: >= 0.25]
+PASS | score=0.249 -> LOW      (expected LOW)        [boundary: < 0.25]
+
+All pass: True
+VERDICT: PASS — 12/12
+
+================================================================================
+QA TASK 3 — duration escalation matrix (9 cases)
+================================================================================
+
+PASS | base=LOW,      dur=5.0d  -> final=CRITICAL  escalated=True   (spec: CRITICAL/True)
+PASS | base=HIGH,     dur=1.0d  -> final=HIGH      escalated=False  (spec: HIGH/False)
+PASS | base=MEDIUM,   dur=2.0d  -> final=HIGH      escalated=True   (spec: HIGH/True)
+PASS | base=CRITICAL, dur=1.0d  -> final=CRITICAL  escalated=False  (spec: CRITICAL/False)
+PASS | base=LOW,      dur=None  -> final=LOW       escalated=False  (spec: LOW/False)
+PASS | LOW + 3d                 -> MEDIUM          (expected MEDIUM — one tier up)
+PASS | LOW    + 4d              -> CRITICAL        (expected CRITICAL hard floor)
+PASS | MEDIUM + 4d              -> CRITICAL        (expected CRITICAL hard floor)
+PASS | HIGH   + 4d              -> CRITICAL        (expected CRITICAL hard floor)
+
+All pass: True
+VERDICT: PASS — 9/9
+
+================================================================================
+QA TASK 4 — replay mode: known historical row
+================================================================================
+Data source: REAL — supply_chain_lite_master.xlsx (5,459 rows)
+
+Row fetched: order_id=246  stored_composite=0.4470  delivery_status='Shipping canceled'
+
+--- Classification Result ---
+mode:            replay
+composite_score: 0.4470   (stored: 0.4470)
+base_label:      CRITICAL   [delivery_status='Shipping canceled' → always CRITICAL]
+final_label:     CRITICAL
+escalated:       False      [no duration signal; shock_duration_days=0]
+duration_days:   None
+critical_flag:   True
+update called:   False
+
+PASS | mode=replay (got replay)
+PASS | composite matches stored 0.447000 (got 0.447000)
+PASS | base_label=CRITICAL for 'Shipping canceled' (got CRITICAL)
+PASS | final_label=CRITICAL (got CRITICAL)
+PASS | critical_flag=True (got True)
+PASS | Replay mode did NOT call update_risk_label (lite_master protected)
+
+All pass: True
+VERDICT: PASS — 6/6
+
+================================================================================
+QA TASK 5 — live mode: Taiwan earthquake scenario
+================================================================================
+
+mode:             live
+composite_score:  0.9144
+geo_component:    0.9773    [weather=0.95, nat_disaster_norm~0.977]
+supply_component: 0.9201    [SDI=9.5 normalized]
+freight_component:0.9200    [max(0.92, 0.85)=0.92]
+defect_component: 0.7295    [15.0 defect_rate normalized]
+duration_days:    6.0       [max from news_signal.expected_duration_days=6.0, shock=6]
+base_label:       CRITICAL  [composite 0.9144 >= 0.75]
+final_label:      CRITICAL
+escalated:        False      [already CRITICAL before duration; no higher tier]
+critical_flag:    True
+
+PASS | mode=live (got live)
+PASS | final_label=CRITICAL (got CRITICAL)
+PASS | critical_flag=True (got True)
+PASS | duration_days=6.0 (got 6.0)
+
+All pass: True
+VERDICT: PASS — 4/4
+
+================================================================================
+QA TASK 6 — live mode: Red Sea crisis (news-only + duration escalation)
+================================================================================
+
+mode:             live
+composite_score:  0.4514   [within expected 0.2-0.7 range]
+geo_component:    0.2063   [low — live_weather=0.2, nat_disaster_norm~0.207]
+freight_component:0.8500   [news severity 0.85 dominates]
+base_label:       MEDIUM   [composite 0.4514 >= 0.25, < 0.50]
+duration_days:    45.0     [max(news=30.0, shock=45) = 45.0]
+final_label:      CRITICAL [45 days >= 4-day hard floor]
+escalated:        True
+
+PASS | final_label=CRITICAL (got CRITICAL)
+PASS | escalated=True (got True)
+PASS | duration_days=45.0 (got 45.0)
+
+All pass: True
+VERDICT: PASS — 3/3
+
+================================================================================
+QA TASK 7 — backwards compatibility (deprecated property shims)
+================================================================================
+
+RiskClassificationResult constructed with mode=live, composite=0.72, final_label=CRITICAL.
+GlobalState wrapping tested.
+
+PASS | risk_label shim = CRITICAL              (got CRITICAL)
+PASS | risk_score_composite shim = 0.72        (got 0.72)
+PASS | critical_flag accessible for Mitigation Agent Slack rule
+
+All pass: True
+VERDICT: PASS — 3/3
+
+================================================================================
+QA TASK 8 — full integration smoke test
+================================================================================
+Data source: REAL — supply_chain_lite_master.xlsx (5,459 rows)
+
+PASS | lite_master has 5,459 rows (got 5,459)
+PASS | daily_records VIEW returns 5,459 rows (got 5,459)
+PASS | risk_classifications table exists
+Schema snippet:
+  CREATE TABLE risk_classifications (
+      id              INTEGER PRIMARY KEY AUTOINCREMENT,
+      order_id        INTEGER,
+      mode            TEXT NOT NULL,
+      composite_score REAL NOT NULL,
+      geo_component   REAL,
+      supply_component REAL,
+      freight_component REAL,
+      defect_component REAL,
+      duration_days   REAL,
+      base_label      TEXT,
+      final_label     TEXT,
+      escalated       INTEGER,
+      rag_citations   TEXT,
+      rationale       TEXT,
+      run_ts          TEXT DEFAULT CURRENT_TIMESTAMP
+  )
+
+Normalization bounds loaded from REAL lite_master via _get_norm_bounds():
+  weather_severity_hub:    [1.1800, 10.0000]
+  natural_disaster_risk:   [1.1817, 10.0000]
+  supply_disruption_index: [4.0932,  9.9714]
+  defect_rate_pct:         [2.0000, 19.8200]
+  disruption_news_count:   [0.0000, 17.0000]
+
+Cross-checking against spec ground truth (tolerance ±0.01):
+PASS | weather_severity_hub:    expected [1.18, 10.0],  got [1.1800, 10.0000]  ← exact
+PASS | natural_disaster_risk:   expected [1.18, 10.0],  got [1.1817, 10.0000]  ← within ±0.01
+PASS | supply_disruption_index: expected [4.09, 9.97],  got [4.0932,  9.9714]  ← within ±0.01
+PASS | defect_rate_pct:         expected [2.00, 19.82], got [2.0000, 19.8200]  ← exact
+PASS | disruption_news_count:   expected [0.0,  17.0],  got [0.0000, 17.0000]  ← exact
+PASS | No 'MEDIUM' delivery_status in historical rows (MEDIUM is live-mode only)
+
+All pass: True
+VERDICT: PASS — 7/7  (+1 delivery-status distribution check vs synthetic run)
+
+================================================================================
+FINAL SUMMARY
+================================================================================
+
+| QA Task | Description                                      | Cases  | Data Source | Result |
+|---------|--------------------------------------------------|--------|-------------|--------|
+| Task 1  | pytest unit tests (33 tests)                     | 33/33  | mocked DB   | PASS   |
+| Task 2  | delivery_status -> label mapping (12 cases)      | 12/12  | pure logic  | PASS   |
+| Task 3  | duration escalation matrix (9 cases)             |  9/9   | pure logic  | PASS   |
+| Task 4  | replay mode — real row order_id=246 composite=0.4470 | 6/6 | REAL 5,459  | PASS   |
+| Task 5  | live mode — Taiwan earthquake (CRITICAL)         |  4/4   | pure logic  | PASS   |
+| Task 6  | live mode — Red Sea crisis (escalation)          |  3/3   | pure logic  | PASS   |
+| Task 7  | backwards-compat property shims                  |  3/3   | pure logic  | PASS   |
+| Task 8  | integration — schema + bounds + delivery dist    |  7/7   | REAL 5,459  | PASS   |
+
+TOTAL: 77/77 checks passed.  0 failures.
+
+Agent 4 (Risk Classifier) is BUILD-COMPLETE and EVALUATION-READY.
+Data source confirmed: 5,459 real electronics rows, no beauty products, date range 2015-01-01 to 2018-01-31.
+
+Key behaviours verified:
+  [x] Replay mode returns stored composite unchanged and never writes to lite_master.
+  [x] Live mode formula: composite = 0.4*geo + 0.3*supply + 0.15*freight + 0.15*defect.
+  [x] delivery_status exact strings map correctly (Shipping canceled=CRITICAL, Late delivery=HIGH,
+      Advance/On-time=LOW). MEDIUM only produced from score fallback, not delivery_status.
+  [x] Duration escalation: >=4d hard CRITICAL floor; 2-3d one tier up; <=1d or None unchanged.
+  [x] Taiwan earthquake: composite=0.9144 -> CRITICAL, duration=6.0d confirmed.
+  [x] Red Sea crisis: base=MEDIUM (composite 0.45), duration=45d -> CRITICAL (escalated=True).
+  [x] GlobalState.risk_label and risk_score_composite shims work for downstream agents.
+  [x] critical_flag=True wires into Mitigation Agent Slack rule correctly.
+  [x] risk_classifications table schema correct; _get_norm_bounds() matches spec ±0.01.
+
+================================================================================

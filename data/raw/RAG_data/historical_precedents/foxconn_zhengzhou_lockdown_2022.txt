@@ -1,0 +1,22 @@
+[SOURCE: REAL — Reuters News Agency, November 2022. Original article: "Foxconn's China woes: mistrust, miscommunication, COVID curbs"]
+DISRUPTION PROFILE: FOXCONN ZHENGZHOU FACTORY CRISIS — COVID LOCKDOWN AND LABOR UNREST (2022)
+SEVERITY: CRITICAL | CATEGORY: Factory Shutdown, Geopolitical (Policy), Labor | GEOGRAPHY: Zhengzhou, China (Henan Province)
+PRIMARY IMPACT: Smartphone supply chain (Apple iPhone), consumer electronics OSAT/final assembly
+
+The world's largest iPhone factory, Foxconn's Zhengzhou plant in central China, experienced a severe production crisis in late October and November 2022, combining COVID-19 lockdown enforcement under China's zero-COVID policy, labor unrest over pay disputes, and mass worker exodus. The plant employs more than 200,000 workers and manufactures approximately 70 percent of iPhones globally.
+
+The crisis began when an October 2022 COVID outbreak on the Zhengzhou campus triggered what a senior Foxconn official described as "a mess." The plant was caught in a difficult position, having to accelerate shipments during Apple's most important holiday season while following local government's strict COVID guidelines under China's closed-loop system — a policy requiring workers to be isolated from the wider world in factory dormitories.
+
+Tens of thousands of workers fled the plant over subsequent weeks. Violent protests erupted over the COVID lockdown and confusion over hiring bonuses. Workers who remained described confusion over COVID-positive patients being moved to a vacant housing project without disclosing the infections, and failure to properly segregate infected workers in company canteens. Such grievances prompted confrontations with Foxconn management, leading to sporadic clashes that received worldwide media attention, including workers smashing surveillance cameras and windows.
+
+Foxconn responded by offering premium hiring bonuses — up to 30,000 yuan (approximately $4,200) for less than four months' work, compared to the usual 12,000-16,000 yuan for four months. However, the company was subsequently accused of a "technical error" related to how those bonuses were structured, with newly hired workers discovering conditions differed from what they had been promised. Foxconn ultimately offered 10,000 yuan ($1,400) to protesting workers who agreed to leave.
+
+Production impact was severe: the crisis could cut November production at the factory by at least 30 percent according to a Foxconn source. If problems persisted through December, KGI Securities analyst Christine Wang estimated it would cost Foxconn and Apple the output of approximately 10 million iPhones, equal to cutting iPhone shipments by 12 percent in the fourth quarter. The supply disruption hit Apple's share price directly.
+
+The incident exposed structural vulnerabilities in electronics supply chains that concentrate final assembly in single geography. A senior Foxconn official stated that what happened at the plant was the "epitome" of what companies face under China's rigid COVID policy, and predicted it would "push production lines out of China at a greater speed." Marina Zhang of the University of Technology Sydney noted that a company's internal communications can be "totally overpowered, overwhelmed by social media" in such situations.
+
+SUPPLY CHAIN LESSONS AND PRECEDENT VALUE: (1) Concentration risk — a single factory producing 70% of a product line creates critical dependency; (2) Just-in-time labor as well as just-in-time inventory creates brittleness; (3) Government policy (COVID restrictions) can be a force majeure event for factory operations; (4) Worker trust and communications infrastructure are supply chain risk factors; (5) Chinese manufacturing concentration creates geopolitical tail risk for electronics supply chains.
+
+ALTERNATE SUPPLIER RESPONSE: Apple accelerated its India manufacturing program (Foxconn India, Wistron, Pegatron Chennai plants) following this incident. India's share of global iPhone manufacturing rose from under 1% in 2021 to approximately 7% in 2023 and over 14% by 2024, directly as a risk mitigation response to the Zhengzhou crisis.
+
+MITIGATION STRATEGIES APPLIED: Geographic diversification of assembly to India and Vietnam; increased safety stock buffers for seasonal demand spikes; improved worker communication protocols; revised bonus structures with clearer terms; reduced closed-loop duration requirements.

@@ -1,0 +1,27 @@
+[SOURCE: SYNTHESIZED — Based on Invest India sector briefs, MeitY annual reports, IESA industry data. Official information at investindia.gov.in. Accurate as of mid-2025.]
+SECTOR OVERVIEW: INDIA ELECTRONICS AND SEMICONDUCTOR ECOSYSTEM — INVEST INDIA / IESA BRIEF (2024)
+SOURCE: Invest India (Government of India investment promotion body), IESA (India Electronics & Semiconductor Association)
+CATEGORY: India Sourcing Intelligence | GEOGRAPHY: India national overview
+
+India's electronics and semiconductor ecosystem is undergoing the fastest transformation in its history, driven by the ISM program, PLI scheme, and the global supply chain diversification trend accelerating post-COVID and post-China export control escalation. This overview covers the key clusters, capabilities, and supply chain planning implications for electronics procurement in India.
+
+CURRENT ELECTRONICS MANUFACTURING SCALE: India's electronics production exceeded $115 billion in FY2024, making it one of the world's largest electronics manufacturing nations by output. Mobile phones account for approximately 45-50% of this output, followed by consumer electronics, IT hardware, industrial electronics, and strategic/defense electronics. India imported approximately $70-75 billion of electronics in FY2024, primarily semiconductors, displays, PCBs, and component sub-assemblies from China, Taiwan, South Korea, Vietnam, and Malaysia. Reducing this import dependence through domestic manufacturing (ISM + PLI) is the policy objective driving all semiconductor investments.
+
+KEY GEOGRAPHIC CLUSTERS FOR ALTERNATE SOURCING:
+Bengaluru (Karnataka): India's primary electronics design and manufacturing hub. Hosts India R&D centers for Intel, Qualcomm, Texas Instruments, Samsung, NXP, Broadcom, and 300+ fabless chip design companies. Also hosts electronics manufacturing companies including Foxconn India's Karnataka facilities, HCL, and BHEL Electronics. For OSAT and chip design, Bengaluru is the primary talent and IP resource center.
+
+Greater Noida and Gurugram (NCR Delhi): Major smartphone and consumer electronics assembly hub. Samsung Electronics' Noida facility (one of the world's largest mobile phone manufacturing plants), Dixon Technologies, and several PLI-approved manufacturers operate here. Supply chain planners sourcing finished electronics products should engage this cluster for Samsung Galaxy and Indian brand (Xiaomi India, Realme) alternate procurement.
+
+Chennai (Tamil Nadu): Hub for Apple iPhone manufacturing via Foxconn Sriperumbudur (the primary India iPhone factory), Wistron Chennai, and Pegatron Chennai plants. Also hosts major hard disk drive assembly operations (historically Seagate, Western Digital). For iPhone supply chain alternate sourcing, Chennai-Bengaluru corridor is the relevant geography.
+
+Hyderabad (Telangana): Growing electronics manufacturing cluster with Kaynes Semicon (OSAT), defense electronics (DRDO labs, BEL Hyderabad), and EV electronics manufacturing. Microsoft India Data Center, AWS India Data Center, and Meta India data center infrastructure in Hyderabad create demand for server-grade semiconductors packaged domestically.
+
+Sanand / Dholera (Gujarat): The emerging semiconductor manufacturing cluster, anchored by Micron Technology ATMP, CG Power-Renesas OSAT, and the Tata Electronics Dholera fab (under development). This will be India's primary semiconductor manufacturing geography by 2027-2030, comparable in role to Hsinchu (Taiwan) or Suwon (South Korea) in their respective national ecosystems.
+
+INDIA SEMICONDUCTOR DESIGN CAPABILITY: India's semiconductor design centers are globally significant even in the absence of domestic manufacturing. India accounts for approximately 20 percent of the world's semiconductor design engineers (estimated 125,000+ chip designers), concentrated in Bengaluru, Hyderabad, Pune, and Chennai. Texas Instruments India (Bengaluru) is TI's largest R&D center globally. Qualcomm India has 6,000+ engineers working on 5G modem and Snapdragon chip design. Intel India Design Center in Bengaluru works on Xeon and Arc GPU development. This design capability, while not immediately creating alternate sourcing for manufactured chips, represents India's long-term competitive advantage in the DLI scheme and establishes the human capital foundation for future fabless chip companies.
+
+SUPPLY CHAIN TIMING FRAMEWORK (FOR MITIGATION AGENT RECOMMENDATIONS):
+Immediate (0-3 months): Alternate finished goods sourcing from PLI-approved manufacturers (Samsung Noida, Foxconn Chennai, Dixon Noida). No domestic chip manufacturing alternative yet.
+Near-term (3-18 months): Micron Sanand ATMP for memory packaging; CG Power-Renesas Sanand for automotive MCU packaging.
+Medium-term (2-5 years): Tata Dholera fab for 28nm logic chips (MCUs, display drivers, PMICs); expanded OSAT ecosystem capacity.
+Long-term (5+ years): DLI-scheme Indian fabless companies producing India-designed chips at India or TSMC foundries; full supply chain maturity.
