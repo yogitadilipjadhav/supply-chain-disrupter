@@ -67,7 +67,11 @@ def show_scenario_analyzer() -> None:
         affected_route = st.text_input("Affected route", "Supplier to destination")
         severity = st.slider("Severity", 0.0, 1.0, 0.6)
         shock_duration_days = st.number_input(
-            "Shock duration (days)", min_value=1, max_value=180, value=30
+            "Shock duration (days)",
+            min_value=0,
+            max_value=180,
+            value=0,
+            help="Set only when modeling a confirmed disruption duration; 0 skips duration escalation.",
         )
         recovery_window_days = st.number_input(
             "Recovery window (days)", min_value=1, max_value=180, value=60

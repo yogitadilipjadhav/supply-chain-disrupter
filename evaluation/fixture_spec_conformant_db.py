@@ -137,7 +137,8 @@ def create_schema(conn: sqlite3.Connection) -> None:
         supply_disruption_index,
         natural_disaster_risk,
         export_control_level,
-        order_region
+        order_region,
+        year
     FROM lite_master;
 
     -- Minimal semiconductor_signals table for SDI fallback in live mode

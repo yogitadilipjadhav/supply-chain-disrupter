@@ -35,7 +35,7 @@ sys.path.insert(0, ".")  # allow imports from project root
 
 from unittest.mock import patch
 
-from src.agents.langgraph_engine import risk_classifier_agent
+from src.agents.risk_classifier_agent import risk_classifier_agent
 from src.agents.state import EventMetadata, GlobalState, NewsRiskSignal
 
 
@@ -113,10 +113,10 @@ state = GlobalState(
 # ---------------------------------------------------------------------------
 # Step 2 — Run the classifier with DB and RAG patched out.
 # ---------------------------------------------------------------------------
-with patch("src.agents.langgraph_engine.ensure_risk_classification_table"):
-    with patch("src.agents.langgraph_engine.insert_risk_classification"):
-        with patch("src.agents.langgraph_engine.update_risk_label"):
-            with patch("src.agents.langgraph_engine.query_chroma_rag", return_value=[]):
+with patch("src.agents.risk_classifier_agent.ensure_risk_classification_table"):
+    with patch("src.agents.risk_classifier_agent.insert_risk_classification"):
+        with patch("src.agents.risk_classifier_agent.update_risk_label"):
+            with patch("src.agents.risk_classifier_agent.query_chroma_rag", return_value=[]):
                 result = risk_classifier_agent(state)
 
 rc = result["risk_classification"]

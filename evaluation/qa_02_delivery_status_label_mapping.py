@@ -32,7 +32,7 @@ Expected outcome: all 12 cases PASS (4 exact strings + 8 score thresholds).
 import sys
 sys.path.insert(0, ".")  # allow imports from project root
 
-from src.agents.langgraph_engine import _base_label_from_delivery_status
+from src.agents.risk_classifier_agent import _base_label_from_delivery_status
 
 
 # ---------------------------------------------------------------------------

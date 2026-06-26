@@ -34,7 +34,7 @@ sys.path.insert(0, ".")  # allow imports from project root
 import sqlite3
 from unittest.mock import patch
 
-from src.agents.langgraph_engine import risk_classifier_agent
+from src.agents.risk_classifier_agent import risk_classifier_agent
 from src.agents.state import EventMetadata, GlobalState
 
 
@@ -108,10 +108,10 @@ state = GlobalState(
 # insert_risk_classification is allowed to be called (audit trail is written
 # even in replay mode); only update_risk_label must NOT be called.
 # ---------------------------------------------------------------------------
-with patch("src.agents.langgraph_engine.ensure_risk_classification_table"):
-    with patch("src.agents.langgraph_engine.insert_risk_classification"):
-        with patch("src.agents.langgraph_engine.update_risk_label") as mock_update:
-            with patch("src.agents.langgraph_engine.query_chroma_rag", return_value=[]):
+with patch("src.agents.risk_classifier_agent.ensure_risk_classification_table"):
+    with patch("src.agents.risk_classifier_agent.insert_risk_classification"):
+        with patch("src.agents.risk_classifier_agent.update_risk_label") as mock_update:
+            with patch("src.agents.risk_classifier_agent.query_chroma_rag", return_value=[]):
                 result = risk_classifier_agent(state)
 
 rc = result["risk_classification"]

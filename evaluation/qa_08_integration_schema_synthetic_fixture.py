@@ -31,7 +31,7 @@ import os
 sys.path.insert(0, ".")  # allow imports from project root
 
 # Clear any stale LRU-cached bounds from a prior run so we always read live from DB.
-from src.agents.langgraph_engine import _get_norm_bounds
+from src.agents.risk_classifier_agent import _get_norm_bounds
 _get_norm_bounds.cache_clear()
 
 import sqlite3

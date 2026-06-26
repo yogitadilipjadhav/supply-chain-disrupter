@@ -35,7 +35,7 @@ sys.path.insert(0, ".")  # allow imports from project root
 # Clear any stale LRU-cached bounds from a prior run (e.g., the synthetic fixture).
 # The cache is process-wide and persists across script invocations within the same
 # Python process.  Always clear before reading from a freshly rebuilt DB.
-from src.agents.langgraph_engine import _get_norm_bounds
+from src.agents.risk_classifier_agent import _get_norm_bounds
 _get_norm_bounds.cache_clear()
 
 import sqlite3

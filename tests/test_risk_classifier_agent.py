@@ -25,7 +25,7 @@ from src.agents.state import (
     NewsRiskSignal,
     RiskClassificationResult,
 )
-from src.agents.langgraph_engine import (
+from src.agents.risk_classifier_agent import (
     _base_label_from_delivery_status,
     _compute_components,
     _escalate_label,
@@ -91,10 +91,10 @@ class TestReplayMode:
             delivery_status="Late delivery",
         )
         # Patch DB writes so test doesn't need a real DB
-        with patch("src.agents.langgraph_engine.ensure_risk_classification_table"):
-            with patch("src.agents.langgraph_engine.insert_risk_classification"):
-                with patch("src.agents.langgraph_engine.update_risk_label"):
-                    with patch("src.agents.langgraph_engine._get_norm_bounds") as mock_bounds:
+        with patch("src.agents.risk_classifier_agent.ensure_risk_classification_table"):
+            with patch("src.agents.risk_classifier_agent.insert_risk_classification"):
+                with patch("src.agents.risk_classifier_agent.update_risk_label"):
+                    with patch("src.agents.risk_classifier_agent._get_norm_bounds") as mock_bounds:
                         mock_bounds.return_value = {
                             "weather_severity_hub": (1.18, 10.0),
                             "natural_disaster_risk": (1.18, 10.0),
@@ -102,8 +102,8 @@ class TestReplayMode:
                             "defect_rate_pct": (2.0, 19.82),
                             "disruption_news_count": (0.0, 17.0),
                         }
-                        with patch("src.agents.langgraph_engine.query_chroma_rag", return_value=[]):
-                            from src.agents.langgraph_engine import risk_classifier_agent
+                        with patch("src.agents.risk_classifier_agent.query_chroma_rag", return_value=[]):
+                            from src.agents.risk_classifier_agent import risk_classifier_agent
                             result = risk_classifier_agent(state)
 
         rc = result["risk_classification"]
@@ -118,10 +118,10 @@ class TestReplayMode:
             disruption_event_label="HIGH",
             delivery_status="Late delivery",
         )
-        with patch("src.agents.langgraph_engine.ensure_risk_classification_table"):
-            with patch("src.agents.langgraph_engine.insert_risk_classification"):
-                with patch("src.agents.langgraph_engine.update_risk_label") as mock_update:
-                    with patch("src.agents.langgraph_engine._get_norm_bounds") as mock_bounds:
+        with patch("src.agents.risk_classifier_agent.ensure_risk_classification_table"):
+            with patch("src.agents.risk_classifier_agent.insert_risk_classification"):
+                with patch("src.agents.risk_classifier_agent.update_risk_label") as mock_update:
+                    with patch("src.agents.risk_classifier_agent._get_norm_bounds") as mock_bounds:
                         mock_bounds.return_value = {
                             "weather_severity_hub": (1.18, 10.0),
                             "natural_disaster_risk": (1.18, 10.0),
@@ -129,8 +129,8 @@ class TestReplayMode:
                             "defect_rate_pct": (2.0, 19.82),
                             "disruption_news_count": (0.0, 17.0),
                         }
-                        with patch("src.agents.langgraph_engine.query_chroma_rag", return_value=[]):
-                            from src.agents.langgraph_engine import risk_classifier_agent
+                        with patch("src.agents.risk_classifier_agent.query_chroma_rag", return_value=[]):
+                            from src.agents.risk_classifier_agent import risk_classifier_agent
                             risk_classifier_agent(state)
         mock_update.assert_not_called()
 
@@ -169,7 +169,7 @@ class TestLiveModeFormula:
 
         expected = round(0.4 * geo + 0.3 * supply + 0.15 * freight + 0.15 * defect_n, 3)
 
-        with patch("src.agents.langgraph_engine._get_norm_bounds", return_value=BOUNDS):
+        with patch("src.agents.risk_classifier_agent._get_norm_bounds", return_value=BOUNDS):
             components = _compute_components(
                 live_weather_severity=weather_sev,
                 natural_disaster_risk=nat_disaster,
@@ -291,16 +291,16 @@ class TestDeliveryStatusMapping:
 class TestRAGGating:
     def test_no_rag_call_for_low_not_escalated(self):
         """LOW label + escalated=False → zero RAG calls."""
-        with patch("src.agents.langgraph_engine.query_chroma_rag") as mock_rag:
-            from src.agents.langgraph_engine import _gather_rag_citations
+        with patch("src.agents.risk_classifier_agent.query_chroma_rag") as mock_rag:
+            from src.agents.risk_classifier_agent import _gather_rag_citations
             citations, _ = _gather_rag_citations("LOW", escalated=False)
             assert mock_rag.call_count == 0
             assert citations == []
 
     def test_no_rag_call_for_medium_not_escalated(self):
         """MEDIUM label + escalated=False → zero RAG calls."""
-        with patch("src.agents.langgraph_engine.query_chroma_rag") as mock_rag:
-            from src.agents.langgraph_engine import _gather_rag_citations
+        with patch("src.agents.risk_classifier_agent.query_chroma_rag") as mock_rag:
+            from src.agents.risk_classifier_agent import _gather_rag_citations
             citations, _ = _gather_rag_citations("MEDIUM", escalated=False)
             assert mock_rag.call_count == 0
 
@@ -311,8 +311,8 @@ class TestRAGGating:
             "metadata": {"source": "Disruptions_at_Red_Sea_route.docx", "type": "static_report"},
             "distance": 0.3,
         }
-        with patch("src.agents.langgraph_engine.query_chroma_rag", return_value=[mock_hit]):
-            from src.agents.langgraph_engine import _gather_rag_citations
+        with patch("src.agents.risk_classifier_agent.query_chroma_rag", return_value=[mock_hit]):
+            from src.agents.risk_classifier_agent import _gather_rag_citations
             citations, rationale = _gather_rag_citations("HIGH", escalated=False)
             assert len(citations) > 0
 
@@ -323,15 +323,15 @@ class TestRAGGating:
             "metadata": {"source": "playbook_port_strike.txt", "type": "mitigation_playbook"},
             "distance": 0.25,
         }
-        with patch("src.agents.langgraph_engine.query_chroma_rag", return_value=[mock_hit]):
-            from src.agents.langgraph_engine import _gather_rag_citations
+        with patch("src.agents.risk_classifier_agent.query_chroma_rag", return_value=[mock_hit]):
+            from src.agents.risk_classifier_agent import _gather_rag_citations
             citations, _ = _gather_rag_citations("MEDIUM", escalated=True)
             assert len(citations) > 0
 
     def test_rag_fires_for_critical(self):
         """CRITICAL label triggers RAG lookup."""
-        with patch("src.agents.langgraph_engine.query_chroma_rag", return_value=[]) as mock_rag:
-            from src.agents.langgraph_engine import _gather_rag_citations
+        with patch("src.agents.risk_classifier_agent.query_chroma_rag", return_value=[]) as mock_rag:
+            from src.agents.risk_classifier_agent import _gather_rag_citations
             _gather_rag_citations("CRITICAL", escalated=False)
             assert mock_rag.call_count >= 1
 
@@ -346,10 +346,10 @@ class TestSQLiteWrites:
             delivery_status=None,
             live_weather_severity=0.9,
         )
-        with patch("src.agents.langgraph_engine.ensure_risk_classification_table"):
-            with patch("src.agents.langgraph_engine.insert_risk_classification") as mock_insert:
-                with patch("src.agents.langgraph_engine.update_risk_label"):
-                    with patch("src.agents.langgraph_engine._get_norm_bounds") as mock_bounds:
+        with patch("src.agents.risk_classifier_agent.ensure_risk_classification_table"):
+            with patch("src.agents.risk_classifier_agent.insert_risk_classification") as mock_insert:
+                with patch("src.agents.risk_classifier_agent.update_risk_label"):
+                    with patch("src.agents.risk_classifier_agent._get_norm_bounds") as mock_bounds:
                         mock_bounds.return_value = {
                             "weather_severity_hub": (1.18, 10.0),
                             "natural_disaster_risk": (1.18, 10.0),
@@ -357,8 +357,8 @@ class TestSQLiteWrites:
                             "defect_rate_pct": (2.0, 19.82),
                             "disruption_news_count": (0.0, 17.0),
                         }
-                        with patch("src.agents.langgraph_engine.query_chroma_rag", return_value=[]):
-                            from src.agents.langgraph_engine import risk_classifier_agent
+                        with patch("src.agents.risk_classifier_agent.query_chroma_rag", return_value=[]):
+                            from src.agents.risk_classifier_agent import risk_classifier_agent
                             risk_classifier_agent(state)
         mock_insert.assert_called_once()
 
@@ -369,10 +369,10 @@ class TestSQLiteWrites:
             disruption_event_label="HIGH",
             delivery_status="Late delivery",
         )
-        with patch("src.agents.langgraph_engine.ensure_risk_classification_table"):
-            with patch("src.agents.langgraph_engine.insert_risk_classification") as mock_insert:
-                with patch("src.agents.langgraph_engine.update_risk_label") as mock_update:
-                    with patch("src.agents.langgraph_engine._get_norm_bounds") as mock_bounds:
+        with patch("src.agents.risk_classifier_agent.ensure_risk_classification_table"):
+            with patch("src.agents.risk_classifier_agent.insert_risk_classification") as mock_insert:
+                with patch("src.agents.risk_classifier_agent.update_risk_label") as mock_update:
+                    with patch("src.agents.risk_classifier_agent._get_norm_bounds") as mock_bounds:
                         mock_bounds.return_value = {
                             "weather_severity_hub": (1.18, 10.0),
                             "natural_disaster_risk": (1.18, 10.0),
@@ -380,8 +380,8 @@ class TestSQLiteWrites:
                             "defect_rate_pct": (2.0, 19.82),
                             "disruption_news_count": (0.0, 17.0),
                         }
-                        with patch("src.agents.langgraph_engine.query_chroma_rag", return_value=[]):
-                            from src.agents.langgraph_engine import risk_classifier_agent
+                        with patch("src.agents.risk_classifier_agent.query_chroma_rag", return_value=[]):
+                            from src.agents.risk_classifier_agent import risk_classifier_agent
                             risk_classifier_agent(state)
         mock_insert.assert_called_once()    # audit row still written
         mock_update.assert_not_called()     # lite_master NOT overwritten
@@ -408,7 +408,7 @@ class TestDemoScenarios:
             "defect_rate_pct": (2.0, 19.82),
             "disruption_news_count": (0.0, 17.0),
         }
-        with patch("src.agents.langgraph_engine._get_norm_bounds", return_value=BOUNDS):
+        with patch("src.agents.risk_classifier_agent._get_norm_bounds", return_value=BOUNDS):
             components = _compute_components(
                 live_weather_severity=0.95,   # severe earthquake
                 natural_disaster_risk=9.8,    # near max
@@ -448,7 +448,7 @@ class TestDemoScenarios:
             "defect_rate_pct": (2.0, 19.82),
             "disruption_news_count": (0.0, 17.0),
         }
-        with patch("src.agents.langgraph_engine._get_norm_bounds", return_value=BOUNDS):
+        with patch("src.agents.risk_classifier_agent._get_norm_bounds", return_value=BOUNDS):
             components = _compute_components(
                 live_weather_severity=0.2,   # no severe weather
                 natural_disaster_risk=3.0,   # low

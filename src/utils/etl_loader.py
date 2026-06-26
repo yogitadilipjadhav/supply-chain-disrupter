@@ -302,9 +302,14 @@ def _create_schema(conn: sqlite3.Connection) -> None:
             unit_price_usd,
             shipping_mode,
             defect_rate_pct,
-            mitigation_recommendation
-            ,latitude
-            ,longitude
+            mitigation_recommendation,
+            latitude,
+            longitude,
+            year,
+            supply_disruption_index,
+            natural_disaster_risk,
+            export_control_level,
+            order_region
         FROM lite_master;
 
         CREATE INDEX idx_lite_master_date ON lite_master(order_date);

@@ -29,7 +29,7 @@ Expected outcome: all 9 cases PASS.
 import sys
 sys.path.insert(0, ".")  # allow imports from project root
 
-from src.agents.langgraph_engine import _escalate_label
+from src.agents.risk_classifier_agent import _escalate_label
 
 
 # ---------------------------------------------------------------------------
