@@ -12,7 +12,7 @@ import pandas as pd
 from src.utils.db_utils import DB_PATH
 
 
-EXCEL_SOURCE = Path("data/raw/supply_chain_lite_master.xlsx")
+EXCEL_SOURCE = Path("data/raw/supply_chain_lite_master_v2.xlsx")
 EXPECTED_SHEETS = {
     "Lite Master",
     "Column Guide (Lite)",
