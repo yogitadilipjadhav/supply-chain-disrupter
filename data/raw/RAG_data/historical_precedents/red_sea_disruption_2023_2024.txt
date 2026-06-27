@@ -1,0 +1,22 @@
+[SOURCE: REAL — GTRI (Global Trade Research Initiative), Ajay Srivastava, 2024]
+DISRUPTION PROFILE: RED SEA / HOUTHI ATTACKS ON COMMERCIAL SHIPPING (2023–2024)
+SEVERITY: HIGH | CATEGORY: Geopolitical-Logistics | GEOGRAPHY: Middle East, Red Sea, Suez Canal Route
+PRIMARY IMPACT: Electronics, Automotive, Chemicals, Consumer Goods, Pharmaceuticals
+
+Longer disruptions at the crucial Red Sea trade route may hurt manufacturing lines of some sectors like electronics, automobiles, chemicals, consumer goods, and machinery, economic think tank GTRI said. Companies relying on just-in-time manufacturing processes are particularly vulnerable as they maintain low inventory levels and depend on the timely arrival of components and finished products.
+
+Due to attacks by Houthi rebels on commercial ships, the movement of goods from the Red Sea — the world's busiest shipping route — has disrupted global supply chains, forcing vessels to take long routes for exports and imports. The immediate ripple effects include increased freight costs, mandatory war risk insurance, and significant delays due to rerouting.
+
+Average container spot rates more than doubled since early December 2023. Basmati rice exporters face freight costs soaring to USD 2,000 per 20-tonne container for destinations around the Red Sea, marking a 233 percent increase. The adverse impact will multiply if the disruption continues beyond a few more weeks, as it impacts not only trade but local production of many industries which rely on just-in-time procurement of inputs through global value chains spanning both Europe and Asia.
+
+The strait of Bab al-Mandab is only about 29 miles wide at its narrowest point, making it easy to block or disrupt shipping. The strait handles approximately 30 percent of global container traffic. The Houthi group has been using drones and rockets on ships transporting goods through the strait, which connects the Mediterranean Sea to the Indian Ocean. Strikes have been continuing for many years but escalated sharply, with militants now using anti-ship ballistic missiles.
+
+Most large shipping firms, since December 15, 2023, stopped using the Bab al-Mandab straits for trade with Europe via the Red Sea and Suez Canal. The closure of this route snaps a critical trade link between Europe and India and all of Asia. Large shipping firms that stopped plying ships include the Danish firm Maersk, Swiss-Italian MSC (Mediterranean Shipping Company), German Hapag-Lloyd, and French CMA CGM.
+
+Ships going to Europe now move via a much longer route around the Cape of Good Hope at the bottom tip of Africa. This change increases voyage distances by 40 percent and raises transportation time and cost substantially. The two main shipping routes from India to Europe are: (1) via Bab-el-Mandeb Strait, Suez Canal, and Red Sea; and (2) via Cape of Good Hope, encircling Africa. The Red Sea route is shorter and faster, making it the preferred option for most shipping companies.
+
+India is heavily reliant on the Red Sea route for crude oil, LNG imports, and trade with the Middle East, Africa, and Europe. Due to disruptions, exporters have been forced to diversify trade routes. The closure snaps critical electronics component supply lines between Southeast Asian manufacturers and European assembly plants, and between Indian electronics assemblers and their European retail customers.
+
+MITIGATION PRECEDENTS APPLIED IN THIS CRISIS: Route diversion to Cape of Good Hope (adds 10-14 days transit); increased safety stock buffers by logistics-conscious firms; spot charter aircraft for time-sensitive components; advance booking of container space 8-12 weeks ahead; insurance procurement including war risk riders; dual-sourcing components from both Asian and European/North African suppliers where possible.
+
+ELECTRONICS-SPECIFIC IMPACT: Consumer electronics components (display panels, PCBs, semiconductor ICs) shipped from Southeast Asian manufacturing hubs to European distribution centers face 10-14 day additional transit time and 30-60% cost increase per container. Firms with safety stock above 45 days were insulated; firms at 15-20 days inventory faced partial stockouts at European distribution centers by Q1 2024.

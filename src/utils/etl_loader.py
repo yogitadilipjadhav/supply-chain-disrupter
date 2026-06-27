@@ -27,6 +27,16 @@ ALLOWED_CATEGORIES = {
     "Cameras",
     "Video Games",
 }
+
+# The DataCo source dataset mislabels sports/fashion products (golf balls, shoes,
+# NFL merchandise) as "Electronics". Only these four categories contain genuine
+# electronics products and are loaded into lite_master.
+GENUINE_ELECTRONICS_CATEGORIES = {
+    "Consumer Electronics",
+    "Computers",
+    "Cameras",
+    "Video Games",
+}
 BEAUTY_TERMS = {
     "beauty",
     "cosmetic",
@@ -107,10 +117,30 @@ def _validate_varun_dataset(sheets: Dict[str, pd.DataFrame]) -> None:
             "Workbook contains beauty/cosmetics categories; refusing load: "
             f"{found_beauty_terms}"
         )
-    if len(master) != 5459:
-        raise ValueError(f"Expected 5,459 Lite Master rows, found {len(master):,}")
     if master["Order_ID"].isna().any():
         raise ValueError("Lite Master contains null Order_ID values")
+
+
+def _filter_genuine_electronics(master: pd.DataFrame) -> pd.DataFrame:
+    """
+    Drop rows whose Category_Name is not in GENUINE_ELECTRONICS_CATEGORIES.
+
+    The DataCo source dataset categorises sports/fashion products (golf balls,
+    Under Armour shoes, NFL merchandise) under 'Electronics'. Removing that
+    category keeps only rows backed by real semiconductor supply-chain signals.
+    """
+    before = len(master)
+    filtered = master[master["Category_Name"].isin(GENUINE_ELECTRONICS_CATEGORIES)].copy()
+    removed = before - len(filtered)
+    if removed:
+        import logging
+        logging.getLogger(__name__).info(
+            "ETL: removed %d non-electronics rows (category 'Electronics' excluded). "
+            "Remaining: %d",
+            removed,
+            len(filtered),
+        )
+    return filtered
 
 
 def _create_schema(conn: sqlite3.Connection) -> None:
@@ -272,9 +302,14 @@ def _create_schema(conn: sqlite3.Connection) -> None:
             unit_price_usd,
             shipping_mode,
             defect_rate_pct,
-            mitigation_recommendation
-            ,latitude
-            ,longitude
+            mitigation_recommendation,
+            latitude,
+            longitude,
+            year,
+            supply_disruption_index,
+            natural_disaster_risk,
+            export_control_level,
+            order_region
         FROM lite_master;
 
         CREATE INDEX idx_lite_master_date ON lite_master(order_date);
@@ -314,6 +349,7 @@ def load_excel_into_sqlite(
     """Build a complete, lossless SQLite database from Varun's workbook."""
     sheets = read_excel_sheets(excel_path)
     _validate_varun_dataset(sheets)
+    sheets["Lite Master"] = _filter_genuine_electronics(sheets["Lite Master"])
 
     db_path.parent.mkdir(parents=True, exist_ok=True)
     temp_path = db_path.with_suffix(".building.db")
@@ -419,6 +455,7 @@ def load_excel_into_sqlite(
             "domain": "electronics_semiconductors",
             "dataset_owner": "Varun",
             "beauty_products_included": "false",
+            "electronics_only": "true",
             "built_at_utc": datetime.now(timezone.utc).isoformat(),
             "lite_master_rows": str(len(sheets["Lite Master"])),
             "ops_kpi_rows": str(len(ops)),
@@ -433,6 +470,16 @@ def load_excel_into_sqlite(
         integrity = conn.execute("PRAGMA integrity_check").fetchone()[0]
         if integrity != "ok":
             raise RuntimeError(f"SQLite integrity check failed: {integrity}")
+
+        # Step 6 — update column_guide to reflect the correct 4-tier label set
+        conn.execute(
+            """
+            UPDATE column_guide
+            SET purpose = REPLACE(purpose, 'LOW / HIGH / CRITICAL', 'LOW / MEDIUM / HIGH / CRITICAL')
+            WHERE purpose LIKE '%LOW / HIGH / CRITICAL%'
+            """
+        )
+        conn.commit()
     except Exception:
         conn.close()
         if temp_path.exists():

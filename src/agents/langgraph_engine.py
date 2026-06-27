@@ -1,18 +1,25 @@
+import importlib.util
 import json
+import logging
 from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Field
 
+logger = logging.getLogger(__name__)
+
+# Optional heavy dependencies — agents that need these degrade gracefully when absent.
+_PROPHET_AVAILABLE = importlib.util.find_spec("prophet") is not None
+_PANDAS_AVAILABLE = importlib.util.find_spec("pandas") is not None
+
 from src.utils.api_clients import compute_weather_severity, fetch_open_meteo
 from src.utils.db_utils import (
     fetch_daily_record,
-    fetch_inventory_snapshot,
     fetch_time_series,
     insert_mitigation_action,
-    update_risk_label,
 )
 from src.utils.yaml_utils import get_port_coordinates, get_route_map, load_config
 from src.agents.rag_agent import build_news_signals
+from src.agents.risk_classifier_agent import risk_classifier_agent
 from src.agents.state import (
     EventMetadata,
     ForecastResult,
@@ -23,37 +30,10 @@ from src.agents.state import (
 )
 
 
-class NewsAnalysisSchema(BaseModel):
-    source_id: str = Field(..., description="Unique identifier for the news or report chunk")
-    category: str = Field(..., description="Risk category extracted from the document")
-    severity: float = Field(..., ge=0.0, le=1.0)
-    summary: str = Field(..., description="Short summary of the relevant risk signal")
-    signal_tags: List[str] = Field(..., description="Key topic tags extracted from the text")
-
-
-class RiskClassificationSchema(BaseModel):
-    composite_score: float = Field(..., ge=0.0, le=1.0)
-    risk_label: str = Field(..., description="LOW, HIGH, or CRITICAL")
-    rationale: str = Field(...)
-
-
 class MitigationSchema(BaseModel):
     summary: str = Field(...)
     recommendations: List[str] = Field(..., min_items=3, max_items=3)
     cost_delta: str = Field(...)
-
-
-def load_vector_signals(event_category: str) -> List[Dict[str, Any]]:
-    # Placeholder for actual ChromaDB query path.
-    return [
-        {
-            "source_id": "mock-001",
-            "category": "weather",
-            "severity": 0.8,
-            "summary": "Historic monsoon port closures caused major delays.",
-            "signal_tags": ["monsoon", "port closure", "inventory risk"],
-        }
-    ]
 
 
 def data_ingestion_agent(state: GlobalState, payload: Dict[str, Any]) -> Dict[str, Any]:
@@ -114,49 +94,31 @@ def weather_risk_monitoring_agent(state: GlobalState) -> Dict[str, Any]:
     }
 
 
-def risk_classifier_agent(state: GlobalState) -> Dict[str, Any]:
-    if state.event_metadata is None or state.active_record is None:
-        raise ValueError("Data ingestion and record load are required for risk classification.")
-    risk_inputs = {
-        "disruption_type": state.event_metadata.disruption_type,
-        "severity": state.event_metadata.severity,
-        "weather_severity": state.live_weather_severity or 0.0,
-        "news_signals": [signal.dict() for signal in state.news_signals],
-        "chip_risk": float(state.active_record.get("chip_risk", 0.0)),
-        "supplier_risk": float(state.active_record.get("supplier_risk", 0.0)),
-    }
-
-    composite = min(1.0, (risk_inputs["severity"] * 0.4) + (risk_inputs["weather_severity"] * 0.2) + (risk_inputs["chip_risk"] * 0.2) + (risk_inputs["supplier_risk"] * 0.2))
-    label = "LOW"
-    if composite >= 0.75:
-        label = "CRITICAL"
-    elif composite >= 0.4:
-        label = "HIGH"
-    update_risk_label(
-        state.active_record["event_date"],
-        state.active_record["port"],
-        state.active_record["sku"],
-        composite,
-        label,
-    )
-    return {
-        "risk_score_composite": round(composite, 3),
-        "risk_label": label,
-        "agent_logs": state.agent_logs + ["L4: Risk classification completed."],
-    }
-
-
 def demand_forecasting_agent(state: GlobalState) -> Dict[str, Any]:
+    if not _PROPHET_AVAILABLE or not _PANDAS_AVAILABLE:
+        logger.warning("L5: prophet/pandas not installed — demand forecasting skipped.")
+        return {
+            "agent_logs": state.agent_logs + [
+                "L5: SKIPPED — prophet or pandas not installed. "
+                "Run: pip install prophet pandas"
+            ],
+        }
+
     if state.active_record is None:
         raise ValueError("Active record is required for demand forecasting.")
+
     ts = fetch_time_series(state.active_record["port"], state.active_record["sku"])
     if len(ts) < 10:
-        raise ValueError("Not enough historical data for forecasting.")
+        return {
+            "agent_logs": state.agent_logs + [
+                f"L5: SKIPPED — only {len(ts)} history points available (need ≥ 10)."
+            ],
+        }
+
+    import pandas as pd
+    from prophet import Prophet
 
     df_records = [{"ds": row["event_date"], "y": row["demand"]} for row in ts]
-    from prophet import Prophet
-    import pandas as pd
-
     df = pd.DataFrame(df_records)
     model = Prophet()
     model.fit(df)
@@ -194,15 +156,25 @@ def simulation_agent(state: GlobalState) -> Dict[str, Any]:
 
 
 def mitigation_recommendation_agent(state: GlobalState) -> Dict[str, Any]:
-    if state.risk_label is None or state.simulation_result is None or state.forecast_result is None:
-        raise ValueError("Risk label, simulation results, and forecast result are required for mitigation.")
-    stockout = state.simulation_result.stockout_probability_pct
-    forecast_drop = state.forecast_result.expected_drop_pct
-    alt_route = state.simulation_result.alternate_route or "the configured backup route"
+    if state.risk_label is None:
+        raise ValueError("Risk label is required for mitigation — run risk_classifier_agent first.")
+
+    # Simulation and forecast are optional — use fallback values when not available.
+    stockout = state.simulation_result.stockout_probability_pct if state.simulation_result else None
+    forecast_drop = state.forecast_result.expected_drop_pct if state.forecast_result else None
+    alt_route = (
+        state.simulation_result.alternate_route
+        if state.simulation_result
+        else "the configured backup route"
+    ) or "the configured backup route"
+
+    stockout_note = f"{stockout:.1f}%" if stockout is not None else "unknown (simulation not run)"
+    forecast_note = f"{forecast_drop:.1f}%" if forecast_drop is not None else "unknown (forecast not run)"
+
     recommendations = [
-        f"Raise safety stock for the affected product using the {stockout:.1f}% stockout estimate.",
+        f"Raise safety stock for the affected product — stockout estimate: {stockout_note}.",
         f"Prepare diversion through {alt_route} and confirm carrier capacity.",
-        f"Review alternate suppliers and align purchase orders to the {forecast_drop:.1f}% forecast variance.",
+        f"Review alternate suppliers and align purchase orders to forecast variance: {forecast_note}.",
     ]
     cost_delta = (
         "High: expedite critical inventory and activate alternate sourcing."
@@ -225,14 +197,39 @@ def mitigation_recommendation_agent(state: GlobalState) -> Dict[str, Any]:
         json.dumps(parsed.recommendations),
         parsed.cost_delta,
     )
+    # Slack trigger: hard business rule — fire when critical_flag is set
+    if state.risk_classification and state.risk_classification.critical_flag:
+        # fire Slack webhook here — this is the hard business rule
+        pass
     return {
         "mitigation_action": MitigationAction(**parsed.dict()),
         "agent_logs": state.agent_logs + ["L7: Mitigation recommendation generated and persisted."],
     }
 
 
+def _run_optional(
+    state: GlobalState,
+    agent_fn,
+    label: str,
+) -> GlobalState:
+    """
+    Run an optional agent. On any exception, append a SKIPPED log entry and
+    return the unchanged state so downstream agents can still run.
+    """
+    try:
+        delta = agent_fn(state)
+        return state.copy(update=delta)
+    except Exception as exc:
+        logger.warning("%s skipped: %s", label, exc)
+        return state.copy(
+            update={"agent_logs": state.agent_logs + [f"{label}: SKIPPED — {exc}"]}
+        )
+
+
 def run_agent_graph(payload: Dict[str, Any]) -> GlobalState:
+    # ── Critical agents — raise on failure ───────────────────────────────────
     state = GlobalState()
+
     ingestion_delta = data_ingestion_agent(state, payload)
     state = state.copy(update=ingestion_delta)
 
@@ -245,12 +242,9 @@ def run_agent_graph(payload: Dict[str, Any]) -> GlobalState:
     risk_delta = risk_classifier_agent(state)
     state = state.copy(update=risk_delta)
 
-    forecast_delta = demand_forecasting_agent(state)
-    state = state.copy(update=forecast_delta)
+    # ── Optional agents — log and continue on failure ─────────────────────────
+    state = _run_optional(state, demand_forecasting_agent, "L5")
+    state = _run_optional(state, simulation_agent, "L6")
+    state = _run_optional(state, mitigation_recommendation_agent, "L7")
 
-    simulation_delta = simulation_agent(state)
-    state = state.copy(update=simulation_delta)
-
-    mitigation_delta = mitigation_recommendation_agent(state)
-    state = state.copy(update=mitigation_delta)
     return state

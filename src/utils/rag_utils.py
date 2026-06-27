@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import re
-import shutil
+import threading
 from pathlib import Path
 from typing import Any, Dict, List
 
@@ -23,17 +23,27 @@ EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 200
 
+# Module-level singleton — ChromaDB PersistentClient holds an exclusive file lock
+# on chroma.sqlite3. Creating multiple instances in the same process causes WinError 32
+# ("file is being used by another process"). A single shared client avoids this.
+_chroma_client: chromadb.PersistentClient | None = None
+_chroma_lock = threading.Lock()
+
+
+def get_chroma_client() -> chromadb.PersistentClient:
+    global _chroma_client
+    with _chroma_lock:
+        if _chroma_client is None:
+            CHROMA_DIR.mkdir(parents=True, exist_ok=True)
+            _chroma_client = chromadb.PersistentClient(path=str(CHROMA_DIR))
+    return _chroma_client
+
 
 def get_embedding_model() -> SentenceTransformerEmbeddingFunction:
     return SentenceTransformerEmbeddingFunction(
         model_name=EMBEDDING_MODEL,
         normalize_embeddings=True,
     )
-
-
-def get_chroma_client() -> chromadb.PersistentClient:
-    CHROMA_DIR.mkdir(parents=True, exist_ok=True)
-    return chromadb.PersistentClient(path=str(CHROMA_DIR))
 
 
 def _chunk_text(text: str) -> List[str]:
@@ -390,8 +400,14 @@ def build_chroma_complete(
     static_context_dir: Path = STATIC_CONTEXT_DIR,
 ) -> Dict[str, Any]:
     """Build one electronics semantic store from all committed static sources."""
-    if flush_existing and CHROMA_DIR.exists():
-        shutil.rmtree(CHROMA_DIR)
+    if flush_existing:
+        # Drop the collection via the API rather than deleting the directory.
+        # shutil.rmtree on a live PersistentClient causes WinError 32 on Windows
+        # because the client holds an exclusive lock on chroma.sqlite3.
+        try:
+            get_chroma_client().delete_collection(name=DEFAULT_COLLECTION_NAME)
+        except Exception:
+            pass  # collection may not exist yet — that's fine
 
     workbook_docs, workbook_meta, workbook_ids, counts = _workbook_documents(
         excel_path
