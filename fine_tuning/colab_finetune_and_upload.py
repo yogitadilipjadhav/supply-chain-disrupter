@@ -360,18 +360,26 @@ def upload_to_huggingface(distilbert_path: Path, embedding_path: Path) -> None:
         return
 
     from huggingface_hub import HfApi
-    from transformers import AutoModelForSequenceClassification, AutoTokenizer
+    from huggingface_hub.utils import HfHubHTTPError
 
-    api = HfApi()
+    api = HfApi(token=HF_TOKEN or None)
     for repo_id in (DISTILBERT_REPO, EMBEDDING_REPO):
-        api.create_repo(repo_id, exist_ok=True, repo_type="model")
+        try:
+            api.create_repo(repo_id, exist_ok=True, repo_type="model", token=HF_TOKEN or None)
+        except HfHubHTTPError as exc:
+            if exc.response.status_code != 409:
+                raise
+            logger.info("Repo already exists (409 ok): https://huggingface.co/%s", repo_id)
         logger.info("Repo ready: https://huggingface.co/%s", repo_id)
 
     logger.info("Uploading DistilBERT → %s", DISTILBERT_REPO)
-    tokenizer = AutoTokenizer.from_pretrained(str(distilbert_path))
-    model = AutoModelForSequenceClassification.from_pretrained(str(distilbert_path))
-    model.push_to_hub(DISTILBERT_REPO, commit_message="Fine-tuned 4-class supply chain risk classifier")
-    tokenizer.push_to_hub(DISTILBERT_REPO, commit_message="Tokenizer for supply chain DistilBERT")
+    api.upload_folder(
+        folder_path=str(distilbert_path),
+        repo_id=DISTILBERT_REPO,
+        repo_type="model",
+        commit_message="Fine-tuned 4-class supply chain risk classifier",
+        token=HF_TOKEN or None,
+    )
 
     card_distilbert = f"""---
 language: en
@@ -426,12 +434,12 @@ DISTILBERT_MODEL_ID={DISTILBERT_REPO}
     )
 
     logger.info("Uploading embeddings → %s", EMBEDDING_REPO)
-    from sentence_transformers import SentenceTransformer
-
-    emb_model = SentenceTransformer(str(embedding_path))
-    emb_model.push_to_hub(
-        EMBEDDING_REPO,
+    api.upload_folder(
+        folder_path=str(embedding_path),
+        repo_id=EMBEDDING_REPO,
+        repo_type="model",
         commit_message="Fine-tuned supply chain RAG bi-encoder (MultipleNegativesRankingLoss)",
+        token=HF_TOKEN or None,
     )
 
     card_embeddings = f"""---
