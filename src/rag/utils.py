@@ -181,12 +181,30 @@ def _workbook_documents(
     }
 
     guide = sheets["Column Guide (Lite)"].dropna(how="all")
-    for row in guide.to_dict(orient="records"):
+    for row_index, row in enumerate(guide.to_dict(orient="records")):
+        column = row.get("Column")
+        agent = row.get("Agent")
+        source_type = row.get("Source Type")
+        purpose = row.get("Purpose")
+
+        # v3.1 appendix rows (Known_Disruption_Event, Known_Severity) use Unnamed cols
+        if pd.isna(column) or str(column).strip().lower() in ("", "nan", "none"):
+            column = row.get("Unnamed: 5")
+            if pd.isna(agent) or str(agent).strip().lower() in ("", "nan", "none"):
+                agent = row.get("Unnamed: 4")
+            if pd.isna(source_type) or str(source_type).strip().lower() in ("", "nan", "none"):
+                source_type = row.get("Unnamed: 6")
+            if pd.isna(purpose) or str(purpose).strip().lower() in ("", "nan", "none"):
+                purpose = row.get("Unnamed: 7")
+
+        if pd.isna(column) or str(column).strip().lower() in ("", "nan", "none"):
+            continue
+
         text = (
-            f"Agent: {row.get('Agent')}\n"
-            f"Field: {row.get('Column')}\n"
-            f"Source type: {row.get('Source Type')}\n"
-            f"Purpose: {row.get('Purpose')}"
+            f"Agent: {agent}\n"
+            f"Field: {column}\n"
+            f"Source type: {source_type}\n"
+            f"Purpose: {purpose}"
         )
         _add_document(
             documents,
@@ -195,8 +213,8 @@ def _workbook_documents(
             text=text,
             source=excel_path.name,
             doc_type="data_dictionary",
-            key=str(row.get("Column")),
-            metadata={"agent": str(row.get("Agent")), "field": str(row.get("Column"))},
+            key=f"{row_index}|{column}",
+            metadata={"agent": str(agent), "field": str(column)},
         )
         counts["data_dictionary"] += 1
 
@@ -483,6 +501,23 @@ def build_chroma_complete(
     ids = workbook_ids + playbook_ids + context_ids
     if not documents:
         raise ValueError("No electronics knowledge documents were generated")
+
+    # Guard against duplicate IDs (Chroma upsert rejects duplicates in one batch)
+    seen_ids: set[str] = set()
+    dedup_docs: List[str] = []
+    dedup_meta: List[Dict[str, Any]] = []
+    dedup_ids: List[str] = []
+    for doc, meta, doc_id in zip(documents, metadatas, ids):
+        unique_id = doc_id
+        suffix = 0
+        while unique_id in seen_ids:
+            suffix += 1
+            unique_id = hashlib.sha256(f"{doc_id}|{suffix}".encode()).hexdigest()
+        seen_ids.add(unique_id)
+        dedup_docs.append(doc)
+        dedup_meta.append(meta)
+        dedup_ids.append(unique_id)
+    documents, metadatas, ids = dedup_docs, dedup_meta, dedup_ids
 
     client = get_chroma_client()
     collection = client.get_or_create_collection(
