@@ -275,6 +275,7 @@ def train_embeddings() -> Path:
     from sentence_transformers.evaluation import InformationRetrievalEvaluator
     from torch.utils.data import DataLoader
 
+    from fine_tuning.finetune_embeddings import _accuracy_at_3
     from fine_tuning.generate_training_data import save_all_qa_pairs
 
     model_output = PROJECT_ROOT / "fine_tuning" / "models" / "supply_chain_embeddings"
@@ -311,8 +312,9 @@ def train_embeddings() -> Path:
     )
 
     model_output.mkdir(parents=True, exist_ok=True)
-    baseline = evaluator(model, output_path=str(model_output / "eval"))
-    logger.info("Embedding baseline retrieval score: %.4f", baseline)
+    baseline_result = evaluator(model, output_path=str(model_output / "eval"))
+    baseline_score = _accuracy_at_3(baseline_result)
+    logger.info("Embedding baseline Accuracy@3: %.4f", baseline_score)
 
     model.fit(
         train_objectives=[(train_loader, train_loss)],
@@ -327,12 +329,25 @@ def train_embeddings() -> Path:
     )
 
     finetuned = SentenceTransformer(str(model_output))
-    final_score = evaluator(finetuned)
-    logger.info("Embedding fine-tuned score: %.4f (baseline %.4f)", final_score, baseline)
+    final_result = evaluator(finetuned)
+    final_score = _accuracy_at_3(final_result)
+    improvement = final_score - baseline_score
+    logger.info(
+        "Embedding fine-tuned Accuracy@3: %.4f (baseline %.4f, +%.1f%%)",
+        final_score,
+        baseline_score,
+        improvement * 100,
+    )
 
     with open(model_output / "retrieval_metrics.json", "w") as f:
         json.dump(
-            {"baseline": baseline, "finetuned": final_score, "improvement": final_score - baseline},
+            {
+                "baseline_accuracy_at_3": baseline_score,
+                "finetuned_accuracy_at_3": final_score,
+                "improvement": improvement,
+                "baseline_full": baseline_result if isinstance(baseline_result, dict) else {},
+                "finetuned_full": final_result if isinstance(final_result, dict) else {},
+            },
             f,
             indent=2,
         )
@@ -529,9 +544,15 @@ def main() -> None:
 
     if not SKIP_EMBEDDINGS:
         embedding_path = train_embeddings()
-        rebuild_chromadb()
     elif not embedding_path.exists():
         raise FileNotFoundError("SKIP_EMBEDDINGS=1 but no saved embedding model found.")
+
+    from src.rag.utils import _embedding_weights_present
+
+    if _embedding_weights_present(embedding_path):
+        rebuild_chromadb()
+    else:
+        logger.warning("Embedding weights not found — skipping ChromaDB rebuild.")
 
     upload_to_huggingface(distilbert_path, embedding_path)
     make_models_zip(distilbert_path, embedding_path)
