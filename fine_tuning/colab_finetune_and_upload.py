@@ -113,7 +113,7 @@ def login_huggingface() -> None:
 
 
 def ensure_database() -> None:
-    """Build SQLite + ChromaDB from Excel if outputs/supply_chain.db is missing."""
+    """Build SQLite from Excel. ChromaDB is rebuilt after embedding fine-tune."""
     if SKIP_DB_BUILD and SQLITE_PATH.exists():
         logger.info("SKIP_DB_BUILD=1 and DB exists — skipping build.")
         return
@@ -124,10 +124,27 @@ def ensure_database() -> None:
         )
     os.chdir(PROJECT_ROOT)
     sys.path.insert(0, str(PROJECT_ROOT))
-    logger.info("Building SQLite + ChromaDB from %s ...", EXCEL_PATH.name)
-    from scripts.build_databases import main as build_main
+    logger.info("Building SQLite from %s ...", EXCEL_PATH.name)
+    from src.utils.etl_loader import get_sqlite_stats, load_excel_into_sqlite
 
-    build_main()
+    inserted = load_excel_into_sqlite(flush_existing=True)
+    logger.info("SQLite: loaded %d Lite Master rows", inserted)
+    logger.info("%s", json.dumps(get_sqlite_stats(), indent=2))
+    logger.info(
+        "ChromaDB build deferred until after embedding fine-tune "
+        "(avoids loading weights from an empty fine_tuning/models/ dir)."
+    )
+
+
+def rebuild_chromadb() -> None:
+    """Rebuild ChromaDB using the fine-tuned (or base) embedding model."""
+    os.chdir(PROJECT_ROOT)
+    sys.path.insert(0, str(PROJECT_ROOT))
+    from src.rag.utils import build_rag_corpus_complete
+
+    logger.info("=== Rebuilding ChromaDB with fine-tuned embeddings ===")
+    summary = build_rag_corpus_complete(flush_existing=True)
+    logger.info("ChromaDB:\n%s", json.dumps(summary, indent=2))
 
 
 def generate_training_data() -> None:
@@ -512,6 +529,7 @@ def main() -> None:
 
     if not SKIP_EMBEDDINGS:
         embedding_path = train_embeddings()
+        rebuild_chromadb()
     elif not embedding_path.exists():
         raise FileNotFoundError("SKIP_EMBEDDINGS=1 but no saved embedding model found.")
 

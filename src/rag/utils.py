@@ -27,6 +27,13 @@ CHUNK_SIZE = 1000
 logger = logging.getLogger(__name__)
 CHUNK_OVERLAP = 200
 
+_EMBEDDING_WEIGHT_FILES = ("model.safetensors", "pytorch_model.bin")
+
+
+def _embedding_weights_present(model_dir: Path) -> bool:
+    """True when a local embedding directory contains loadable model weights."""
+    return model_dir.is_dir() and any((model_dir / name).exists() for name in _EMBEDDING_WEIGHT_FILES)
+
 # Module-level singleton — ChromaDB PersistentClient holds an exclusive file lock
 # on chroma.sqlite3. Creating multiple instances in the same process causes WinError 32
 # ("file is being used by another process"). A single shared client avoids this.
@@ -61,16 +68,31 @@ def resolve_embedding_model_name() -> str:
     """
     custom = os.getenv("EMBEDDING_MODEL_PATH", "").strip()
     if custom:
-        if Path(custom).exists():
-            logger.info("Using custom embedding model (local): %s", custom)
+        custom_path = Path(custom)
+        if custom_path.exists():
+            if _embedding_weights_present(custom_path):
+                logger.info("Using custom embedding model (local): %s", custom)
+                return str(custom_path)
+            logger.warning(
+                "EMBEDDING_MODEL_PATH %s exists but has no model weights — "
+                "falling back to base model %s",
+                custom,
+                EMBEDDING_MODEL,
+            )
+        else:
+            # Hugging Face repo ids (org/model) are not local paths — pass through.
+            logger.info("Using custom embedding model: %s", custom)
             return custom
-        # Hugging Face repo ids (org/model) are not local paths — pass through.
-        logger.info("Using custom embedding model: %s", custom)
-        return custom
-    if FINETUNED_EMBEDDING_MODEL.exists():
+    if _embedding_weights_present(FINETUNED_EMBEDDING_MODEL):
         model_name = str(FINETUNED_EMBEDDING_MODEL)
         logger.info("Using fine-tuned embedding model (Phase A output): %s", model_name)
         return model_name
+    if FINETUNED_EMBEDDING_MODEL.exists():
+        logger.info(
+            "Fine-tuned embedding dir present but no weights (Colab/git clone) — "
+            "using base model: %s",
+            EMBEDDING_MODEL,
+        )
     logger.info("Using base embedding model (fine-tuned model not found): %s", EMBEDDING_MODEL)
     return EMBEDDING_MODEL
 

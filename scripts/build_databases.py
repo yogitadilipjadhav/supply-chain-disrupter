@@ -2,6 +2,11 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
+from pathlib import Path
+
+# Allow `python scripts/build_databases.py` from project root (Colab, CLI)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from src.utils.etl_loader import get_sqlite_stats, load_excel_into_sqlite
 from src.rag.utils import build_rag_corpus_complete, query_chroma_rag
