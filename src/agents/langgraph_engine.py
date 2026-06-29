@@ -3,22 +3,20 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Field
 
-from src.utils.api_clients import compute_weather_severity, fetch_open_meteo
 from src.utils.db_utils import (
-    fetch_daily_record,
     fetch_inventory_snapshot,
     fetch_time_series,
     insert_mitigation_action,
     update_risk_label,
 )
-from src.utils.yaml_utils import get_port_coordinates, get_route_map, load_config
-from src.agents.rag_agent import build_news_signals
+from src.utils.yaml_utils import get_route_map
+from src.agents.data_ingestion.agent import data_ingestion_agent
+from src.agents.weather_agent.agent import weather_risk_monitoring_agent
+from src.agents.news_agent.agent import news_event_analysis_agent
 from src.agents.state import (
-    EventMetadata,
     ForecastResult,
     GlobalState,
     MitigationAction,
-    NewsRiskSignal,
     SimulationResult,
 )
 
@@ -41,77 +39,6 @@ class MitigationSchema(BaseModel):
     summary: str = Field(...)
     recommendations: List[str] = Field(..., min_items=3, max_items=3)
     cost_delta: str = Field(...)
-
-
-def load_vector_signals(event_category: str) -> List[Dict[str, Any]]:
-    # Placeholder for actual ChromaDB query path.
-    return [
-        {
-            "source_id": "mock-001",
-            "category": "weather",
-            "severity": 0.8,
-            "summary": "Historic monsoon port closures caused major delays.",
-            "signal_tags": ["monsoon", "port closure", "inventory risk"],
-        }
-    ]
-
-
-def data_ingestion_agent(state: GlobalState, payload: Dict[str, Any]) -> Dict[str, Any]:
-    event_metadata = EventMetadata(**payload)
-    state_updates: Dict[str, Any] = {
-        "event_metadata": event_metadata,
-        "config": load_config(),
-        "agent_logs": state.agent_logs + ["L1: Data ingestion completed."],
-    }
-    record = fetch_daily_record(
-        payload.get("event_date", ""),
-        event_metadata.affected_port,
-        payload.get("sku", "CHIP_AP"),
-    )
-    if record:
-        state_updates["active_record"] = record
-    return state_updates
-
-
-def news_event_analysis_agent(state: GlobalState) -> Dict[str, Any]:
-    metadata = state.event_metadata
-    if metadata is None or state.config is None:
-        raise ValueError("Event metadata and config are required for news analysis.")
-    parsed_signals = build_news_signals(metadata.disruption_type)
-    if not parsed_signals:
-        parsed_signals = [
-            NewsRiskSignal(
-                source_id="fallback-001",
-                category=metadata.disruption_type,
-                severity=0.3,
-                summary="Fallback risk signal for missing RAG data.",
-                signal_tags=[metadata.disruption_type, "fallback"],
-            )
-        ]
-    return {
-        "news_signals": parsed_signals,
-        "agent_logs": state.agent_logs + ["L2: News and event analysis completed."],
-    }
-
-
-def weather_risk_monitoring_agent(state: GlobalState) -> Dict[str, Any]:
-    metadata = state.event_metadata
-    config = state.config
-    if metadata is None or config is None:
-        raise ValueError("Event metadata and config are required for weather monitoring.")
-    if state.active_record and state.active_record.get("latitude") is not None:
-        coords = {
-            "latitude": float(state.active_record["latitude"]),
-            "longitude": float(state.active_record["longitude"]),
-        }
-    else:
-        coords = get_port_coordinates(config, metadata.affected_port)
-    payload = fetch_open_meteo(coords["latitude"], coords["longitude"])
-    severity = compute_weather_severity(payload)
-    return {
-        "live_weather_severity": severity,
-        "agent_logs": state.agent_logs + ["L3: Weather risk assessment completed."],
-    }
 
 
 def risk_classifier_agent(state: GlobalState) -> Dict[str, Any]:

@@ -97,6 +97,33 @@ The command safely rebuilds:
   mitigation knowledge, playbooks, event profiles, field definitions, and
   the committed PDF/DOCX static context
 
+## Live data ingestion (Data Ingestion agent)
+
+The Data Ingestion agent fetches live signals from external APIs and stores them
+in SQLite, separate from the historical workbook tables:
+
+- **Weather** — Open-Meteo, one row per configured hub per day (`weather_signals`).
+- **News** — GDELT DOC 2.0 API with an RSS fallback, deduplicated (`news_signals`).
+
+Both tables are stamped with `source_type` and `ingestion_ts` for provenance.
+
+```powershell
+python -m src.agents.data_ingestion.cli            # weather + news
+python -m src.agents.data_ingestion.cli --weather  # weather only
+python -m src.agents.data_ingestion.cli --news --rss   # news from GDELT + RSS
+```
+
+If GDELT requests fail with a TLS/certificate error on your network (common
+behind corporate proxies), opt out of verification explicitly for the run:
+
+```powershell
+$env:INGEST_INSECURE_SSL = "1"
+python -m src.agents.data_ingestion.cli --news
+```
+
+TLS verification stays on by default; the RSS fallback still returns news even
+when GDELT is blocked, so the news table is never left empty.
+
 ## Run the application
 
 ```powershell
@@ -124,6 +151,7 @@ The application contains three pages:
 cd D:\supply-chain-disrupter
 .\.venv\Scripts\Activate.ps1
 python -m src.build_databases
+python -m src.agents.data_ingestion.cli
 python -m streamlit run src/main.py
 ```
 
@@ -141,9 +169,21 @@ data/
     supply_chain_lite_master.xlsx
 outputs/                       Generated SQLite and ChromaDB files
 src/
-  agents/                      Scenario workflow and state models
+  agents/
+    data_ingestion/            L1: scenario loader + live weather/news ingestion
+      agent.py                 data_ingestion_agent
+      live_ingest.py           Open-Meteo + GDELT/RSS -> SQLite
+      cli.py                   Ingestion CLI entry point
+    weather_agent/             L3: live weather risk
+      agent.py                 weather_risk_monitoring_agent
+      client.py                Open-Meteo client + severity
+    news_agent/                L2: news/event risk signals
+      agent.py                 news_event_analysis_agent
+      rag.py                   RAG signal builder
+    state.py                   Shared Pydantic state models
+    langgraph_engine.py        Orchestrator + L4-L7 agents
   dashboard/                   Streamlit pages
-  utils/                       ETL, SQLite, RAG, weather, and YAML utilities
+  utils/                       ETL, SQLite, RAG, and YAML utilities
   build_databases.py           Database build command
   main.py                      Streamlit entry point
 requirements.txt
