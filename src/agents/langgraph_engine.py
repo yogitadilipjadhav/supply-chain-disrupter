@@ -2,37 +2,20 @@ import importlib.util
 import logging
 from typing import Any, Dict
 
+from src.utils.db_utils import fetch_time_series
+from src.utils.yaml_utils import get_route_map
+from src.agents.data_ingestion.agent import data_ingestion_agent
+from src.agents.weather_agent.agent import weather_risk_monitoring_agent
+from src.agents.news_agent.agent import news_event_analysis_agent
+from src.agents.risk_classifier_agent import risk_classifier_agent
+from src.agents.mitigation_agent import mitigation_recommendation_agent
+from src.agents.state import ForecastResult, GlobalState, SimulationResult
+
 logger = logging.getLogger(__name__)
 
 # Optional heavy dependencies — agents that need these degrade gracefully when absent.
 _PROPHET_AVAILABLE = importlib.util.find_spec("prophet") is not None
 _PANDAS_AVAILABLE = importlib.util.find_spec("pandas") is not None
-
-from src.utils.db_utils import fetch_daily_record, fetch_time_series
-from src.utils.yaml_utils import get_route_map, load_config
-from src.agents.news_agent import news_event_analysis_agent
-from src.agents.weather_agent import weather_risk_monitoring_agent
-from src.agents.risk_classifier_agent import risk_classifier_agent
-from src.agents.mitigation_agent import mitigation_recommendation_agent
-from src.agents.state import EventMetadata, ForecastResult, GlobalState, SimulationResult
-
-
-def data_ingestion_agent(state: GlobalState, payload: Dict[str, Any]) -> Dict[str, Any]:
-    """L1 — Load event metadata, config, and the active SQLite record."""
-    event_metadata = EventMetadata(**payload)
-    state_updates: Dict[str, Any] = {
-        "event_metadata": event_metadata,
-        "config": load_config(),
-        "agent_logs": state.agent_logs + ["L1: Data ingestion completed."],
-    }
-    record = fetch_daily_record(
-        payload.get("event_date", ""),
-        event_metadata.affected_port,
-        payload.get("sku", "CHIP_AP"),
-    )
-    if record:
-        state_updates["active_record"] = record
-    return state_updates
 
 
 def demand_forecasting_agent(state: GlobalState) -> Dict[str, Any]:
