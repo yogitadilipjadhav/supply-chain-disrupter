@@ -1,0 +1,1554 @@
+[
+  {
+    "query": "What is the risk level for SMIC during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: China. Company: SMIC. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Amkor during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Amkor. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Electronics risk: weather disaster fab production",
+    "positive": "Historical semiconductor disruption signal\nYear: 2020\nCountry: Taiwan\nCompany: UMC\nEvent: COVID-19 Pandemic\nKnown severity: CRITICAL\nSupply disruption index: 9.826\nSemiconductor security risk: 7.382\nNatural disaster risk: 9.821\nFactory shutdown risk: 10.0\nExport control level: 5.055\nChip price index: 181.136"
+  },
+  {
+    "query": "What is the risk level for Texas Instruments during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Texas Instruments. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What happened with India supply chains?",
+    "positive": "e within 6 hours)\n- Negotiate temporary production pause with downstream manufacturers (no excess inventory buildup)\n- Activate Demand Leveling Protocol: Smooth forecasted orders over extended window\n- Communicate revised delivery timeline to key customers (transparent expectations)\n- Cost Delta: \u20b950\u2013150K in customer communication + compliance documentation\n\n=== FINANCIAL SUMMARY ===\nTotal Mitigation Cost: \u20b9300\u2013700K\nLost Sales Risk Prevented: \u20b98\u201315M\nOperational Resilience Gain: 85\u201395% demand ful"
+  },
+  {
+    "query": "What is the risk level for ON Semiconductor during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: ON Semiconductor. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Kioxia during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Japan. Company: Kioxia. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Arm during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: UK. Company: Arm. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for TSMC during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Taiwan. Company: TSMC. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Qualcomm during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Qualcomm. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Arm during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: UK. Company: Arm. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for JCET during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: China. Company: JCET. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for MediaTek during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Taiwan. Company: MediaTek. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Electronics risk: shipping route disruption freight",
+    "positive": "as vessels have to take long routes for exports and imports.\n\nThe immediate ripple effects are seen in increased freight costs, mandatory war risk insurance, and significant delays due to rerouting.\n\n\"The adverse impact will multiply if the disruption continues beyond a few more weeks as it will impact not only trade but local productions of many industries, which rely on just-in-time procurement/import of inputs through the global value chains spanning both Europe and Asia,\" GTRI co-founder Aja"
+  },
+  {
+    "query": "What is the risk level for Infineon during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Germany. Company: Infineon. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Electronics risk: India semiconductor mission PLI",
+    "positive": "MITIGATION PLAYBOOK: SUPPLIER FAILURE & MATERIAL SHORTAGE\n\nEvent Classification: Supplier Bankruptcy / Component Shortage / Production Halt\n\nHistorical Reference:\n- Semiconductor Supply Shock (2021\u20132022): TSMC capacity constraints; 6\u201312 month delays\n- Japan Manufacturing Earthquake (2011): Supplier disruptions rippled globally for 6+ months\n- COVID Lockdowns in Vietnam (2021): Manufacturing hubs frozen; 2\u20133 month supply gaps\n\nRisk Indicators:\n- Supplier financial distress signals (credit downgra"
+  },
+  {
+    "query": "What is the risk level for Skyworks during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Skyworks. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Applied Materials during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Applied Materials. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "Electronics supply disruption Germany 2023 AI Demand Surge + Inventory Correction",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Germany. Company: Infineon. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Ansys during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Ansys. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for MediaTek during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Taiwan. Company: MediaTek. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "Electronics risk: shipping route disruption freight",
+    "positive": "s the 'Gate of Tears' in Arabic, is a crucial trade route that connects the Mediterranean Sea and the Indian Ocean via the Red Sea and the Suez Canal. It separates Africa from the Arabian Peninsula.\n\nThe strait is only about 29 miles wide at its narrowest point, making it easy to block or disrupt shipping.\n\nThe two main shipping routes from India to Europe are via Bab-el-Mandeb Strait, Suez Canal and Red Sea; and II-Via Cape of Good Hope, encircling Africa.\n\nThe Red Sea route is shorter and fast"
+  },
+  {
+    "query": "Electronics supply disruption UK 2024 AI Memory Shortage (HBM)",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: UK. Company: Arm. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for UMC during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Taiwan. Company: UMC. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for Nexperia during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Netherlands. Company: Nexperia. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for UMC during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Taiwan. Company: UMC. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Nexperia during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Netherlands. Company: Nexperia. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Applied Materials during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Applied Materials. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Graphcore during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: UK. Company: Graphcore. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Realtek during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Taiwan. Company: Realtek. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for Cerebras during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Cerebras. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for AMD during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: AMD. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Rohhm during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Japan. Company: Rohhm. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for NXP during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Netherlands. Company: NXP. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for UMC during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Taiwan. Company: UMC. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Sony during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Japan. Company: Sony. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "Electronics supply disruption Switzerland 2020 COVID-19 Pandemic",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Switzerland. Company: STMicroelectronics. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Marvell during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Marvell. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Electronics supply disruption South Korea 2021 Global Chip Shortage + Texas Freeze",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: South Korea. Company: Samsung. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Samsung during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: South Korea. Company: Samsung. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for Tower Semiconductor during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Israel. Company: Tower Semiconductor. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What mitigation action for HIGH supply chain risk in Western Europe?",
+    "positive": "Mitigation for HIGH risk (composite: 0.730): Escalate \u2014 activate alternate supplier. Reroute via air freight. Notify procurement.. Region: Western Europe."
+  },
+  {
+    "query": "What is the risk level for Marvell during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Marvell. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What happened with export supply chains?",
+    "positive": "Historical semiconductor disruption signal\nYear: 2022\nCountry: China\nCompany: JCET\nEvent: Russia-Ukraine / US Export Controls\nKnown severity: HIGH\nSupply disruption index: 6.424\nSemiconductor security risk: 6.149\nNatural disaster risk: 3.195\nFactory shutdown risk: 2.947\nExport control level: 4.898\nChip price index: 219.175"
+  },
+  {
+    "query": "What is the risk level for Qorvo during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Qorvo. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Amkor during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Amkor. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for VisIC during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Israel. Company: VisIC. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for GlobalFoundries during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: GlobalFoundries. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for SMIC during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: China. Company: SMIC. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Cerebras during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Cerebras. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Lam Research during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Lam Research. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Infineon during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Germany. Company: Infineon. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Ansys during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Ansys. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for Qorvo during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Qorvo. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for NVIDIA during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: NVIDIA. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Realtek during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Taiwan. Company: Realtek. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Qorvo during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Qorvo. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Electronics risk: weather disaster fab production",
+    "positive": "MITIGATION PLAYBOOK: SUPPLIER FAILURE & MATERIAL SHORTAGE\n\nEvent Classification: Supplier Bankruptcy / Component Shortage / Production Halt\n\nHistorical Reference:\n- Semiconductor Supply Shock (2021\u20132022): TSMC capacity constraints; 6\u201312 month delays\n- Japan Manufacturing Earthquake (2011): Supplier disruptions rippled globally for 6+ months\n- COVID Lockdowns in Vietnam (2021): Manufacturing hubs frozen; 2\u20133 month supply gaps\n\nRisk Indicators:\n- Supplier financial distress signals (credit downgra"
+  },
+  {
+    "query": "Electronics supply disruption Switzerland 2021 Global Chip Shortage + Texas Freeze",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Switzerland. Company: STMicroelectronics. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Electronics supply disruption Israel 2021 Global Chip Shortage + Texas Freeze",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Israel. Company: Tower Semiconductor. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Electronics supply disruption China 2022 Russia-Ukraine / US Export Controls",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: China. Company: SMIC. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for TSMC during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Taiwan. Company: TSMC. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "Electronics supply disruption Switzerland 2024 AI Memory Shortage (HBM)",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Switzerland. Company: STMicroelectronics. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Applied Materials during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Applied Materials. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for ASML during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Netherlands. Company: ASML. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Western Digital during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Western Digital. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for Arm during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: UK. Company: Arm. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "Electronics supply disruption South Korea 2020 COVID-19 Pandemic",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: South Korea. Company: Samsung. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "Electronics supply disruption USA 2021 Global Chip Shortage + Texas Freeze",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: NVIDIA. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Amkor during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Amkor. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Microchip during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Microchip. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Micron during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Micron. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for NVIDIA during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: NVIDIA. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Electronics risk: shipping route disruption freight",
+    "positive": "Disruptions at Red Sea route may hurt auto, electronics production: GTRI\n\nComponents and finished products are often shipped through the Suez Canal to reach different markets, and disruptions can lead to delays in manufacturing and increased costs, it said\n\nLonger disruptions at the crucial Red Sea trade route may hurt manufacturing lines of some sectors like electronics, automobiles, chemicals, consumer goods and machinery, economic think tank GTRI said on Sunday.\n\nThe Global Trade Research Ini"
+  },
+  {
+    "query": "What is the risk level for Tokyo Electron during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Japan. Company: Tokyo Electron. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Supply chain mitigation CRITICAL risk semiconductor",
+    "positive": "Mitigation for CRITICAL risk (composite: 0.711): Emergency \u2014 stop-ship from disrupted supplier. Expedite from Tier-2 alternate. Raise Slack alert.. Region: Western Europe."
+  },
+  {
+    "query": "What is the risk level for Bosch during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Germany. Company: Bosch. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "Electronics supply disruption Taiwan 2024 AI Memory Shortage (HBM)",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Taiwan. Company: TSMC. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "Electronics supply disruption Japan 2024 AI Memory Shortage (HBM)",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Japan. Company: Tokyo Electron. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Microchip during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Microchip. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Qualcomm during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Qualcomm. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What happened with export supply chains?",
+    "positive": "Electronics mitigation guidance\nRisk label: CRITICAL\nRecommended response: Emergency \u2014 stop-ship from disrupted supplier. Expedite from Tier-2 alternate. Raise Slack alert."
+  },
+  {
+    "query": "What is the risk level for Realtek during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Taiwan. Company: Realtek. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for MediaTek during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Taiwan. Company: MediaTek. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "Electronics supply disruption Japan 2022 Russia-Ukraine / US Export Controls",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Japan. Company: Tokyo Electron. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Electronics supply disruption Japan 2020 COVID-19 Pandemic",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Japan. Company: Tokyo Electron. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for STMicroelectronics during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Switzerland. Company: STMicroelectronics. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for ASE during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Taiwan. Company: ASE. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for SMIC during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: China. Company: SMIC. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Electronics supply disruption Germany 2021 Global Chip Shortage + Texas Freeze",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Germany. Company: Infineon. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Electronics supply disruption China 2024 AI Memory Shortage (HBM)",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: China. Company: SMIC. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "Tell me about: India semiconductor mission PLI sourcing Dixon Tata",
+    "positive": "from sea freight to air freight for high-value SKUs (CHIP_AP, memory modules)\n- Redirect cargo to alternate port + overland trucking:\n  * JNPT closure \u2192 Route via Mundra (350km, 2 days truck transit)\n  * Chennai closure \u2192 Route via Cochin (500km, 3 days truck transit)\n- Cost Impact: Air freight premium \u20b980\u2013150 per kg; overland \u20b920\u201340 per unit\n- Timeline Extension: +3\u20135 days total (vs. normal 7\u201310 day sea route)\n\nAction 2: WAREHOUSE BUFFER ACTIVATION (Execute within 2 hours)\n- Tap regional free-t"
+  },
+  {
+    "query": "Tell me about: India semiconductor mission PLI sourcing Dixon Tata",
+    "positive": "e within 6 hours)\n- Negotiate temporary production pause with downstream manufacturers (no excess inventory buildup)\n- Activate Demand Leveling Protocol: Smooth forecasted orders over extended window\n- Communicate revised delivery timeline to key customers (transparent expectations)\n- Cost Delta: \u20b950\u2013150K in customer communication + compliance documentation\n\n=== FINANCIAL SUMMARY ===\nTotal Mitigation Cost: \u20b9300\u2013700K\nLost Sales Risk Prevented: \u20b98\u201315M\nOperational Resilience Gain: 85\u201395% demand ful"
+  },
+  {
+    "query": "What is the risk level for STMicroelectronics during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Switzerland. Company: STMicroelectronics. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for ASML during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Netherlands. Company: ASML. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What was the supply chain impact of AI Memory Shortage (HBM) in USA?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: NVIDIA. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What happened with weather supply chains?",
+    "positive": "MITIGATION PLAYBOOK: SUPPLIER FAILURE & MATERIAL SHORTAGE\n\nEvent Classification: Supplier Bankruptcy / Component Shortage / Production Halt\n\nHistorical Reference:\n- Semiconductor Supply Shock (2021\u20132022): TSMC capacity constraints; 6\u201312 month delays\n- Japan Manufacturing Earthquake (2011): Supplier disruptions rippled globally for 6+ months\n- COVID Lockdowns in Vietnam (2021): Manufacturing hubs frozen; 2\u20133 month supply gaps\n\nRisk Indicators:\n- Supplier financial distress signals (credit downgra"
+  },
+  {
+    "query": "Electronics supply disruption Germany 2022 Russia-Ukraine / US Export Controls",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Germany. Company: Infineon. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Electronics supply disruption Netherlands 2020 COVID-19 Pandemic",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Netherlands. Company: ASML. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for NVIDIA during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: NVIDIA. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Bosch during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Germany. Company: Bosch. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for GlobalFoundries during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: GlobalFoundries. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "Tell me about: semiconductor supply chain disruption historical",
+    "positive": "Historical semiconductor disruption signal\nYear: 2023\nCountry: USA\nCompany: Applied Materials\nEvent: AI Demand Surge + Inventory Correction\nKnown severity: HIGH\nSupply disruption index: 5.837\nSemiconductor security risk: 5.464\nNatural disaster risk: 5.148\nFactory shutdown risk: 7.926\nExport control level: 3.591\nChip price index: 241.092"
+  },
+  {
+    "query": "Electronics risk: shipping route disruption freight",
+    "positive": "MITIGATION PLAYBOOK: FREIGHT SPIKE & DEMAND SURGE\n\nEvent Classification: Sudden Demand Spike / Holiday Season Peak / Flash E-Commerce Events\n\nHistorical Reference:\n- Diwali Season (India): 200\u2013300% demand spike; 3-week fulfillment window\n- Black Friday / Cyber Monday: Global demand surge; container capacity constraints\n- Post-COVID Recovery (2021): Pent-up demand triggered 6+ month supply chain strain\n\nRisk Indicators:\n- E-commerce promotional calendars (Flipkart Super, Amazon Prime, festive sea"
+  },
+  {
+    "query": "What is the risk level for Marvell during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Marvell. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Powertech during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Taiwan. Company: Powertech. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for UMC during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Taiwan. Company: UMC. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Broadcom during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Broadcom. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Sony during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Japan. Company: Sony. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "How to respond to CRITICAL electronics disruption?",
+    "positive": "Mitigation for CRITICAL risk (composite: 0.711): Emergency \u2014 stop-ship from disrupted supplier. Expedite from Tier-2 alternate. Raise Slack alert.. Region: Western Europe."
+  },
+  {
+    "query": "Electronics supply disruption Netherlands 2021 Global Chip Shortage + Texas Freeze",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Netherlands. Company: ASML. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Tower Semiconductor during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Israel. Company: Tower Semiconductor. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for ASML during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Netherlands. Company: ASML. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "Tell me about: shipping route disruption freight rate Red Sea",
+    "positive": "ons around the Red Sea, marking a 233 per cent increase, Srivastava added.\n\nSimilarly, he said, the other sectors which have faced issues include life-saving drugs, textiles, diesel, ATF, and steel.\n\nExporters have also expressed apprehensions that if the crisis continues, it will hurt the country's trade.\n\nMumbai-based exporter SK Saraf said the time is right for India to consider building a big domestic shipping company, as, at present, \"we are completely dependent on foreign shippers\".\n\nRepor"
+  },
+  {
+    "query": "Electronics risk: India semiconductor mission PLI",
+    "positive": "rea backup sources) for expedited production\n- Negotiate shorter lead times: 14 days \u2192 7 days (premium: +8\u201312% on unit cost)\n- Lock in air freight capacity for critical SKUs (CHIP_AP, memory modules)\n- Cost Delta: +\u20b9200\u2013350K for accelerated procurement window; recoverable post-disruption\n\n=== FINANCIAL SUMMARY ===\nTotal Mitigation Cost: \u20b9300\u2013500K\nInventory Risk Avoided (Stockout Prevention): \u20b95\u201310M (revenue protection)\nROI: 10\u201330x (1\u20132 week recovery window)\n\n=== POST-RECOVERY MONITORING ===\n- Re"
+  },
+  {
+    "query": "What is the risk level for Synopsys during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Synopsys. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "How to respond to LOW electronics disruption?",
+    "positive": "Mitigation for LOW risk (composite: 0.671): Monitor \u2014 no immediate action required. Review supplier SLAs quarterly.. Region: Northern Europe."
+  },
+  {
+    "query": "Electronics risk: shipping route disruption freight",
+    "positive": "where production will be impacted due to disruptions in global value chains include electronics, automotive, machinery, chemicals, pharmaceuticals, plastics, textiles, and consumer goods, it added.\n\nComponents and finished products are often shipped through the Suez Canal to reach different markets, and disruptions can lead to delays in manufacturing and increased costs, it said.\n\nDue to the attacks by Houthi rebels on commercial ships, the movement of goods from the Red Sea, the world's busiest"
+  },
+  {
+    "query": "What is the risk level for Texas Instruments during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Texas Instruments. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Samsung during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: South Korea. Company: Samsung. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Bosch during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Germany. Company: Bosch. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for ASML during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Netherlands. Company: ASML. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for GlobalFoundries during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: GlobalFoundries. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for VisIC during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Israel. Company: VisIC. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "Electronics supply disruption USA 2022 Russia-Ukraine / US Export Controls",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: NVIDIA. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Electronics risk: semiconductor supply chain disruption",
+    "positive": "Historical semiconductor disruption signal\nYear: 2023\nCountry: USA\nCompany: Applied Materials\nEvent: AI Demand Surge + Inventory Correction\nKnown severity: HIGH\nSupply disruption index: 5.837\nSemiconductor security risk: 5.464\nNatural disaster risk: 5.148\nFactory shutdown risk: 7.926\nExport control level: 3.591\nChip price index: 241.092"
+  },
+  {
+    "query": "What is the risk level for ON Semiconductor during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: ON Semiconductor. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Tell me about: export control electronics restriction BIS entity list",
+    "positive": "Electronics mitigation guidance\nRisk label: CRITICAL\nRecommended response: Emergency \u2014 stop-ship from disrupted supplier. Expedite from Tier-2 alternate. Raise Slack alert."
+  },
+  {
+    "query": "Electronics risk: shipping route disruption freight",
+    "positive": "ar, have stopped using the Bab al-Mandab straits for trade with Europe via the Red Sea and Suez Canal. The closure of this route snaps a critical trade link between Europe and India and all of Asia.\n\nShips going to Europe will now move via a much longer route around the Cape of Good Hope, the bottom tip of Africa. This change increases voyage distances by 40 per cent and raises transportation time and cost.\n\nAccording to GTRI, the large shipping firms that stopped plying ships include the Danish"
+  },
+  {
+    "query": "What is the risk level for Renesas during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Japan. Company: Renesas. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "Tell me about: India semiconductor mission PLI sourcing Dixon Tata",
+    "positive": "MITIGATION PLAYBOOK: SUPPLIER FAILURE & MATERIAL SHORTAGE\n\nEvent Classification: Supplier Bankruptcy / Component Shortage / Production Halt\n\nHistorical Reference:\n- Semiconductor Supply Shock (2021\u20132022): TSMC capacity constraints; 6\u201312 month delays\n- Japan Manufacturing Earthquake (2011): Supplier disruptions rippled globally for 6+ months\n- COVID Lockdowns in Vietnam (2021): Manufacturing hubs frozen; 2\u20133 month supply gaps\n\nRisk Indicators:\n- Supplier financial distress signals (credit downgra"
+  },
+  {
+    "query": "What is the risk level for JCET during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: China. Company: JCET. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for Powertech during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Taiwan. Company: Powertech. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Samsung during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: South Korea. Company: Samsung. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Western Digital during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Western Digital. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for SK Hynix during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: South Korea. Company: SK Hynix. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for Renesas during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Japan. Company: Renesas. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What happened with shipping supply chains?",
+    "positive": "s the 'Gate of Tears' in Arabic, is a crucial trade route that connects the Mediterranean Sea and the Indian Ocean via the Red Sea and the Suez Canal. It separates Africa from the Arabian Peninsula.\n\nThe strait is only about 29 miles wide at its narrowest point, making it easy to block or disrupt shipping.\n\nThe two main shipping routes from India to Europe are via Bab-el-Mandeb Strait, Suez Canal and Red Sea; and II-Via Cape of Good Hope, encircling Africa.\n\nThe Red Sea route is shorter and fast"
+  },
+  {
+    "query": "How to respond to MEDIUM electronics disruption?",
+    "positive": "Mitigation for MEDIUM risk (composite: 0.575): Watch \u2014 increase safety-stock buffer by 15%. Flag supplier for next QBR.. Region: Western Europe."
+  },
+  {
+    "query": "What is the risk level for Sony during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Japan. Company: Sony. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Tell me about: India semiconductor mission PLI sourcing Dixon Tata",
+    "positive": "rea backup sources) for expedited production\n- Negotiate shorter lead times: 14 days \u2192 7 days (premium: +8\u201312% on unit cost)\n- Lock in air freight capacity for critical SKUs (CHIP_AP, memory modules)\n- Cost Delta: +\u20b9200\u2013350K for accelerated procurement window; recoverable post-disruption\n\n=== FINANCIAL SUMMARY ===\nTotal Mitigation Cost: \u20b9300\u2013500K\nInventory Risk Avoided (Stockout Prevention): \u20b95\u201310M (revenue protection)\nROI: 10\u201330x (1\u20132 week recovery window)\n\n=== POST-RECOVERY MONITORING ===\n- Re"
+  },
+  {
+    "query": "What is the risk level for STMicroelectronics during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Switzerland. Company: STMicroelectronics. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Electronics risk: India semiconductor mission PLI",
+    "positive": "Historical semiconductor disruption signal\nYear: 2023\nCountry: Taiwan\nCompany: MediaTek\nEvent: AI Demand Surge + Inventory Correction\nKnown severity: HIGH\nSupply disruption index: 5.837\nSemiconductor security risk: 5.464\nNatural disaster risk: 5.148\nFactory shutdown risk: 7.926\nExport control level: 3.591\nChip price index: 241.092"
+  },
+  {
+    "query": "What is the risk level for Analog Devices during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Analog Devices. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for NXP during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Netherlands. Company: NXP. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Cadence during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Cadence. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Kioxia during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Japan. Company: Kioxia. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Renesas during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Japan. Company: Renesas. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What was the supply chain impact of Global Chip Shortage + Texas Freeze in USA?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: NVIDIA. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for SK Hynix during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: South Korea. Company: SK Hynix. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Marvell during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Marvell. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for NXP during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Netherlands. Company: NXP. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for Rohhm during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Japan. Company: Rohhm. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "Electronics supply disruption Taiwan 2023 AI Demand Surge + Inventory Correction",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Taiwan. Company: TSMC. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for ASML during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Netherlands. Company: ASML. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for KLA during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: KLA. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What happened with shipping supply chains?",
+    "positive": "Disruptions at Red Sea route may hurt auto, electronics production: GTRI\n\nComponents and finished products are often shipped through the Suez Canal to reach different markets, and disruptions can lead to delays in manufacturing and increased costs, it said\n\nLonger disruptions at the crucial Red Sea trade route may hurt manufacturing lines of some sectors like electronics, automobiles, chemicals, consumer goods and machinery, economic think tank GTRI said on Sunday.\n\nThe Global Trade Research Ini"
+  },
+  {
+    "query": "What is the risk level for Graphcore during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: UK. Company: Graphcore. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "Electronics supply disruption Netherlands 2022 Russia-Ukraine / US Export Controls",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Netherlands. Company: ASML. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Electronics risk: India semiconductor mission PLI",
+    "positive": "from sea freight to air freight for high-value SKUs (CHIP_AP, memory modules)\n- Redirect cargo to alternate port + overland trucking:\n  * JNPT closure \u2192 Route via Mundra (350km, 2 days truck transit)\n  * Chennai closure \u2192 Route via Cochin (500km, 3 days truck transit)\n- Cost Impact: Air freight premium \u20b980\u2013150 per kg; overland \u20b920\u201340 per unit\n- Timeline Extension: +3\u20135 days total (vs. normal 7\u201310 day sea route)\n\nAction 2: WAREHOUSE BUFFER ACTIVATION (Execute within 2 hours)\n- Tap regional free-t"
+  },
+  {
+    "query": "What is the risk level for NXP during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Netherlands. Company: NXP. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Intel during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Intel. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Tokyo Electron during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Japan. Company: Tokyo Electron. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Skyworks during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Skyworks. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What happened with shipping supply chains?",
+    "positive": "from sea freight to air freight for high-value SKUs (CHIP_AP, memory modules)\n- Redirect cargo to alternate port + overland trucking:\n  * JNPT closure \u2192 Route via Mundra (350km, 2 days truck transit)\n  * Chennai closure \u2192 Route via Cochin (500km, 3 days truck transit)\n- Cost Impact: Air freight premium \u20b980\u2013150 per kg; overland \u20b920\u201340 per unit\n- Timeline Extension: +3\u20135 days total (vs. normal 7\u201310 day sea route)\n\nAction 2: WAREHOUSE BUFFER ACTIVATION (Execute within 2 hours)\n- Tap regional free-t"
+  },
+  {
+    "query": "What is the risk level for Western Digital during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Western Digital. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Tokyo Electron during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Japan. Company: Tokyo Electron. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "How did COVID-19 Pandemic affect semiconductor supply in 2020?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: NVIDIA. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for KLA during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: KLA. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What happened with India supply chains?",
+    "positive": "Historical semiconductor disruption signal\nYear: 2023\nCountry: Taiwan\nCompany: MediaTek\nEvent: AI Demand Surge + Inventory Correction\nKnown severity: HIGH\nSupply disruption index: 5.837\nSemiconductor security risk: 5.464\nNatural disaster risk: 5.148\nFactory shutdown risk: 7.926\nExport control level: 3.591\nChip price index: 241.092"
+  },
+  {
+    "query": "What is the risk level for Broadcom during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Broadcom. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Micron during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Micron. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Tell me about: shipping route disruption freight rate Red Sea",
+    "positive": "s the 'Gate of Tears' in Arabic, is a crucial trade route that connects the Mediterranean Sea and the Indian Ocean via the Red Sea and the Suez Canal. It separates Africa from the Arabian Peninsula.\n\nThe strait is only about 29 miles wide at its narrowest point, making it easy to block or disrupt shipping.\n\nThe two main shipping routes from India to Europe are via Bab-el-Mandeb Strait, Suez Canal and Red Sea; and II-Via Cape of Good Hope, encircling Africa.\n\nThe Red Sea route is shorter and fast"
+  },
+  {
+    "query": "What is the risk level for VisIC during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Israel. Company: VisIC. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Microchip during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Microchip. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Cadence during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Cadence. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Intel during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Intel. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What happened with India supply chains?",
+    "positive": "rea backup sources) for expedited production\n- Negotiate shorter lead times: 14 days \u2192 7 days (premium: +8\u201312% on unit cost)\n- Lock in air freight capacity for critical SKUs (CHIP_AP, memory modules)\n- Cost Delta: +\u20b9200\u2013350K for accelerated procurement window; recoverable post-disruption\n\n=== FINANCIAL SUMMARY ===\nTotal Mitigation Cost: \u20b9300\u2013500K\nInventory Risk Avoided (Stockout Prevention): \u20b95\u201310M (revenue protection)\nROI: 10\u201330x (1\u20132 week recovery window)\n\n=== POST-RECOVERY MONITORING ===\n- Re"
+  },
+  {
+    "query": "What is the risk level for ON Semiconductor during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: ON Semiconductor. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for JCET during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: China. Company: JCET. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Intel during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Intel. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for SMIC during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: China. Company: SMIC. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Rohhm during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Japan. Company: Rohhm. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Amkor during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Amkor. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Synopsys during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Synopsys. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for SK Hynix during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: South Korea. Company: SK Hynix. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Tell me about: India semiconductor mission PLI sourcing Dixon Tata",
+    "positive": "\u2013400K in temp storage\n- Reduces port congestion; enables fast last-mile fulfillment\n\nAction 3: DYNAMIC FULFILLMENT ROUTING (Execute within 1 week before peak)\n- Activate Regional Fulfillment Network:\n  * Direct 40\u201350% of orders to nearest regional warehouse (vs. centralized distribution)\n  * Use air freight + express trucking for tier-1 cities (Delhi, Bangalore, Mumbai)\n  * Reserve sea freight for bulk, less-time-sensitive orders\n- Diversify carrier network: Add backup carriers (cost: +\u20b950\u2013100 p"
+  },
+  {
+    "query": "Electronics supply disruption Israel 2022 Russia-Ukraine / US Export Controls",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Israel. Company: Tower Semiconductor. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What mitigation action for MEDIUM supply chain risk in Western Europe?",
+    "positive": "Mitigation for MEDIUM risk (composite: 0.575): Watch \u2014 increase safety-stock buffer by 15%. Flag supplier for next QBR.. Region: Western Europe."
+  },
+  {
+    "query": "What happened with India supply chains?",
+    "positive": "from sea freight to air freight for high-value SKUs (CHIP_AP, memory modules)\n- Redirect cargo to alternate port + overland trucking:\n  * JNPT closure \u2192 Route via Mundra (350km, 2 days truck transit)\n  * Chennai closure \u2192 Route via Cochin (500km, 3 days truck transit)\n- Cost Impact: Air freight premium \u20b980\u2013150 per kg; overland \u20b920\u201340 per unit\n- Timeline Extension: +3\u20135 days total (vs. normal 7\u201310 day sea route)\n\nAction 2: WAREHOUSE BUFFER ACTIVATION (Execute within 2 hours)\n- Tap regional free-t"
+  },
+  {
+    "query": "Supply chain mitigation HIGH risk semiconductor",
+    "positive": "Mitigation for HIGH risk (composite: 0.730): Escalate \u2014 activate alternate supplier. Reroute via air freight. Notify procurement.. Region: Western Europe."
+  },
+  {
+    "query": "What is the risk level for Western Digital during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Western Digital. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Powertech during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Taiwan. Company: Powertech. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for SK Hynix during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: South Korea. Company: SK Hynix. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Nexperia during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Netherlands. Company: Nexperia. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Novatek during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Taiwan. Company: Novatek. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Graphcore during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: UK. Company: Graphcore. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Kioxia during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Japan. Company: Kioxia. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What happened with shipping supply chains?",
+    "positive": "MITIGATION PLAYBOOK: FREIGHT SPIKE & DEMAND SURGE\n\nEvent Classification: Sudden Demand Spike / Holiday Season Peak / Flash E-Commerce Events\n\nHistorical Reference:\n- Diwali Season (India): 200\u2013300% demand spike; 3-week fulfillment window\n- Black Friday / Cyber Monday: Global demand surge; container capacity constraints\n- Post-COVID Recovery (2021): Pent-up demand triggered 6+ month supply chain strain\n\nRisk Indicators:\n- E-commerce promotional calendars (Flipkart Super, Amazon Prime, festive sea"
+  },
+  {
+    "query": "What is the risk level for VisIC during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Israel. Company: VisIC. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Rohhm during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Japan. Company: Rohhm. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for Realtek during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Taiwan. Company: Realtek. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Micron during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Micron. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "Electronics supply disruption South Korea 2023 AI Demand Surge + Inventory Correction",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: South Korea. Company: Samsung. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "Tell me about: shipping route disruption freight rate Red Sea",
+    "positive": "MITIGATION PLAYBOOK: PORT CLOSURE & INFRASTRUCTURE FAILURE\n\nEvent Classification: Port Authority Lockdown / Operational Shutdown\n\nHistorical Reference:\n- Suez Canal Blockage (March 2021): Ever Given incident; 10-day global delay\n- COVID Port Restrictions (2020): Port capacity reduced 40\u201360%; extended queues\n- Labor Strikes (common in Indian ports): 3\u20137 day operational freezes\n\nRisk Indicators:\n- Port authority regulatory notices\n- Labor union announcements of strikes/walkouts\n- Geopolitical tens"
+  },
+  {
+    "query": "What is the risk level for Nexperia during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Netherlands. Company: Nexperia. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Micron during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Micron. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What was the supply chain impact of Russia-Ukraine / US Export Controls in USA?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: NVIDIA. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "How did AI Demand Surge + Inventory Correction affect semiconductor supply in 2023?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: NVIDIA. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for KLA during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: KLA. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Analog Devices during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Analog Devices. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for KLA during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: KLA. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Tell me about: shipping route disruption freight rate Red Sea",
+    "positive": "Disruptions at Red Sea route may hurt auto, electronics production: GTRI\n\nComponents and finished products are often shipped through the Suez Canal to reach different markets, and disruptions can lead to delays in manufacturing and increased costs, it said\n\nLonger disruptions at the crucial Red Sea trade route may hurt manufacturing lines of some sectors like electronics, automobiles, chemicals, consumer goods and machinery, economic think tank GTRI said on Sunday.\n\nThe Global Trade Research Ini"
+  },
+  {
+    "query": "What is the risk level for Texas Instruments during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Texas Instruments. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Cerebras during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Cerebras. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Analog Devices during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Analog Devices. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Analog Devices during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Analog Devices. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Infineon during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Germany. Company: Infineon. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for ON Semiconductor during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: ON Semiconductor. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Entegris during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Entegris. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for TSMC during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Taiwan. Company: TSMC. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "Electronics supply disruption Israel 2024 AI Memory Shortage (HBM)",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Israel. Company: Tower Semiconductor. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Analog Devices during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Analog Devices. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Electronics supply disruption Switzerland 2022 Russia-Ukraine / US Export Controls",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Switzerland. Company: STMicroelectronics. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Electronics supply disruption USA 2024 AI Memory Shortage (HBM)",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: NVIDIA. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Arm during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: UK. Company: Arm. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for AMD during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: AMD. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What happened with shipping supply chains?",
+    "positive": "as vessels have to take long routes for exports and imports.\n\nThe immediate ripple effects are seen in increased freight costs, mandatory war risk insurance, and significant delays due to rerouting.\n\n\"The adverse impact will multiply if the disruption continues beyond a few more weeks as it will impact not only trade but local productions of many industries, which rely on just-in-time procurement/import of inputs through the global value chains spanning both Europe and Asia,\" GTRI co-founder Aja"
+  },
+  {
+    "query": "What is the risk level for Western Digital during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Western Digital. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for NVIDIA during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: NVIDIA. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "Electronics supply disruption China 2021 Global Chip Shortage + Texas Freeze",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: China. Company: SMIC. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Novatek during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Taiwan. Company: Novatek. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Entegris during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Entegris. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for GlobalFoundries during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: GlobalFoundries. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for Bosch during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Germany. Company: Bosch. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Novatek during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Taiwan. Company: Novatek. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Electronics supply disruption Switzerland 2023 AI Demand Surge + Inventory Correction",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Switzerland. Company: STMicroelectronics. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Texas Instruments during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Texas Instruments. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Electronics supply disruption UK 2022 Russia-Ukraine / US Export Controls",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: UK. Company: Arm. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Electronics supply disruption UK 2023 AI Demand Surge + Inventory Correction",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: UK. Company: Arm. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "Electronics supply disruption Germany 2020 COVID-19 Pandemic",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Germany. Company: Infineon. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Synopsys during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Synopsys. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "Electronics supply disruption Taiwan 2022 Russia-Ukraine / US Export Controls",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Taiwan. Company: TSMC. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for Qorvo during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Qorvo. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Applied Materials during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Applied Materials. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for AMD during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: AMD. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "Electronics supply disruption Taiwan 2021 Global Chip Shortage + Texas Freeze",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Taiwan. Company: TSMC. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "How did AI Memory Shortage (HBM) affect semiconductor supply in 2024?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: NVIDIA. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Realtek during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Taiwan. Company: Realtek. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Graphcore during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: UK. Company: Graphcore. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Electronics supply disruption Israel 2023 AI Demand Surge + Inventory Correction",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Israel. Company: Tower Semiconductor. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What was the supply chain impact of COVID-19 Pandemic in USA?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: NVIDIA. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What happened with semiconductor supply chains?",
+    "positive": "Historical semiconductor disruption signal\nYear: 2023\nCountry: USA\nCompany: Applied Materials\nEvent: AI Demand Surge + Inventory Correction\nKnown severity: HIGH\nSupply disruption index: 5.837\nSemiconductor security risk: 5.464\nNatural disaster risk: 5.148\nFactory shutdown risk: 7.926\nExport control level: 3.591\nChip price index: 241.092"
+  },
+  {
+    "query": "Electronics risk: export control electronics restriction",
+    "positive": "Historical semiconductor disruption signal\nYear: 2022\nCountry: China\nCompany: JCET\nEvent: Russia-Ukraine / US Export Controls\nKnown severity: HIGH\nSupply disruption index: 6.424\nSemiconductor security risk: 6.149\nNatural disaster risk: 3.195\nFactory shutdown risk: 2.947\nExport control level: 4.898\nChip price index: 219.175"
+  },
+  {
+    "query": "Electronics risk: shipping route disruption freight",
+    "positive": "MITIGATION PLAYBOOK: PORT CLOSURE & INFRASTRUCTURE FAILURE\n\nEvent Classification: Port Authority Lockdown / Operational Shutdown\n\nHistorical Reference:\n- Suez Canal Blockage (March 2021): Ever Given incident; 10-day global delay\n- COVID Port Restrictions (2020): Port capacity reduced 40\u201360%; extended queues\n- Labor Strikes (common in Indian ports): 3\u20137 day operational freezes\n\nRisk Indicators:\n- Port authority regulatory notices\n- Labor union announcements of strikes/walkouts\n- Geopolitical tens"
+  },
+  {
+    "query": "Tell me about: India semiconductor mission PLI sourcing Dixon Tata",
+    "positive": "sels from affected port to nearest alternate:\n  * From JNPT (Mumbai) \u2192 Mundra or Paradip\n  * From Chennai \u2192 Cochin or Vizag\n  * From Mundra \u2192 JNPT\n- Cost Impact: +\u20b915\u201325 per TEU (fuel + time premium)\n- Inventory Impact: +2\u20133 days transit delay, but avoids port queue congestion\n\nAction 2: SAFETY STOCK DEPLOYMENT (Execute within 6 hours)\n- Activate emergency inventory at inland warehouses (Delhi, Bangalore regional DCs)\n- Pre-position CHIP_AP, CHIP_MEM, PCB stocks from neighboring port-adjacent wa"
+  },
+  {
+    "query": "What happened with shipping supply chains?",
+    "positive": "ons around the Red Sea, marking a 233 per cent increase, Srivastava added.\n\nSimilarly, he said, the other sectors which have faced issues include life-saving drugs, textiles, diesel, ATF, and steel.\n\nExporters have also expressed apprehensions that if the crisis continues, it will hurt the country's trade.\n\nMumbai-based exporter SK Saraf said the time is right for India to consider building a big domestic shipping company, as, at present, \"we are completely dependent on foreign shippers\".\n\nRepor"
+  },
+  {
+    "query": "Electronics risk: India semiconductor mission PLI",
+    "positive": "\u2013400K in temp storage\n- Reduces port congestion; enables fast last-mile fulfillment\n\nAction 3: DYNAMIC FULFILLMENT ROUTING (Execute within 1 week before peak)\n- Activate Regional Fulfillment Network:\n  * Direct 40\u201350% of orders to nearest regional warehouse (vs. centralized distribution)\n  * Use air freight + express trucking for tier-1 cities (Delhi, Bangalore, Mumbai)\n  * Reserve sea freight for bulk, less-time-sensitive orders\n- Diversify carrier network: Add backup carriers (cost: +\u20b950\u2013100 p"
+  },
+  {
+    "query": "What mitigation action for CRITICAL supply chain risk in Western Europe?",
+    "positive": "Mitigation for CRITICAL risk (composite: 0.711): Emergency \u2014 stop-ship from disrupted supplier. Expedite from Tier-2 alternate. Raise Slack alert.. Region: Western Europe."
+  },
+  {
+    "query": "Electronics supply disruption Israel 2020 COVID-19 Pandemic",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Israel. Company: Tower Semiconductor. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "Electronics supply disruption Taiwan 2020 COVID-19 Pandemic",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Taiwan. Company: TSMC. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for TSMC during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Taiwan. Company: TSMC. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for JCET during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: China. Company: JCET. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Samsung during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: South Korea. Company: Samsung. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Broadcom during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Broadcom. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for SMIC during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: China. Company: SMIC. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "Tell me about: weather disaster fab production halt Taiwan earthquake",
+    "positive": "Historical semiconductor disruption signal\nYear: 2020\nCountry: Taiwan\nCompany: UMC\nEvent: COVID-19 Pandemic\nKnown severity: CRITICAL\nSupply disruption index: 9.826\nSemiconductor security risk: 7.382\nNatural disaster risk: 9.821\nFactory shutdown risk: 10.0\nExport control level: 5.055\nChip price index: 181.136"
+  },
+  {
+    "query": "What happened with weather supply chains?",
+    "positive": "Historical semiconductor disruption signal\nYear: 2020\nCountry: Taiwan\nCompany: UMC\nEvent: COVID-19 Pandemic\nKnown severity: CRITICAL\nSupply disruption index: 9.826\nSemiconductor security risk: 7.382\nNatural disaster risk: 9.821\nFactory shutdown risk: 10.0\nExport control level: 5.055\nChip price index: 181.136"
+  },
+  {
+    "query": "What is the risk level for Lam Research during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Lam Research. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Bosch during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Germany. Company: Bosch. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Microchip during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Microchip. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Skyworks during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Skyworks. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for TSMC during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Taiwan. Company: TSMC. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Qualcomm during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Qualcomm. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Intel during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Intel. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for ASE during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Taiwan. Company: ASE. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "Tell me about: export control electronics restriction BIS entity list",
+    "positive": "Historical semiconductor disruption signal\nYear: 2022\nCountry: China\nCompany: JCET\nEvent: Russia-Ukraine / US Export Controls\nKnown severity: HIGH\nSupply disruption index: 6.424\nSemiconductor security risk: 6.149\nNatural disaster risk: 3.195\nFactory shutdown risk: 2.947\nExport control level: 4.898\nChip price index: 219.175"
+  },
+  {
+    "query": "What is the risk level for Tokyo Electron during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Japan. Company: Tokyo Electron. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "Electronics supply disruption China 2023 AI Demand Surge + Inventory Correction",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: China. Company: SMIC. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "Electronics supply disruption South Korea 2022 Russia-Ukraine / US Export Controls",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: South Korea. Company: Samsung. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Electronics supply disruption Germany 2024 AI Memory Shortage (HBM)",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Germany. Company: Infineon. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for NVIDIA during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: NVIDIA. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What happened with shipping supply chains?",
+    "positive": "ar, have stopped using the Bab al-Mandab straits for trade with Europe via the Red Sea and Suez Canal. The closure of this route snaps a critical trade link between Europe and India and all of Asia.\n\nShips going to Europe will now move via a much longer route around the Cape of Good Hope, the bottom tip of Africa. This change increases voyage distances by 40 per cent and raises transportation time and cost.\n\nAccording to GTRI, the large shipping firms that stopped plying ships include the Danish"
+  },
+  {
+    "query": "Electronics risk: India semiconductor mission PLI",
+    "positive": "e within 6 hours)\n- Negotiate temporary production pause with downstream manufacturers (no excess inventory buildup)\n- Activate Demand Leveling Protocol: Smooth forecasted orders over extended window\n- Communicate revised delivery timeline to key customers (transparent expectations)\n- Cost Delta: \u20b950\u2013150K in customer communication + compliance documentation\n\n=== FINANCIAL SUMMARY ===\nTotal Mitigation Cost: \u20b9300\u2013700K\nLost Sales Risk Prevented: \u20b98\u201315M\nOperational Resilience Gain: 85\u201395% demand ful"
+  },
+  {
+    "query": "What is the risk level for Broadcom during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Broadcom. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Cadence during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Cadence. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Lam Research during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Lam Research. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "Electronics supply disruption Netherlands 2024 AI Memory Shortage (HBM)",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Netherlands. Company: ASML. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Sony during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Japan. Company: Sony. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "Electronics risk: shipping route disruption freight",
+    "positive": "ons around the Red Sea, marking a 233 per cent increase, Srivastava added.\n\nSimilarly, he said, the other sectors which have faced issues include life-saving drugs, textiles, diesel, ATF, and steel.\n\nExporters have also expressed apprehensions that if the crisis continues, it will hurt the country's trade.\n\nMumbai-based exporter SK Saraf said the time is right for India to consider building a big domestic shipping company, as, at present, \"we are completely dependent on foreign shippers\".\n\nRepor"
+  },
+  {
+    "query": "What is the risk level for Kioxia during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Japan. Company: Kioxia. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Skyworks during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Skyworks. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Electronics supply disruption China 2020 COVID-19 Pandemic",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: China. Company: SMIC. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for AMD during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: AMD. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Electronics supply disruption Japan 2023 AI Demand Surge + Inventory Correction",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Japan. Company: Tokyo Electron. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for MediaTek during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Taiwan. Company: MediaTek. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Electronics risk: shipping route disruption freight",
+    "positive": "from sea freight to air freight for high-value SKUs (CHIP_AP, memory modules)\n- Redirect cargo to alternate port + overland trucking:\n  * JNPT closure \u2192 Route via Mundra (350km, 2 days truck transit)\n  * Chennai closure \u2192 Route via Cochin (500km, 3 days truck transit)\n- Cost Impact: Air freight premium \u20b980\u2013150 per kg; overland \u20b920\u201340 per unit\n- Timeline Extension: +3\u20135 days total (vs. normal 7\u201310 day sea route)\n\nAction 2: WAREHOUSE BUFFER ACTIVATION (Execute within 2 hours)\n- Tap regional free-t"
+  },
+  {
+    "query": "What is the risk level for Nexperia during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Netherlands. Company: Nexperia. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for STMicroelectronics during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Switzerland. Company: STMicroelectronics. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Kioxia during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Japan. Company: Kioxia. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Tell me about: shipping route disruption freight rate Red Sea",
+    "positive": "where production will be impacted due to disruptions in global value chains include electronics, automotive, machinery, chemicals, pharmaceuticals, plastics, textiles, and consumer goods, it added.\n\nComponents and finished products are often shipped through the Suez Canal to reach different markets, and disruptions can lead to delays in manufacturing and increased costs, it said.\n\nDue to the attacks by Houthi rebels on commercial ships, the movement of goods from the Red Sea, the world's busiest"
+  },
+  {
+    "query": "What is the risk level for MediaTek during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Taiwan. Company: MediaTek. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Texas Instruments during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Texas Instruments. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Supply chain mitigation LOW risk semiconductor",
+    "positive": "Mitigation for LOW risk (composite: 0.671): Monitor \u2014 no immediate action required. Review supplier SLAs quarterly.. Region: Northern Europe."
+  },
+  {
+    "query": "What is the risk level for Entegris during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Entegris. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "How to respond to HIGH electronics disruption?",
+    "positive": "Mitigation for HIGH risk (composite: 0.730): Escalate \u2014 activate alternate supplier. Reroute via air freight. Notify procurement.. Region: Western Europe."
+  },
+  {
+    "query": "Tell me about: shipping route disruption freight rate Red Sea",
+    "positive": "MITIGATION PLAYBOOK: FREIGHT SPIKE & DEMAND SURGE\n\nEvent Classification: Sudden Demand Spike / Holiday Season Peak / Flash E-Commerce Events\n\nHistorical Reference:\n- Diwali Season (India): 200\u2013300% demand spike; 3-week fulfillment window\n- Black Friday / Cyber Monday: Global demand surge; container capacity constraints\n- Post-COVID Recovery (2021): Pent-up demand triggered 6+ month supply chain strain\n\nRisk Indicators:\n- E-commerce promotional calendars (Flipkart Super, Amazon Prime, festive sea"
+  },
+  {
+    "query": "What is the risk level for Renesas during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Japan. Company: Renesas. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Renesas during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Japan. Company: Renesas. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Electronics supply disruption UK 2020 COVID-19 Pandemic",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: UK. Company: Arm. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Qualcomm during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Qualcomm. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for Qorvo during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Qorvo. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Tower Semiconductor during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Israel. Company: Tower Semiconductor. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Electronics supply disruption USA 2023 AI Demand Surge + Inventory Correction",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: NVIDIA. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for KLA during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: KLA. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What was the supply chain impact of AI Demand Surge + Inventory Correction in USA?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: NVIDIA. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Skyworks during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Skyworks. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What happened with India supply chains?",
+    "positive": "\u2013400K in temp storage\n- Reduces port congestion; enables fast last-mile fulfillment\n\nAction 3: DYNAMIC FULFILLMENT ROUTING (Execute within 1 week before peak)\n- Activate Regional Fulfillment Network:\n  * Direct 40\u201350% of orders to nearest regional warehouse (vs. centralized distribution)\n  * Use air freight + express trucking for tier-1 cities (Delhi, Bangalore, Mumbai)\n  * Reserve sea freight for bulk, less-time-sensitive orders\n- Diversify carrier network: Add backup carriers (cost: +\u20b950\u2013100 p"
+  },
+  {
+    "query": "What happened with India supply chains?",
+    "positive": "MITIGATION PLAYBOOK: SUPPLIER FAILURE & MATERIAL SHORTAGE\n\nEvent Classification: Supplier Bankruptcy / Component Shortage / Production Halt\n\nHistorical Reference:\n- Semiconductor Supply Shock (2021\u20132022): TSMC capacity constraints; 6\u201312 month delays\n- Japan Manufacturing Earthquake (2011): Supplier disruptions rippled globally for 6+ months\n- COVID Lockdowns in Vietnam (2021): Manufacturing hubs frozen; 2\u20133 month supply gaps\n\nRisk Indicators:\n- Supplier financial distress signals (credit downgra"
+  },
+  {
+    "query": "What is the risk level for Amkor during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Amkor. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What happened with shipping supply chains?",
+    "positive": "MITIGATION PLAYBOOK: PORT CLOSURE & INFRASTRUCTURE FAILURE\n\nEvent Classification: Port Authority Lockdown / Operational Shutdown\n\nHistorical Reference:\n- Suez Canal Blockage (March 2021): Ever Given incident; 10-day global delay\n- COVID Port Restrictions (2020): Port capacity reduced 40\u201360%; extended queues\n- Labor Strikes (common in Indian ports): 3\u20137 day operational freezes\n\nRisk Indicators:\n- Port authority regulatory notices\n- Labor union announcements of strikes/walkouts\n- Geopolitical tens"
+  },
+  {
+    "query": "Electronics risk: India semiconductor mission PLI",
+    "positive": "sels from affected port to nearest alternate:\n  * From JNPT (Mumbai) \u2192 Mundra or Paradip\n  * From Chennai \u2192 Cochin or Vizag\n  * From Mundra \u2192 JNPT\n- Cost Impact: +\u20b915\u201325 per TEU (fuel + time premium)\n- Inventory Impact: +2\u20133 days transit delay, but avoids port queue congestion\n\nAction 2: SAFETY STOCK DEPLOYMENT (Execute within 6 hours)\n- Activate emergency inventory at inland warehouses (Delhi, Bangalore regional DCs)\n- Pre-position CHIP_AP, CHIP_MEM, PCB stocks from neighboring port-adjacent wa"
+  },
+  {
+    "query": "What is the risk level for Microchip during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Microchip. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for Powertech during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Taiwan. Company: Powertech. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Marvell during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Marvell. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Arm during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: UK. Company: Arm. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "Electronics supply disruption UK 2021 Global Chip Shortage + Texas Freeze",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: UK. Company: Arm. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Synopsys during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Synopsys. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Cerebras during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Cerebras. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What mitigation action for LOW supply chain risk in Northern Europe?",
+    "positive": "Mitigation for LOW risk (composite: 0.671): Monitor \u2014 no immediate action required. Review supplier SLAs quarterly.. Region: Northern Europe."
+  },
+  {
+    "query": "Supply chain mitigation MEDIUM risk semiconductor",
+    "positive": "Mitigation for MEDIUM risk (composite: 0.575): Watch \u2014 increase safety-stock buffer by 15%. Flag supplier for next QBR.. Region: Western Europe."
+  },
+  {
+    "query": "What is the risk level for Infineon during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Germany. Company: Infineon. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for UMC during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Taiwan. Company: UMC. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for SK Hynix during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: South Korea. Company: SK Hynix. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "Electronics supply disruption Netherlands 2023 AI Demand Surge + Inventory Correction",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Netherlands. Company: ASML. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "How did Global Chip Shortage + Texas Freeze affect semiconductor supply in 2021?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: NVIDIA. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Infineon during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Germany. Company: Infineon. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Ansys during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Ansys. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for NXP during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Netherlands. Company: NXP. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Broadcom during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Broadcom. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for Cerebras during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: Cerebras. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for ASE during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Taiwan. Company: ASE. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for VisIC during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Israel. Company: VisIC. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for Ansys during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Ansys. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Intel during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: Intel. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "Tell me about: shipping route disruption freight rate Red Sea",
+    "positive": "from sea freight to air freight for high-value SKUs (CHIP_AP, memory modules)\n- Redirect cargo to alternate port + overland trucking:\n  * JNPT closure \u2192 Route via Mundra (350km, 2 days truck transit)\n  * Chennai closure \u2192 Route via Cochin (500km, 3 days truck transit)\n- Cost Impact: Air freight premium \u20b980\u2013150 per kg; overland \u20b920\u201340 per unit\n- Timeline Extension: +3\u20135 days total (vs. normal 7\u201310 day sea route)\n\nAction 2: WAREHOUSE BUFFER ACTIVATION (Execute within 2 hours)\n- Tap regional free-t"
+  },
+  {
+    "query": "Electronics risk: shipping route disruption freight",
+    "positive": "has been using drones and rockets on ships, which are transporting goods through the strait of Bab al-Mandab, which is a crucial shipping route connecting the Mediterranean Sea to the Indian Ocean.\n\nThe strait, vital for 30 per cent of global container traffic, has seen increased tensions with various incidents in 2023, including attacks and military manoeuvres by regional and global powers.\n\nIndia is heavily reliant on this route for trade and energy imports and due to the disruptions, exporter"
+  },
+  {
+    "query": "What is the risk level for Cadence during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Cadence. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for Cadence during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Cadence. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Micron during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Micron. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Tell me about: weather disaster fab production halt Taiwan earthquake",
+    "positive": "MITIGATION PLAYBOOK: SUPPLIER FAILURE & MATERIAL SHORTAGE\n\nEvent Classification: Supplier Bankruptcy / Component Shortage / Production Halt\n\nHistorical Reference:\n- Semiconductor Supply Shock (2021\u20132022): TSMC capacity constraints; 6\u201312 month delays\n- Japan Manufacturing Earthquake (2011): Supplier disruptions rippled globally for 6+ months\n- COVID Lockdowns in Vietnam (2021): Manufacturing hubs frozen; 2\u20133 month supply gaps\n\nRisk Indicators:\n- Supplier financial distress signals (credit downgra"
+  },
+  {
+    "query": "What is the risk level for Entegris during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Entegris. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Tell me about: shipping route disruption freight rate Red Sea",
+    "positive": "as vessels have to take long routes for exports and imports.\n\nThe immediate ripple effects are seen in increased freight costs, mandatory war risk insurance, and significant delays due to rerouting.\n\n\"The adverse impact will multiply if the disruption continues beyond a few more weeks as it will impact not only trade but local productions of many industries, which rely on just-in-time procurement/import of inputs through the global value chains spanning both Europe and Asia,\" GTRI co-founder Aja"
+  },
+  {
+    "query": "Electronics supply disruption Japan 2021 Global Chip Shortage + Texas Freeze",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Japan. Company: Tokyo Electron. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "Electronics supply disruption USA 2020 COVID-19 Pandemic",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: NVIDIA. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Tokyo Electron during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: Japan. Company: Tokyo Electron. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for JCET during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: China. Company: JCET. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Sony during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Japan. Company: Sony. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Entegris during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Entegris. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for STMicroelectronics during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: Switzerland. Company: STMicroelectronics. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "Tell me about: shipping route disruption freight rate Red Sea",
+    "positive": "has been using drones and rockets on ships, which are transporting goods through the strait of Bab al-Mandab, which is a crucial shipping route connecting the Mediterranean Sea to the Indian Ocean.\n\nThe strait, vital for 30 per cent of global container traffic, has seen increased tensions with various incidents in 2023, including attacks and military manoeuvres by regional and global powers.\n\nIndia is heavily reliant on this route for trade and energy imports and due to the disruptions, exporter"
+  },
+  {
+    "query": "What happened with shipping supply chains?",
+    "positive": "where production will be impacted due to disruptions in global value chains include electronics, automotive, machinery, chemicals, pharmaceuticals, plastics, textiles, and consumer goods, it added.\n\nComponents and finished products are often shipped through the Suez Canal to reach different markets, and disruptions can lead to delays in manufacturing and increased costs, it said.\n\nDue to the attacks by Houthi rebels on commercial ships, the movement of goods from the Red Sea, the world's busiest"
+  },
+  {
+    "query": "What happened with India supply chains?",
+    "positive": "sels from affected port to nearest alternate:\n  * From JNPT (Mumbai) \u2192 Mundra or Paradip\n  * From Chennai \u2192 Cochin or Vizag\n  * From Mundra \u2192 JNPT\n- Cost Impact: +\u20b915\u201325 per TEU (fuel + time premium)\n- Inventory Impact: +2\u20133 days transit delay, but avoids port queue congestion\n\nAction 2: SAFETY STOCK DEPLOYMENT (Execute within 6 hours)\n- Activate emergency inventory at inland warehouses (Delhi, Bangalore regional DCs)\n- Pre-position CHIP_AP, CHIP_MEM, PCB stocks from neighboring port-adjacent wa"
+  },
+  {
+    "query": "What is the risk level for Novatek during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Taiwan. Company: Novatek. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Novatek during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Taiwan. Company: Novatek. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for AMD during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: AMD. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Graphcore during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: UK. Company: Graphcore. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "Electronics supply disruption South Korea 2024 AI Memory Shortage (HBM)",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: South Korea. Company: Samsung. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Tower Semiconductor during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Israel. Company: Tower Semiconductor. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Ansys during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: USA. Company: Ansys. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for Synopsys during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Synopsys. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Applied Materials during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Applied Materials. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Lam Research during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Lam Research. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for ON Semiconductor during AI Demand Surge + Inventory Correction?",
+    "positive": "Semiconductor disruption: AI Demand Surge + Inventory Correction (HIGH). Year: 2023. Country: USA. Company: ON Semiconductor. Supply disruption index: 5.84. Export control level: 3.59. Chip price index: 241.09. Natural disaster risk: 5.15. Factory shutdown risk: 7.93."
+  },
+  {
+    "query": "What is the risk level for Powertech during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: Taiwan. Company: Powertech. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "What is the risk level for Rohhm during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Japan. Company: Rohhm. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for GlobalFoundries during AI Memory Shortage (HBM)?",
+    "positive": "Semiconductor disruption: AI Memory Shortage (HBM) (HIGH). Year: 2024. Country: USA. Company: GlobalFoundries. Supply disruption index: 7.14. Export control level: 1.47. Chip price index: 265.20. Natural disaster risk: 5.47. Factory shutdown risk: 7.29."
+  },
+  {
+    "query": "Tell me about: India semiconductor mission PLI sourcing Dixon Tata",
+    "positive": "Historical semiconductor disruption signal\nYear: 2023\nCountry: Taiwan\nCompany: MediaTek\nEvent: AI Demand Surge + Inventory Correction\nKnown severity: HIGH\nSupply disruption index: 5.837\nSemiconductor security risk: 5.464\nNatural disaster risk: 5.148\nFactory shutdown risk: 7.926\nExport control level: 3.591\nChip price index: 241.092"
+  },
+  {
+    "query": "What is the risk level for ASE during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Taiwan. Company: ASE. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What happened with shipping supply chains?",
+    "positive": "has been using drones and rockets on ships, which are transporting goods through the strait of Bab al-Mandab, which is a crucial shipping route connecting the Mediterranean Sea to the Indian Ocean.\n\nThe strait, vital for 30 per cent of global container traffic, has seen increased tensions with various incidents in 2023, including attacks and military manoeuvres by regional and global powers.\n\nIndia is heavily reliant on this route for trade and energy imports and due to the disruptions, exporter"
+  },
+  {
+    "query": "What is the risk level for Samsung during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: South Korea. Company: Samsung. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "What is the risk level for ASE during Global Chip Shortage + Texas Freeze?",
+    "positive": "Semiconductor disruption: Global Chip Shortage + Texas Freeze (CRITICAL). Year: 2021. Country: Taiwan. Company: ASE. Supply disruption index: 7.30. Export control level: 2.35. Chip price index: 199.25. Natural disaster risk: 5.47. Factory shutdown risk: 4.09."
+  },
+  {
+    "query": "How did Russia-Ukraine / US Export Controls affect semiconductor supply in 2022?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: NVIDIA. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "What is the risk level for Lam Research during Russia-Ukraine / US Export Controls?",
+    "positive": "Semiconductor disruption: Russia-Ukraine / US Export Controls (HIGH). Year: 2022. Country: USA. Company: Lam Research. Supply disruption index: 6.42. Export control level: 4.90. Chip price index: 219.18. Natural disaster risk: 3.19. Factory shutdown risk: 2.95."
+  },
+  {
+    "query": "Tell me about: shipping route disruption freight rate Red Sea",
+    "positive": "ar, have stopped using the Bab al-Mandab straits for trade with Europe via the Red Sea and Suez Canal. The closure of this route snaps a critical trade link between Europe and India and all of Asia.\n\nShips going to Europe will now move via a much longer route around the Cape of Good Hope, the bottom tip of Africa. This change increases voyage distances by 40 per cent and raises transportation time and cost.\n\nAccording to GTRI, the large shipping firms that stopped plying ships include the Danish"
+  },
+  {
+    "query": "What is the risk level for Qualcomm during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: USA. Company: Qualcomm. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "What is the risk level for Tower Semiconductor during COVID-19 Pandemic?",
+    "positive": "Semiconductor disruption: COVID-19 Pandemic (CRITICAL). Year: 2020. Country: Israel. Company: Tower Semiconductor. Supply disruption index: 9.83. Export control level: 5.05. Chip price index: 181.14. Natural disaster risk: 9.82. Factory shutdown risk: 10.00."
+  },
+  {
+    "query": "Electronics risk: export control electronics restriction",
+    "positive": "Electronics mitigation guidance\nRisk label: CRITICAL\nRecommended response: Emergency \u2014 stop-ship from disrupted supplier. Expedite from Tier-2 alternate. Raise Slack alert."
+  }
+]

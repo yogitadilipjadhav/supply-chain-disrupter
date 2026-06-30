@@ -19,14 +19,17 @@ import sqlite3
 from functools import lru_cache
 from typing import Any, Dict, List, Optional
 
-from src.agents.state import GlobalState, RiskClassificationResult
+from src.agents.distilbert_signal import run_distilbert_inference
+from src.agents.judge_agent import run_judge
+from src.agents.llm_signal import run_llm_signal
+from src.agents.state import GlobalState, RiskClassificationResult, RuleBasedSignal
 from src.utils.db_utils import (
     ensure_risk_classification_table,
     execute_query,
     insert_risk_classification,
     update_risk_label,
 )
-from src.utils.rag_utils import query_chroma_rag
+from src.rag.utils import query_chroma_rag
 
 logger = logging.getLogger(__name__)
 
@@ -225,6 +228,21 @@ def _escalate_label(base_label: str, duration_days: Optional[float]) -> tuple:
     return final, final != base_label
 
 
+def _apply_delivery_floor(label: str, delivery_override: Optional[str]) -> str:
+    """
+    Never allow ensemble fallback to produce a label below delivery_status override.
+
+    "Shipping canceled" → CRITICAL and "Late delivery" → HIGH are hard floors.
+    """
+    if not delivery_override or delivery_override not in _TIER_ORDER:
+        return label
+    if label not in _TIER_ORDER:
+        return delivery_override
+    label_idx = _TIER_ORDER.index(label)
+    floor_idx = _TIER_ORDER.index(delivery_override)
+    return _TIER_ORDER[max(label_idx, floor_idx)]
+
+
 # ── RAG grounding ─────────────────────────────────────────────────────────────
 
 # Top-quartile threshold for export_control_level triggering an export-control RAG query.
@@ -396,7 +414,7 @@ def risk_classifier_agent(state: GlobalState) -> Dict[str, Any]:
     # ── Label derivation ──────────────────────────────────────────────────────
     base_label = _base_label_from_delivery_status(record.get("delivery_status"), composite_score)
 
-    # ── Duration escalation ───────────────────────────────────────────────────
+    # ── Duration escalation (duration also fed to DistilBERT as input) ─────────
     duration_days = _max_duration_days(state.news_signals, state.event_metadata)
     final_label, escalated = _escalate_label(base_label, duration_days)
 
@@ -407,6 +425,109 @@ def risk_classifier_agent(state: GlobalState) -> Dict[str, Any]:
 
     # ── Cross-check against known_severity (audit log only) ──────────────────
     _cross_check_known_severity(record.get("year"), final_label)
+
+    # ── Delivery status override tracking ────────────────────────────────────
+    delivery_override = None
+    ds = record.get("delivery_status")
+    if ds is not None:
+        ds_stripped = str(ds).strip()
+        if ds_stripped == "Shipping canceled":
+            delivery_override = "CRITICAL"
+        elif ds_stripped == "Late delivery":
+            delivery_override = "HIGH"
+
+    # ── Signal 1: package rule-based computation ─────────────────────────────
+    rule_signal = RuleBasedSignal(
+        composite_score=composite_score,
+        geo_component=components["geo"],
+        supply_component=components["supply"],
+        freight_component=components["freight"],
+        defect_component=components["defect"],
+        base_label=base_label,
+        escalated_label=final_label,
+        escalated=escalated,
+        duration_days=duration_days,
+        delivery_status_override=delivery_override,
+    )
+
+    # ── Signal 2: DistilBERT (non-blocking) ──────────────────────────────────
+    distilbert_signal = run_distilbert_inference(record, duration_days=duration_days)
+
+    # ── Fetch semiconductor signals for Signal 3 + Judge ─────────────────────
+    semiconductor_rows: List[dict] = []
+    if record.get("year"):
+        try:
+            rows = execute_query(
+                "SELECT year, company, supply_disruption_index, export_control_level, "
+                "known_disruption_event, known_severity FROM semiconductor_signals "
+                "WHERE year = ? ORDER BY supply_disruption_index DESC LIMIT 5",
+                (int(record["year"]),),
+            )
+            semiconductor_rows = [dict(r) for r in rows]
+        except Exception:
+            pass
+
+    # ── Signal 3: GPT-4o + two-stage RAG (non-blocking) ──────────────────────
+    llm_signal = None
+    if state.event_metadata is not None:
+        llm_signal = run_llm_signal(
+            record=record,
+            semiconductor_rows=semiconductor_rows,
+            rule_signal=rule_signal,
+            disruption_type=state.event_metadata.disruption_type,
+            order_region=record.get("order_region"),
+        )
+
+    # ── LLM-as-Judge (non-blocking) ──────────────────────────────────────────
+    judge_verdict = run_judge(
+        rule_signal=rule_signal,
+        distilbert_signal=distilbert_signal,
+        llm_signal=llm_signal,
+        record=record,
+        semiconductor_rows=semiconductor_rows,
+    )
+
+    # ── Final label fallback chain: judge → llm_signal → rule-based ──────────
+    if judge_verdict is not None:
+        final_label = judge_verdict.final_label
+    elif llm_signal is not None:
+        final_label = llm_signal.predicted_label
+    else:
+        final_label = rule_signal.escalated_label
+
+    final_label = _apply_delivery_floor(final_label, rule_signal.delivery_status_override)
+
+    # critical_flag derived from final_label — never from judge alone
+    critical_flag = (final_label == "CRITICAL")
+
+    # LLM display fields from Signal 3 or judge reasoning
+    llm_enhanced_rationale = None
+    llm_evaluator_one_liner = None
+    llm_primary_driver = None
+    llm_confidence = None
+    if llm_signal is not None:
+        llm_enhanced_rationale = llm_signal.rationale
+        llm_primary_driver = llm_signal.primary_driver
+        llm_confidence = llm_signal.confidence_level
+        llm_evaluator_one_liner = (
+            f"{llm_signal.predicted_label} — {llm_signal.primary_driver} driver "
+            f"({llm_signal.confidence_level} confidence)"
+        )[:80]
+    if judge_verdict is not None and judge_verdict.disagreement_explanation:
+        llm_enhanced_rationale = (
+            (llm_enhanced_rationale or "") + "\n\n[Judge] " + judge_verdict.reasoning
+        )
+
+    # ── Ensemble summary log ─────────────────────────────────────────────────
+    db_label = distilbert_signal.predicted_label
+    llm_label = llm_signal.predicted_label if llm_signal else "N/A"
+    jv_label = judge_verdict.final_label if judge_verdict else "N/A"
+    ensemble_summary = (
+        f"ENSEMBLE | rule={rule_signal.escalated_label} | "
+        f"distilbert={db_label}({distilbert_signal.confidence:.0%} conf) | "
+        f"llm={llm_label} | judge={jv_label}"
+    )
+    logger.info("L4: %s", ensemble_summary)
 
     # ── Persist classification audit record ───────────────────────────────────
     insert_risk_classification(
@@ -450,15 +571,25 @@ def risk_classifier_agent(state: GlobalState) -> Dict[str, Any]:
         escalated=escalated,
         rag_citations=rag_citations,
         rationale=rationale,
-        critical_flag=(final_label == "CRITICAL"),
+        critical_flag=critical_flag,
+        llm_enhanced_rationale=llm_enhanced_rationale,
+        llm_evaluator_one_liner=llm_evaluator_one_liner,
+        llm_primary_driver=llm_primary_driver,
+        llm_confidence=llm_confidence,
+        rule_signal=rule_signal,
+        distilbert_signal=distilbert_signal,
+        llm_signal=llm_signal,
+        judge_verdict=judge_verdict,
     )
 
+    llm_tag = "(ensemble+gpt-4o)" if llm_signal else "(ensemble rule-only)"
     return {
         "risk_classification": result,
+        "judge_verdict": judge_verdict,
         "agent_logs": state.agent_logs + [
-            f"L4: Risk classification completed. mode={mode} "
+            f"L4: Risk classification {llm_tag}. mode={mode} "
             f"composite={composite_score:.3f} base={base_label} "
             f"final={final_label} escalated={escalated} "
-            f"duration={duration_days}d citations={len(rag_citations)}"
+            f"duration={duration_days}d citations={len(rag_citations)} | {ensemble_summary}"
         ],
     }

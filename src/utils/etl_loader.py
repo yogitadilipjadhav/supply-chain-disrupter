@@ -32,6 +32,7 @@ ALLOWED_CATEGORIES = {
 # NFL merchandise) as "Electronics". Only these four categories contain genuine
 # electronics products and are loaded into lite_master.
 GENUINE_ELECTRONICS_CATEGORIES = {
+    "Electronics",            # v3.1: sports/fashion mislabels removed; rows are clean
     "Consumer Electronics",
     "Computers",
     "Cameras",
@@ -63,11 +64,11 @@ def read_excel_sheets(excel_path: Path = EXCEL_SOURCE) -> Dict[str, pd.DataFrame
     return {
         "Lite Master": pd.read_excel(excel_path, sheet_name="Lite Master", header=1),
         "Column Guide (Lite)": pd.read_excel(
-            excel_path, sheet_name="Column Guide (Lite)", header=0
+            excel_path, sheet_name="Column Guide (Lite)", header=2
         ),
         "Legend": pd.read_excel(excel_path, sheet_name="Legend", header=None),
         "Ops KPI (Filled)": pd.read_excel(
-            excel_path, sheet_name="Ops KPI (Filled)", header=2
+            excel_path, sheet_name="Ops KPI (Filled)", header=1
         ),
         "Semiconductor Signals": pd.read_excel(
             excel_path, sheet_name="Semiconductor Signals", header=1
@@ -119,6 +120,12 @@ def _validate_varun_dataset(sheets: Dict[str, pd.DataFrame]) -> None:
         )
     if master["Order_ID"].isna().any():
         raise ValueError("Lite Master contains null Order_ID values")
+    if len(master) < 5459:
+        raise ValueError(
+            f"Lite Master row count {len(master):,} is below minimum 5,459. "
+            "Expected 11,559 rows in supply_chain_lite_master.xlsx. "
+            "Ensure the v3.1 workbook (32 cols) is loaded."
+        )
 
 
 def _filter_genuine_electronics(master: pd.DataFrame) -> pd.DataFrame:
@@ -185,7 +192,9 @@ def _create_schema(conn: sqlite3.Connection) -> None:
             simpy_revenue_impact_p50_usd REAL,
             disruption_news_count INTEGER,
             alternate_supplier_available INTEGER,
-            mitigation_recommendation TEXT
+            mitigation_recommendation TEXT,
+            known_disruption_event TEXT,
+            known_severity TEXT
         );
 
         CREATE TABLE ops_kpi (
@@ -372,6 +381,8 @@ def load_excel_into_sqlite(
             "Stockout_Probability_Pct", "SimPy_Revenue_Impact_P50_USD",
             "Disruption_News_Count", "Alternate_Supplier_Available",
             "Mitigation_Recommendation",
+            "Known_Disruption_Event",   # v3: macro event name from Semi Signals join
+            "Known_Severity",           # v3: macro event severity (CRITICAL/HIGH/—)
         ]
         master_target = [
             "order_date", "order_id", "order_region", "category_name", "year",
@@ -385,6 +396,8 @@ def load_excel_into_sqlite(
             "stockout_probability_pct", "simpy_revenue_impact_p50_usd",
             "disruption_news_count", "alternate_supplier_available",
             "mitigation_recommendation",
+            "known_disruption_event",   # v3: macro event name
+            "known_severity",           # v3: macro event severity
         ]
         _insert_frame(
             conn, "lite_master", sheets["Lite Master"], master_source, master_target

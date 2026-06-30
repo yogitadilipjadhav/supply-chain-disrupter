@@ -26,6 +26,7 @@ from src.agents.state import (
     RiskClassificationResult,
 )
 from src.agents.risk_classifier_agent import (
+    _apply_delivery_floor,
     _base_label_from_delivery_status,
     _compute_components,
     _escalate_label,
@@ -284,6 +285,22 @@ class TestDeliveryStatusMapping:
         assert _base_label_from_delivery_status(None, 0.50) == "HIGH"
         assert _base_label_from_delivery_status(None, 0.25) == "MEDIUM"
         assert _base_label_from_delivery_status(None, 0.249) == "LOW"
+
+
+class TestDeliveryFloor:
+    def test_floor_raises_llm_label_below_canceled_override(self):
+        assert _apply_delivery_floor("LOW", "CRITICAL") == "CRITICAL"
+        assert _apply_delivery_floor("MEDIUM", "CRITICAL") == "CRITICAL"
+
+    def test_floor_raises_llm_label_below_late_delivery_override(self):
+        assert _apply_delivery_floor("LOW", "HIGH") == "HIGH"
+        assert _apply_delivery_floor("MEDIUM", "HIGH") == "HIGH"
+
+    def test_floor_keeps_higher_label(self):
+        assert _apply_delivery_floor("CRITICAL", "HIGH") == "CRITICAL"
+
+    def test_floor_no_override_passthrough(self):
+        assert _apply_delivery_floor("MEDIUM", None) == "MEDIUM"
 
 
 # ── §8 Test 5: RAG citation gating ────────────────────────────────────────────

@@ -134,7 +134,9 @@ state = GlobalState(
 with patch("src.agents.risk_classifier_agent.insert_risk_classification"):
     with patch("src.agents.risk_classifier_agent.update_risk_label") as mock_update:
         with patch("src.agents.risk_classifier_agent.query_chroma_rag", return_value=[]):
-            result = risk_classifier_agent(state)
+            with patch("src.agents.risk_classifier_agent.run_llm_signal", return_value=None):
+                with patch("src.agents.risk_classifier_agent.run_judge", return_value=None):
+                    result = risk_classifier_agent(state)
 
 rc = result["risk_classification"]
 
@@ -172,6 +174,12 @@ chk(rc.critical_flag is True,
 
 chk(not mock_update.called,
     "update_risk_label NOT called — replay rows are read-only ground truth")
+
+chk(rc.rule_signal is not None,
+    f"rule_signal populated in ensemble mode (got {rc.rule_signal})")
+
+chk(rc.distilbert_signal is not None,
+    f"distilbert_signal populated (model_source={rc.distilbert_signal.model_source if rc.distilbert_signal else 'N/A'})")
 
 print()
 print(f"All pass: {all_pass}")

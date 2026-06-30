@@ -26,11 +26,7 @@ were added to GlobalState for zero-friction backwards compatibility:
       → returns None if risk_classification is not set
 
 Additionally, RiskClassificationResult.critical_flag is verified to be
-accessible from the GlobalState, because the Mitigation Agent reads it to
-decide whether to fire the Slack webhook (hard business rule):
-
-  if state.risk_classification and state.risk_classification.critical_flag:
-      # fire Slack webhook
+accessible from the GlobalState for downstream agents and the dashboard.
 
 Expected outcome: all 3 assertions PASS.
 """
@@ -100,11 +96,11 @@ chk(
     f"(got {g.risk_score_composite})",
 )
 
-# Mitigation Agent Slack rule: critical_flag must be reachable from GlobalState
+# critical_flag must be reachable from GlobalState
 chk(
     g.risk_classification.critical_flag is True,
     f"critical_flag accessible via state.risk_classification.critical_flag -> True "
-    f"(Mitigation Agent Slack webhook trigger) (got {g.risk_classification.critical_flag})",
+    f"(got {g.risk_classification.critical_flag})",
 )
 
 print()

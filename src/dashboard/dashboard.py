@@ -1,9 +1,71 @@
 import streamlit as st
 
 from src.agents.langgraph_engine import run_agent_graph
+from src.agents.state import RiskClassificationResult
 from src.dashboard.data_loader import show_data_loader
 from src.utils.db_utils import ensure_schema, fetch_scenario_options
-from src.utils.rag_utils import query_chroma_rag
+from src.rag.utils import query_chroma_rag
+
+
+def _render_ensemble_signals(rc: RiskClassificationResult) -> None:
+    """Render three-signal ensemble breakdown and judge verdict panel."""
+    st.markdown("---")
+    st.markdown("#### 🔬 Ensemble Signal Breakdown")
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.markdown("**Signal 1 — Rule-based**")
+        if rc.rule_signal:
+            rs = rc.rule_signal
+            st.metric("Label", rs.escalated_label)
+            st.caption(f"Composite: {rs.composite_score:.4f}")
+            st.caption(f"Delivery override: {rs.delivery_status_override or 'none'}")
+            st.caption(f"Escalated: {'yes' if rs.escalated else 'no'}")
+
+    with col2:
+        st.markdown("**Signal 2 — DistilBERT**")
+        if rc.distilbert_signal:
+            ds = rc.distilbert_signal
+            if ds.model_source == "fine-tuned":
+                st.metric("Label", ds.predicted_label, delta=f"{ds.confidence:.0%} conf")
+                probs = ds.probability_distribution
+                st.caption(
+                    f"LOW {probs.get('LOW', 0):.0%} | "
+                    f"MED {probs.get('MEDIUM', 0):.0%} | "
+                    f"HIGH {probs.get('HIGH', 0):.0%} | "
+                    f"CRIT {probs.get('CRITICAL', 0):.0%}"
+                )
+                st.caption(f"Inference: {ds.inference_ms:.0f}ms (CPU, no API)")
+            else:
+                st.metric("Label", "N/A")
+                st.caption(f"Status: {ds.model_source}")
+                st.caption("Run finetune_distilbert.py to enable")
+
+    with col3:
+        st.markdown("**Signal 3 — GPT-4o + RAG**")
+        if rc.llm_signal:
+            ls = rc.llm_signal
+            st.metric("Label", ls.predicted_label, delta=ls.confidence_level)
+            st.caption(f"Driver: {ls.primary_driver}")
+            st.caption(f"RAG chunks used: {ls.rag_chunks_used} (after cross-encoder)")
+        else:
+            st.metric("Label", "N/A")
+            st.caption("LLM signal failed or not run")
+
+    if rc.judge_verdict:
+        jv = rc.judge_verdict
+        icon = "🟢" if jv.signals_agreed else "🟡"
+        st.markdown(f"**{icon} Judge Verdict: `{jv.final_label}` — `{jv.verdict_type}`**")
+        with st.expander("📋 Judge reasoning (meta-reasoning about signal disagreements)"):
+            st.write(jv.reasoning)
+            if jv.disagreement_explanation:
+                st.warning(f"⚠️ Disagreement: {jv.disagreement_explanation}")
+    else:
+        st.info(
+            "Judge verdict not available — set `OPENAI_API_KEY` in `.env` at the project root "
+            "and restart Streamlit. Signal 3 (GPT-4o) uses the same key."
+        )
 
 
 def show_rag_search() -> None:
@@ -159,8 +221,40 @@ def show_scenario_analyzer() -> None:
                     st.markdown("**Citations:**")
                     for cite in rc.rag_citations:
                         st.markdown(f"- `{cite}`")
+
+        # GPT-4o one-liner and enhanced rationale
+        if rc.llm_evaluator_one_liner:
+            st.info(f"🤖 GPT-4o: {rc.llm_evaluator_one_liner}")
+        if rc.llm_enhanced_rationale:
+            with st.expander("GPT-4o Risk Rationale (L4 Signal 3 + Judge)"):
+                st.write(rc.llm_enhanced_rationale)
+                cols = st.columns(3)
+                cols[0].metric("Primary Driver", rc.llm_primary_driver or "N/A")
+                cols[1].metric("Confidence", rc.llm_confidence or "N/A")
+                cols[2].metric("Label", rc.final_label)
+
+        _render_ensemble_signals(rc)
     else:
         st.warning("Risk classification result not available.")
+
+    st.divider()
+
+    # ── LLM agent outputs ─────────────────────────────────────────────────────
+    if result.weather_risk_llm:
+        with st.expander("GPT-4.1-mini Weather Interpretation (L3)"):
+            st.write(result.weather_risk_llm.supply_chain_narrative)
+            st.caption(f"Hubs: {', '.join(result.weather_risk_llm.affected_semiconductor_hubs)}")
+            st.caption(f"Event class: {result.weather_risk_llm.event_classification}")
+
+    if result.news_analysis_llm:
+        with st.expander("GPT-4.1-mini News Analysis (L2)"):
+            st.write(result.news_analysis_llm.summary)
+            st.caption(
+                f"Category: {result.news_analysis_llm.category} | "
+                f"Severity: {result.news_analysis_llm.severity:.3f} | "
+                f"Component: {result.news_analysis_llm.news_severity_component:.3f} | "
+                f"Duration: {result.news_analysis_llm.expected_duration_days:.0f}d"
+            )
 
     st.divider()
 
@@ -183,6 +277,16 @@ def show_scenario_analyzer() -> None:
         for rec in result.mitigation_action.recommendations:
             st.markdown(f"- {rec}")
         st.caption(f"Cost delta: {result.mitigation_action.cost_delta}")
+        if result.mitigation_action.india_sourcing_recommendations:
+            st.subheader("🇮🇳 India Sourcing (ISM/PLI)")
+            for rec in result.mitigation_action.india_sourcing_recommendations:
+                st.write(f"• {rec}")
+        if result.mitigation_action.rag_citations:
+            with st.expander("RAG Citations (L7)"):
+                for c in result.mitigation_action.rag_citations:
+                    st.caption(c)
+        if result.risk_classification and result.risk_classification.critical_flag:
+            st.error("🚨 CRITICAL: Immediate mitigation required.")
 
     # ── Agent logs ────────────────────────────────────────────────────────────
     with st.expander("Agent Logs"):
