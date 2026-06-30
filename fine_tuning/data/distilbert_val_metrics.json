@@ -1,0 +1,5 @@
+{
+  "f1_macro": 0.9732017267303681,
+  "f1_weighted": 0.987962968631316,
+  "per_class_report": "              precision    recall  f1-score   support\n\n         LOW     1.0000    1.0000    1.0000       168\n      MEDIUM     0.8889    0.9231    0.9057        26\n        HIGH     0.9897    0.9846    0.9871       195\n    CRITICAL     1.0000    1.0000    1.0000        23\n\n    accuracy                         0.9879       412\n   macro avg     0.9696    0.9769    0.9732       412\nweighted avg     0.9881    0.9879    0.9880       412\n"
+}

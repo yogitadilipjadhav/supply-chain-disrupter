@@ -16,6 +16,21 @@ outputs/
 data/processed/
 *.log
 
+# Large ML model weights (Hugging Face / fine-tuned checkpoints)
+*.safetensors
+*.pt
+*.pth
+training_args.bin
+
+# Fine-tuned model artifacts (download from Hugging Face or run finetune scripts)
+fine_tuning/models/
+
+# Generated SQLite (rebuilt from Excel via etl_loader)
+data/*.db
+
+# Local test run output
+test_master_v3_output.txt
+
 # Jupyter
 .ipynb_checkpoints/
 

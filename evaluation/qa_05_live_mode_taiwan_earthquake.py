@@ -127,7 +127,9 @@ with patch("src.agents.risk_classifier_agent.ensure_risk_classification_table"):
     with patch("src.agents.risk_classifier_agent.insert_risk_classification"):
         with patch("src.agents.risk_classifier_agent.update_risk_label"):
             with patch("src.agents.risk_classifier_agent.query_chroma_rag", return_value=[]):
-                result = risk_classifier_agent(state)
+                with patch("src.agents.risk_classifier_agent.run_llm_signal", return_value=None):
+                    with patch("src.agents.risk_classifier_agent.run_judge", return_value=None):
+                        result = risk_classifier_agent(state)
 
 rc = result["risk_classification"]
 
@@ -171,6 +173,12 @@ chk(rc.critical_flag is True,
 
 chk(rc.duration_days == 6.0,
     f"duration_days=6.0 — max(news eq-001=6.0, shock_duration=6) (got {rc.duration_days})")
+
+chk(rc.rule_signal is not None,
+    f"rule_signal populated (escalated_label={rc.rule_signal.escalated_label if rc.rule_signal else 'N/A'})")
+
+chk(rc.distilbert_signal is not None,
+    f"distilbert_signal populated (source={rc.distilbert_signal.model_source if rc.distilbert_signal else 'N/A'})")
 
 print()
 print(f"All pass: {all_pass}")

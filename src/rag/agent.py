@@ -1,7 +1,7 @@
 import re
 from typing import Any, Dict, List, Optional
 
-from src.utils.rag_utils import build_rag_corpus_complete, query_chroma_rag
+from src.rag.utils import build_rag_corpus_complete, query_chroma_rag
 from src.agents.state import NewsRiskSignal
 
 
