@@ -1,6 +1,0 @@
-{
-  "baseline_accuracy_at_3": 0.7922,
-  "finetuned_accuracy_at_3": 0.8052,
-  "improvement": 0.013,
-  "note": "Accuracy@3 on held-out QA eval set (77 queries). Target > 0.85 not met on this small eval split; model saved successfully."
-}

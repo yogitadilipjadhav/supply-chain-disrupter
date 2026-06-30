@@ -22,8 +22,8 @@ data/processed/
 *.pth
 training_args.bin
 
-# Full training checkpoint dirs (optimizer state ~500MB+; not needed for inference)
-fine_tuning/models/**/checkpoints/
+# Fine-tuned model artifacts (download from Hugging Face or run finetune scripts)
+fine_tuning/models/
 
 # Generated SQLite (rebuilt from Excel via etl_loader)
 data/*.db
