@@ -44,7 +44,7 @@ def news_event_analysis_agent(state: GlobalState) -> Dict[str, Any]:
     if call_fn is not None:
         try:
             from src.utils.openai_utils import MODEL_FAST, build_rag_context
-            rag_context = build_rag_context([metadata.disruption_type])
+            rag_context = build_rag_context([(metadata.disruption_type, 5)])
             signal_summary = "\n".join(
                 f"- [{s.category}] severity={s.severity:.2f}: {s.summary}"
                 for s in parsed_signals
