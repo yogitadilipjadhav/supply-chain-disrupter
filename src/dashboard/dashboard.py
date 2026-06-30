@@ -2,6 +2,7 @@ import streamlit as st
 
 from src.agents.langgraph_engine import run_agent_graph
 from src.dashboard.data_loader import show_data_loader
+from src.dashboard.ingestion_dashboard import show_ingestion_dashboard
 from src.utils.db_utils import ensure_schema, fetch_scenario_options
 from src.utils.rag_utils import query_chroma_rag
 
@@ -197,10 +198,12 @@ def main() -> None:
     )
     page = st.sidebar.radio(
         "Navigate",
-        ["Data Ingestion", "RAG Search", "Scenario Analyzer"],
+        ["Data Ingestion", "Live Data Feed", "RAG Search", "Scenario Analyzer"],
     )
     if page == "Data Ingestion":
         show_data_loader()
+    elif page == "Live Data Feed":
+        show_ingestion_dashboard()
     elif page == "RAG Search":
         show_rag_search()
     else:

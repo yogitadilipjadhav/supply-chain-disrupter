@@ -60,6 +60,7 @@ class GlobalState(BaseModel):
     event_metadata: Optional[EventMetadata] = None
     config: Optional[Dict[str, Any]] = None
     active_record: Optional[Dict[str, Any]] = None
+    ingestion_run_id: Optional[str] = None  # UUID from L1; links state to live_news_ingest / live_weather_ingest rows
     news_signals: List[NewsRiskSignal] = Field(default_factory=list)
     live_weather_severity: Optional[float] = None
     risk_classification: Optional[RiskClassificationResult] = None

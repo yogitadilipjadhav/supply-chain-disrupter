@@ -29,6 +29,16 @@ from src.agents.state import (
     SimulationResult,
 )
 
+# Bootstrap ingestion schema once per process (additive, never modifies lite_master)
+try:
+    from src.utils.ingestion_schema import ensure_ingestion_schema
+    from src.agents.data_ingestion_agent import data_ingestion_agent_v2
+    ensure_ingestion_schema()
+    _INGESTION_V2_AVAILABLE = True
+except Exception as _ingestion_bootstrap_exc:
+    logger.warning("Ingestion schema bootstrap failed: %s", _ingestion_bootstrap_exc)
+    _INGESTION_V2_AVAILABLE = False
+
 
 class MitigationSchema(BaseModel):
     summary: str = Field(...)
@@ -79,15 +89,43 @@ def weather_risk_monitoring_agent(state: GlobalState) -> Dict[str, Any]:
     config = state.config
     if metadata is None or config is None:
         raise ValueError("Event metadata and config are required for weather monitoring.")
-    if state.active_record and state.active_record.get("latitude") is not None:
-        coords = {
-            "latitude": float(state.active_record["latitude"]),
-            "longitude": float(state.active_record["longitude"]),
-        }
-    else:
-        coords = get_port_coordinates(config, metadata.affected_port)
-    payload = fetch_open_meteo(coords["latitude"], coords["longitude"])
-    severity = compute_weather_severity(payload)
+
+    # If L1 ran a batch and populated live_weather_ingest, read from there (no live API call).
+    # This makes L3 a pure classifier and enables full SQLite replay of any run.
+    severity: Optional[float] = None
+    if state.ingestion_run_id:
+        try:
+            from src.utils.db_utils import execute_query
+            rows = execute_query(
+                """
+                SELECT raw_severity_score FROM live_weather_ingest
+                WHERE run_id = ?
+                ORDER BY raw_severity_score DESC LIMIT 1
+                """,
+                (state.ingestion_run_id,),
+            )
+            if rows:
+                # Convert ref-spec 0-10 scale to 0-1 for downstream compatibility
+                severity = round(float(rows[0][0]) / 10.0, 4)
+                logger.info(
+                    "L3: read severity=%.2f from live_weather_ingest (run_id=%s)",
+                    severity, state.ingestion_run_id,
+                )
+        except Exception as exc:
+            logger.warning("L3: live_weather_ingest read failed (%s) — falling back to live API.", exc)
+
+    if severity is None:
+        # Fallback: live Open-Meteo call (demo / manual scenario mode)
+        if state.active_record and state.active_record.get("latitude") is not None:
+            coords = {
+                "latitude": float(state.active_record["latitude"]),
+                "longitude": float(state.active_record["longitude"]),
+            }
+        else:
+            coords = get_port_coordinates(config, metadata.affected_port)
+        payload = fetch_open_meteo(coords["latitude"], coords["longitude"])
+        severity = compute_weather_severity(payload)
+
     return {
         "live_weather_severity": severity,
         "agent_logs": state.agent_logs + ["L3: Weather risk assessment completed."],
@@ -230,7 +268,15 @@ def run_agent_graph(payload: Dict[str, Any]) -> GlobalState:
     # ── Critical agents — raise on failure ───────────────────────────────────
     state = GlobalState()
 
-    ingestion_delta = data_ingestion_agent(state, payload)
+    # L1: try live-enriched v2 shim; fall back to legacy shim on any error
+    if _INGESTION_V2_AVAILABLE:
+        try:
+            ingestion_delta = data_ingestion_agent_v2(state, payload)
+        except Exception as _v2_exc:
+            logger.warning("L1v2 failed, falling back to legacy: %s", _v2_exc)
+            ingestion_delta = data_ingestion_agent(state, payload)
+    else:
+        ingestion_delta = data_ingestion_agent(state, payload)
     state = state.copy(update=ingestion_delta)
 
     news_delta = news_event_analysis_agent(state)
