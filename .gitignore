@@ -28,6 +28,9 @@ fine_tuning/models/
 # Generated SQLite (rebuilt from Excel via etl_loader)
 data/*.db
 
+# Old v2 workbook superseded by v3.1 (supply_chain_lite_master.xlsx)
+data/raw/supply_chain_lite_master_v2.xlsx
+
 # Local test run output
 test_master_v3_output.txt
 
