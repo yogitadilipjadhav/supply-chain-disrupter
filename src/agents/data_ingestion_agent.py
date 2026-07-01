@@ -270,14 +270,23 @@ class DataIngestionAgent:
                 )
                 mgr_live = mgr_rows[0][0] if mgr_rows else None
 
-                # News count (last 7 days) for this port or global
-                news_count_rows = execute_query(
+                # News count (last 7 days) — supplier_risk_events + live_news_ingest
+                supplier_rows = execute_query(
                     "SELECT COUNT(*) FROM supplier_risk_events "
                     "WHERE is_active = 1 AND event_date >= date('now', '-7 days')"
                     " AND (canonical_port = ? OR canonical_port IS NULL)",
                     (port,),
                 )
-                news_count = int(news_count_rows[0][0]) if news_count_rows else 0
+                live_news_rows = execute_query(
+                    "SELECT COUNT(*) FROM live_news_ingest "
+                    "WHERE relevance_score >= 0.3 "
+                    "AND fetched_at_utc >= date('now', '-7 days')",
+                    (),
+                )
+                news_count = (
+                    int(supplier_rows[0][0] if supplier_rows else 0)
+                    + int(live_news_rows[0][0] if live_news_rows else 0)
+                )
                 # Cap at normalization bound of 17
                 news_count = min(news_count, 17)
 

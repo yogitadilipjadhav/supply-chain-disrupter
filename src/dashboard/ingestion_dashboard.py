@@ -137,6 +137,72 @@ def show_ingestion_dashboard() -> None:
 
     st.divider()
 
+    # ── Hub City Weather Signals ──────────────────────────────────────────────
+    st.subheader("Hub City Weather Signals (latest run)")
+    try:
+        hub_weather_rows = execute_query(
+            """
+            SELECT hub_city, wind_speed_kmh, precipitation_mm, weather_code,
+                   temperature_c, raw_severity_score, is_trigger_hub, fetched_at_utc
+            FROM live_weather_ingest
+            WHERE run_id = (SELECT run_id FROM live_weather_ingest ORDER BY fetched_at_utc DESC LIMIT 1)
+            ORDER BY raw_severity_score DESC
+            """,
+        )
+        if hub_weather_rows:
+            hub_weather_data = []
+            for row in hub_weather_rows:
+                hub_weather_data.append({
+                    "Hub City": row[0],
+                    "Wind (km/h)": f"{row[1]:.1f}" if row[1] is not None else "—",
+                    "Precip (mm)": f"{row[2]:.1f}" if row[2] is not None else "—",
+                    "WMO Code": row[3] if row[3] is not None else "—",
+                    "Temp (°C)": f"{row[4]:.1f}" if row[4] is not None else "—",
+                    "Severity (0-10)": f"{row[5]:.2f}" if row[5] is not None else "—",
+                    "Trigger Hub": "🔴 YES" if row[6] else "No",
+                    "Fetched (UTC)": row[7][:16].replace("T", " ") if row[7] else "—",
+                })
+            st.dataframe(hub_weather_data, use_container_width=True)
+        else:
+            st.info("No hub city weather data yet. Click 'Run Now' to fetch signals.")
+    except Exception as exc:
+        st.warning(f"Could not load hub city weather data: {exc}")
+
+    st.divider()
+
+    # ── Hub City News Signals ─────────────────────────────────────────────────
+    st.subheader("Hub City News Signals (latest run)")
+    try:
+        hub_news_rows = execute_query(
+            """
+            SELECT hub_city, hub_country, supplier_country, headline,
+                   published_at, relevance_score, query_term
+            FROM live_news_ingest
+            WHERE run_id = (SELECT run_id FROM live_news_ingest ORDER BY fetched_at_utc DESC LIMIT 1)
+            ORDER BY relevance_score DESC
+            LIMIT 30
+            """,
+        )
+        if hub_news_rows:
+            hub_news_data = []
+            for row in hub_news_rows:
+                hub_news_data.append({
+                    "Hub City": row[0] or "—",
+                    "Hub Country": row[1] or "—",
+                    "Supplier Country": row[2] or "—",
+                    "Headline": row[3],
+                    "Published": (row[4] or "")[:16].replace("T", " "),
+                    "Relevance": f"{row[5]:.2f}" if row[5] is not None else "—",
+                    "Query Term": row[6] or "—",
+                })
+            st.dataframe(hub_news_data, use_container_width=True)
+        else:
+            st.info("No hub city news data yet. Click 'Run Now' to fetch signals.")
+    except Exception as exc:
+        st.warning(f"Could not load hub city news data: {exc}")
+
+    st.divider()
+
     # ── Recent News Disruptions ───────────────────────────────────────────────
     st.subheader("Recent News & Disruption Signals")
     try:
