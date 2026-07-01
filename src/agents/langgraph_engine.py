@@ -18,6 +18,17 @@ _PROPHET_AVAILABLE = importlib.util.find_spec("prophet") is not None
 _PANDAS_AVAILABLE = importlib.util.find_spec("pandas") is not None
 
 
+# Bootstrap ingestion schema once per process (additive, never modifies lite_master)
+try:
+    from src.utils.ingestion_schema import ensure_ingestion_schema
+    from src.agents.data_ingestion_agent import data_ingestion_agent_v2
+    ensure_ingestion_schema()
+    _INGESTION_V2_AVAILABLE = True
+except Exception as _ingestion_bootstrap_exc:
+    logger.warning("Ingestion schema bootstrap failed: %s", _ingestion_bootstrap_exc)
+    _INGESTION_V2_AVAILABLE = False
+
+
 def demand_forecasting_agent(state: GlobalState) -> Dict[str, Any]:
     """L5 — Prophet demand forecast (optional — skipped if prophet/pandas absent)."""
     if not _PROPHET_AVAILABLE or not _PANDAS_AVAILABLE:
@@ -111,8 +122,15 @@ def run_agent_graph(payload: Dict[str, Any]) -> GlobalState:
     """
     state = GlobalState()
 
-    # ── Critical agents — raise on failure ───────────────────────────────────
-    ingestion_delta = data_ingestion_agent(state, payload)
+    # L1: try live-enriched v2 shim; fall back to legacy shim on any error
+    if _INGESTION_V2_AVAILABLE:
+        try:
+            ingestion_delta = data_ingestion_agent_v2(state, payload)
+        except Exception as _v2_exc:
+            logger.warning("L1v2 failed, falling back to legacy: %s", _v2_exc)
+            ingestion_delta = data_ingestion_agent(state, payload)
+    else:
+        ingestion_delta = data_ingestion_agent(state, payload)
     state = state.model_copy(update=ingestion_delta)
 
     news_delta = news_event_analysis_agent(state)

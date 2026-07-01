@@ -29,6 +29,19 @@ def execute_non_query(query: str, params: Tuple = ()) -> None:
         raise RuntimeError(f"SQLite write failed: {exc}") from exc
 
 
+def execute_many(query: str, params_list: List[Tuple]) -> int:
+    """Batch-insert helper. Returns the number of rows affected."""
+    if not params_list:
+        return 0
+    try:
+        with get_connection() as conn:
+            cursor = conn.executemany(query, params_list)
+            conn.commit()
+            return cursor.rowcount
+    except sqlite3.DatabaseError as exc:
+        raise RuntimeError(f"SQLite batch write failed: {exc}") from exc
+
+
 def ensure_schema() -> None:
     """Create only the writable agent-output table.
 
